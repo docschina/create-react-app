@@ -19,19 +19,19 @@ import styles from './styles.module.css';
 
 const features = [
   {
-    title: 'Less to Learn',
+    title: '学习成本低',
     content:
-      "You don't need to learn and configure many build tools. Instant reloads help you focus on development. When it's time to deploy, your bundles are optimized automatically.",
+      "无需学习和配置任何构建工具。实时的热更新，让你更专注于代码开发。部署时，自动优化你的 bundle。",
   },
   {
-    title: 'Only One Dependency',
+    title: '唯一依赖',
     content:
-      'Your app only needs one build dependency. We test Create React App to make sure that all of its underlying pieces work together seamlessly – no complicated version mismatches.',
+      '你的应用程序只需要一个构建依赖。为了确保所有基层部分都能无缝协同工作，我们对 Create React App 进行深度测试 —— 以避免出现复杂版本不匹配的情况。',
   },
   {
-    title: 'No Lock-In',
+    title: '未锁定配置',
     content:
-      'Under the hood, we use Webpack, Babel, ESLint, and other amazing projects to power your app. If you ever want an advanced configuration, you can ”eject” from Create React App and edit their config files directly.',
+      '工具底层，我们使用了 Webpack，Babel，ESLint 和其他优秀的项目为你的应用程序提供强劲的动力。如果你需要进行高级定制，则可以执行 Create React App 中的 "eject" 命令，根据需求自定义配置文件。',
   },
 ];
 
@@ -57,7 +57,7 @@ function Home() {
               className="button button--outline button--primary button--lg"
               to={useBaseUrl('docs/getting-started')}
             >
-              Get Started
+              快速入门
             </Link>
           </div>
         </div>
@@ -83,13 +83,12 @@ function Home() {
         <div className="container padding-vert--xl text--left">
           <div className="row">
             <div className="col col--4 col--offset-1">
-              <h2>Get started in seconds</h2>
+              <h2>轻松上手</h2>
               <p>
-                Whether you’re using React or another library, Create React App
-                lets you <strong>focus on code, not build tools</strong>.
+                无论你是使用 React 还是其他库，都可以使用 Create React App，这能使你<strong>更专注于编码，而非构建工具</strong>。
                 <br />
                 <br />
-                To create a project called <i>my-app</i>, run this command:
+                如需创建名为 <i>my-app</i> 的项目，运行如下命令：
               </p>
               <CodeBlock className="language-sh">
                 npx create-react-app my-app
@@ -119,11 +118,10 @@ function Home() {
               />
             </div>
             <div className="col col--5 col--offset-1">
-              <h2>Easy to Maintain</h2>
+              <h2>易于维护</h2>
               <p>
-                Updating your build tooling is typically a daunting and
-                time-consuming task. When new versions of Create React App are
-                released, you can upgrade using a single command:
+                更新构建工具通常在开发中是一项艰巨且耗时的任务，而 Create React App 则不然。
+                新版本发布后，使用如下命令升级即可：
               </p>
               <CodeBlock className="language-sh">
                 npm install react-scripts@latest

@@ -7,7 +7,7 @@
 
 const siteConfig = {
   title: 'Create React App',
-  tagline: 'Set up a modern web app by running one command.',
+  tagline: '通过一行命令，构建现代 Web 应用。',
   url: 'https://create-react-app.dev',
   baseUrl: '/',
   projectName: 'create-react-app',
@@ -21,7 +21,7 @@ const siteConfig = {
           path: '../docs',
           sidebarPath: require.resolve('./sidebars.json'),
           editUrl:
-            'https://github.com/facebook/create-react-app/edit/master/docusaurus/docs/',
+            'https://github.com/docschina/create-react-app/edit/master/docusaurus/docs/',
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
         },
@@ -44,10 +44,10 @@ const siteConfig = {
         src: 'img/logo.svg',
       },
       links: [
-        { to: 'docs/getting-started', label: 'Docs', position: 'right' },
+        { to: 'docs/getting-started', label: '文档', position: 'right' },
         {
           href: 'https://reactjs.org/community/support.html',
-          label: 'Help',
+          label: '帮助',
           position: 'right',
         },
         {
@@ -61,20 +61,20 @@ const siteConfig = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: '文档',
           items: [
             {
-              label: 'Get Started',
+              label: '快速入门',
               to: 'docs/getting-started',
             },
             {
-              label: 'Learn React',
-              href: 'https://reactjs.org/',
+              label: '学习 React',
+              href: 'https://zh-hans.reactjs.org/',
             },
           ],
         },
         {
-          title: 'Community',
+          title: '社区',
           items: [
             {
               label: 'Stack Overflow',
@@ -82,7 +82,7 @@ const siteConfig = {
                 'https://stackoverflow.com/questions/tagged/create-react-app',
             },
             {
-              label: 'Spectrum',
+              label: 'Spectrum 社区',
               href: 'https://spectrum.chat/create-react-app',
             },
             {
@@ -90,7 +90,7 @@ const siteConfig = {
               href: 'https://twitter.com/reactjs',
             },
             {
-              label: 'Contributor Covenant',
+              label: 'Contributor 公约',
               href:
                 'https://www.contributor-covenant.org/version/1/4/code-of-conduct',
             },
@@ -107,7 +107,7 @@ const siteConfig = {
         },
       ],
       logo: {
-        alt: 'Facebook Open Source Logo',
+        alt: 'Facebook 开源 Logo',
         src: 'img/oss_logo.png',
       },
       copyright: `Copyright © ${new Date().getFullYear()} Facebook, Inc.`,
