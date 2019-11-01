@@ -14,7 +14,7 @@ sidebar_label: 可执行脚本
 
 ## `npm test`
 
-在可交互监听模式中启用测试用例，查阅 [执行测试](running-tests.md) 部分以了解更多相关内容。
+在可交互监听模式中启用 test runner，查阅 [执行测试](running-tests.md) 部分以了解更多相关内容。
 
 ## `npm run build`
 
