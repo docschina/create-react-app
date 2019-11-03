@@ -1,13 +1,13 @@
 ---
 id: importing-a-component
-title: Importing a Component
+title: 导入一个组件
 ---
 
-This project setup supports ES6 modules thanks to Webpack.
+由于Webpack，此项目安装程序支持ES6模块。
 
-While you can still use `require()` and `module.exports`, we encourage you to use [`import` and `export`](http://exploringjs.com/es6/ch_modules.html) instead.
+虽然您仍然可以使用 `require()` and `module.exports`, 但我们建议您改用 [`import` and `export`](http://exploringjs.com/es6/ch_modules.html).
 
-For example:
+例如:
 
 ## `Button.js`
 
@@ -20,14 +20,14 @@ class Button extends Component {
   }
 }
 
-export default Button; // Don’t forget to use export default!
+export default Button; //不要忘记使用export default！
 ```
 
 ## `DangerButton.js`
 
 ```js
 import React, { Component } from 'react';
-import Button from './Button'; // Import a component from another file
+import Button from './Button'; // 从另一个文件导入组件
 
 class DangerButton extends Component {
   render() {
@@ -38,23 +38,23 @@ class DangerButton extends Component {
 export default DangerButton;
 ```
 
-Be aware of the [difference between default and named exports](https://stackoverflow.com/questions/36795819/react-native-es-6-when-should-i-use-curly-braces-for-import/36796281#36796281). It is a common source of mistakes.
+注意[默认导出和命名导出的区别](https://stackoverflow.com/questions/36795819/react-native-es-6-when-should-i-use-curly-braces-for-import/36796281#36796281).这里是常见的错误来源。
 
-We suggest that you stick to using default imports and exports when a module only exports a single thing (for example, a component). That’s what you get when you use `export default Button` and `import Button from './Button'`.
+我们建议在模块只导出单个对象（例如，一个组件）时，坚持使用默认导入和导出。当你使用 `export default Button` and `import Button from './Button'`就可以得到想要的结果.
 
-Named exports are useful for utility modules that export several functions. A module may have at most one default export and as many named exports as you like.
+命名导出对于导出多个函数的实用程序模块非常有用。一个模块最多可以有一个默认导出和任意多个命名导出.
 
-Learn more about ES6 modules:
+了解有关ES6模块的更多信息:
 
-- [When to use the curly braces?](https://stackoverflow.com/questions/36795819/react-native-es-6-when-should-i-use-curly-braces-for-import/36796281#36796281)
-- [Exploring ES6: Modules](http://exploringjs.com/es6/ch_modules.html)
-- [Understanding ES6: Modules](https://leanpub.com/understandinges6/read#leanpub-auto-encapsulating-code-with-modules)
+- [何时使用花括号?](https://stackoverflow.com/questions/36795819/react-native-es-6-when-should-i-use-curly-braces-for-import/36796281#36796281)
+- [探索ES6模块](http://exploringjs.com/es6/ch_modules.html)
+- [了解ES6模块](https://leanpub.com/understandinges6/read#leanpub-auto-encapsulating-code-with-modules)
 
-## Absolute Imports
+## 绝对导入
 
-You can configure your application to support importing modules using absolute paths. This can be done by configuring a `jsconfig.json` or `tsconfig.json` file in the root of your project. If you're using TypeScript in your project, you will already have a `tsconfig.json` file.
+您可以将应用程序配置为支持使用绝对路径导入模块。这可以通过在项目根目录中配`jsconfig.json` or `tsconfig.json`文件来完成 . 如果您在项目中使用的是TypeScript，那么您已经有了一个`tsconfig.json` 文件.
 
-Below is an example `jsconfig.json` file for a JavaScript project. You can create the file if it doesn't already exist:
+下面是一个JavaScript项目`jsconfig.json`文件的示例，如果文件不存在，则可以创建该文件：
 
 ```json
 {
@@ -65,12 +65,12 @@ Below is an example `jsconfig.json` file for a JavaScript project. You can creat
 }
 ```
 
-If you're using TypeScript, you can configure the `baseUrl` setting inside the `compilerOptions` of your project's `tsconfig.json` file.
+如果您使用的是typescript，则可以在项目的`tsconfig.json`文件的`compilerOptions`中配置`baseUrl`来设置。
 
-Now that you've configured your project to support absolute imports, if you want to import a module located at `src/components/Button.js`, you can import the module like so:
+既然您已经将项目配置为支持绝对导入，那么如果您要导入位于`src/components/Button.js`的模块，您可以像这样导入该模块：
 
 ```js
 import Button from 'components/Button';
 ```
 
-For more information on these configuration files, see the [jsconfig.json reference](https://code.visualstudio.com/docs/languages/jsconfig) and [tsconfig.json reference](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) documentation.
+有关这些配置文件的更多信息，请参阅[jsconfig.json 参考](https://code.visualstudio.com/docs/languages/jsconfig) and [tsconfig.json 参考](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) 文档.
