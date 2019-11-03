@@ -3,7 +3,7 @@ id: getting-started
 title: 开始
 ---
 
-Create React App 是官方支持的创建单页面 React 应用的方式。它提供了一种无需配置的现代构建方式。
+Create React App 是由官方维护的创建 React 单页面应用的工具。它提供了一种无需配置的现代构建方案。
 
 ## 快速开始
 
