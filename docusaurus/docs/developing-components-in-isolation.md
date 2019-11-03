@@ -1,59 +1,59 @@
 ---
 id: developing-components-in-isolation
-title: Developing Components in Isolation
+title: 独立开发组件
 ---
 
-Usually, in an app, you have a lot of UI components, and each of them has many different states.
-For an example, a basic button component could have the following states:
+通常，在应用程序中会有许多 UI 组件，每个组件都包含不同的状态。
+例如，一个按钮的基础组件可能会包含以下状态：
 
-- In a regular state, with a text label.
-- In the disabled mode.
-- In a loading state.
+- 一般都会有的 label 文本。
+- 禁止状态
+- 加载状态
 
-Usually, it’s hard to see these states without running a sample app or some examples.
+通常，如果不运行应用程序或一些示例，很难看到这些状态。
 
-Create React App doesn’t include any tools for this by default, but you can add [Storybook for React](https://storybook.js.org) ([source](https://github.com/storybooks/storybook)) or [React Styleguidist](https://react-styleguidist.js.org/) ([source](https://github.com/styleguidist/react-styleguidist)) to your project. **These are third-party tools that let you develop components and see all their states in isolation from your app**.
+Create React App 默认不包含任何查看组件状态的工具，但可以在项目里加入 [Storybook for React](https://storybook.js.org) ([源码](https://github.com/storybooks/storybook)) 或 [React Styleguidist](https://react-styleguidist.js.org/) ([源码](https://github.com/styleguidist/react-styleguidist)) **这些第三方工具可以协助你开发组件，并能够独立于应用程序查看它们所有的状态**.
 
-![Storybook for React Demo](https://i.imgur.com/7CIAWpB.gif)
+![Storybook React 示例](https://i.imgur.com/7CIAWpB.gif)
 
-You can also deploy your Storybook or style guide as a static app. This way, everyone in your team can view and review different states of UI components without starting a backend server or creating an account in your app.
+也可以将 Stroybook 或样式指南部署为静态应用程序。这样，团队中的每个人都可以查看和检查 UI 组件的不同状态，而无需启动后端服务器或在应用程序中创建帐户。
 
-## Getting Started with Storybook
+## Storybook 入门
 
-Storybook is a development environment for React UI components. It allows you to browse a component library, view the different states of each component, and interactively develop and test components.
+Storybook 是 React UI 组件的开发环境。它允许你浏览组件库，查看每个组件的不同状态，并进行交互式地开发以及组件测试。
 
-Run the following command inside your app’s directory:
+在应用程序的目录中运行以下命令：
 
 ```sh
 npx -p @storybook/cli sb init
 ```
 
-After that, follow the instructions on the screen.
+之后，按照屏幕上的说明进行操作。
 
-Learn more about React Storybook:
+了解有关 React Storybook 更多信息：
 
-- [Learn Storybook (tutorial)](https://learnstorybook.com)
-- [Documentation](https://storybook.js.org/basics/introduction/)
-- [GitHub Repo](https://github.com/storybooks/storybook)
-- [Snapshot Testing UI](https://github.com/storybooks/storybook/tree/master/addons/storyshots) with Storybook + addon/storyshot
+- [学习 Storybook (教程)](https://learnstorybook.com)
+- [文档](https://storybook.js.org/basics/introduction/)
+- [GitHub 地址](https://github.com/storybooks/storybook)
+- [Storybook 快照测试 UI](https://github.com/storybooks/storybook/tree/master/addons/storyshots) + 插件/快照
 
-## Getting Started with Styleguidist
+## Styleguidist 入门
 
-Styleguidist combines a style guide, where all your components are presented on a single page with their props documentation and usage examples, with an environment for developing components in isolation, similar to Storybook. In Styleguidist you write examples in Markdown, where each code snippet is rendered as a live editable playground.
+Styleguidist 类似于 Storybook，有一个独立开发组件的环境，此外，它集成了样式指南，每个组件包含的属性文档和使用示例都会展示在单页面中。同时，你也可以用 Markdown 编写示例，在 Markdown 中，每个代码片段都呈现为可编辑的区域。
 
-First, install Styleguidist:
+首先，安装 Styleguidist：
 
 ```sh
 npm install --save react-styleguidist
 ```
 
-Alternatively you may use `yarn`:
+或者可以用 `yarn`:
 
 ```sh
 yarn add react-styleguidist
 ```
 
-Then, add these scripts to your `package.json`:
+之后，在 `package.json` 中添加以下 scripts：
 
 ```diff
    "scripts": {
@@ -62,15 +62,15 @@ Then, add these scripts to your `package.json`:
      "start": "react-scripts start",
 ```
 
-Then, run the following command inside your app’s directory:
+在应用程序的目录中运行以下命令：
 
 ```sh
 npm run styleguide
 ```
 
-After that, follow the instructions on the screen.
+最后，按照屏幕上的说明进行操作。
 
-Learn more about React Styleguidist:
+了解有关 React Styleguidist 更多信息：
 
-- [GitHub Repo](https://github.com/styleguidist/react-styleguidist)
-- [Documentation](https://react-styleguidist.js.org/docs/getting-started.html)
+- [GitHub 地址](https://github.com/styleguidist/react-styleguidist)
+- [文档](https://react-styleguidist.js.org/docs/getting-started.html)
