@@ -4,11 +4,11 @@ title: Using HTTPS in Development
 sidebar_label: HTTPS in Development
 ---
 
-> Note: this feature is available with `react-scripts@0.4.0` and higher.
+> 注意: 在react-scripts@0.4.0及更高版本中可以使用此功能
 
-You may require the dev server to serve pages over HTTPS. One particular case where this could be useful is when using [the "proxy" feature](proxying-api-requests-in-development.md) to proxy requests to an API server when that API server is itself serving HTTPS.
+你可能需要使开发服务器支持https。有一种特殊情况是，当该API服务器本身支持HTTPS时，使用 [proxy](proxying-api-requests-in-development.md) 功能可以将请求代理到该API服务器。
 
-To do this, set the `HTTPS` environment variable to `true`, then start the dev server as usual with `npm start`:
+为此，将 `HTTPS` 环境变量设置为 `true` ，然后像往常一样使用 `npm start` 启动开发服务器：
 
 ### Windows (cmd.exe)
 
@@ -16,7 +16,7 @@ To do this, set the `HTTPS` environment variable to `true`, then start the dev s
 set HTTPS=true&&npm start
 ```
 
-(Note: the lack of whitespace is intentional.)
+(注意: 中间是没有空格的。)
 
 ### Windows (Powershell)
 
@@ -30,9 +30,9 @@ set HTTPS=true&&npm start
 HTTPS=true npm start
 ```
 
-Note that the server will use a self-signed certificate, so your web browser will almost definitely display a warning upon accessing the page.
+注意，服务器将使用自签名证书，因此web浏览器在访问页面时可能会显示警告。
 
-To avoid having to set the environment variable each time, you can either include in the `npm start` script like so:
+为了避免每次都必须设置环境变量，你可以像这样在 `npm start` 脚本中包含环境变量：
 
 ```json
 {
@@ -40,5 +40,5 @@ To avoid having to set the environment variable each time, you can either includ
 }
 ```
 
-Or you can create a `.env` file with `HTTPS=true` set.
-[Learn more about environment variables in CRA](https://create-react-app.dev/docs/adding-custom-environment-variables).
+或者你可以使用 `HTTPS=true` 设置创建 `.env` 文件。
+[了解有关CRA中环境变量的更多信息。](https://create-react-app.dev/docs/adding-custom-environment-variables).
