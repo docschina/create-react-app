@@ -35,7 +35,7 @@ _([npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7
 
 **你需要在你的本地开发机器上有 Node>=8.10** (但是这在服务器上是不要求的)。你可以采用 [nvm](https://github.com/creationix/nvm#installation)（macOS/Linux）或 [nvm-windows](https://github.com/coreybutler/nvm-windows#node-version-manager-nvm-for-windows)，来实现在不同项目之间 Node 版本的切换。
 
-要创建新的应用，你可以在下面方法中任选其一：
+如需创建新应用，你可以在下面方法中任选其一：
 
 ### npx
 
