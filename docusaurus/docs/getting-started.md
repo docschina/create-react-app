@@ -19,7 +19,7 @@ _([npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7
 
 然后打开 [http://localhost:3000/](http://localhost:3000/) 可以看到你的应用。
 
-当你准备好部署到生产环境，用 `npm run build` 创建一个被压缩的包。
+当你准备好部署到生产环境，执行 `npm run build` 创建一个被压缩的 bundle。
 
 <p align='center'>
 <img src='https://cdn.jsdelivr.net/gh/facebook/create-react-app@27b42ac7efa018f2541153ab30d63180f5fa39e0/screencast.svg' width='600' alt='npm start' />
