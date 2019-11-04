@@ -14,7 +14,7 @@ title: 独立开发组件
 
 Create React App 默认不包含任何查看组件状态的工具，但可以在项目里加入 [Storybook for React](https://storybook.js.org) ([源码](https://github.com/storybooks/storybook)) 或 [React Styleguidist](https://react-styleguidist.js.org/) ([源码](https://github.com/styleguidist/react-styleguidist)) **这些第三方工具可以协助你开发组件，并能够独立于应用程序查看它们所有的状态**.
 
-![Storybook React示例](https://i.imgur.com/7CIAWpB.gif)
+![Storybook React 示例](https://i.imgur.com/7CIAWpB.gif)
 
 也可以将 Stroybook 或样式指南部署为静态应用程序。这样，团队中的每个人都可以查看和检查 UI 组件的不同状态，而无需启动后端服务器或在应用程序中创建帐户。
 
