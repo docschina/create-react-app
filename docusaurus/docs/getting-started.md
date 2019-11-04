@@ -142,15 +142,15 @@ cd my-app
 
 ### `npm test` or `yarn test`
 
-以交互模式运行测试观察器。默认情况下，对上次提交后更改的文件进行相关测试。
+在可交互监听模式中启用 test runner，默认情况下，对上次提交后更改的文件进行相关测试。
 
 [了解关于测试的更多内容](https://facebook.github.io/create-react-app/docs/running-tests).
 
 ### `npm run build` or `yarn build`
 
-为生产环境构建应用到 `build` 文件夹。在生产环境中正确的打包 React，并且为了获得最好的性能，对构建进行了优化。
+在 `build` 文件夹中构建适用于生产环境的应用，它可在生产环境下正确打包 React，并对其进行性能优化以提升执行效率。
 
-构建中进行了压缩，并且文件名包含hash值。
+构建中进行了压缩，且文件名包含hash。
 
 你的应用已经准备好，可以部署了。
 
