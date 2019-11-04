@@ -1,10 +1,10 @@
 ---
 id: adding-a-stylesheet
-title: Adding a Stylesheet
-sidebar_label: Adding Stylesheets
+title: 添加一个样式表
+sidebar_label: 添加样式表
 ---
 
-This project setup uses [Webpack](https://webpack.js.org/) for handling all assets. Webpack offers a custom way of “extending” the concept of `import` beyond JavaScript. To express that a JavaScript file depends on a CSS file, you need to **import the CSS from the JavaScript file**:
+该项目使用 [Webpack](https://webpack.js.org/) 处理所有 assets。Webpack 提供了一种自定义方式，将 `import` 的概念扩展到 JavaScript 以外。要表示一个 JavaScript 文件依赖一个 CSS 文件，你需要 **在 JavaScript 文件中引入 CSS** ：
 
 ## `Button.css`
 
@@ -18,18 +18,18 @@ This project setup uses [Webpack](https://webpack.js.org/) for handling all asse
 
 ```js
 import React, { Component } from 'react';
-import './Button.css'; // Tell Webpack that Button.js uses these styles
+import './Button.css'; // 告知 Webpack Button.js 调用了这些样式
 
 class Button extends Component {
   render() {
-    // You can use them as regular CSS styles
+    // 你可以将他们作为常规 CSS 样式使用
     return <div className="Button" />;
   }
 }
 ```
 
-**This is not required for React** but many people find this feature convenient. You can read about the benefits of this approach [here](https://medium.com/seek-blog/block-element-modifying-your-javascript-components-d7f99fcab52b). However you should be aware that this makes your code less portable to other build tools and environments than Webpack.
+**React 不需要此功能**，但很多人发现此功能很方便。你可以在[此处](https://medium.com/seek-blog/block-element-modifying-your-javascript-components-d7f99fcab52b)了解此方法所有具有的优势。但是，你应该意识到，这使得你的代码不易从 Webpack 迁移至其他的构建工具和环境中。
 
-In development, expressing dependencies this way allows your styles to be reloaded on the fly as you edit them. In production, all CSS files will be concatenated into a single minified `.css` file in the build output.
+在开发中，以这种方式表示依赖关系将允许你在编辑样式时即时重新加载样式。在生产环境中，所有 CSS 文件都将在构建输出中合并成一个最小化的 `.css` 文件。
 
-If you are concerned about using Webpack-specific semantics, you can put all your CSS right into `src/index.css`. It would still be imported from `src/index.js`, but you could always remove that import if you later migrate to a different build tool.
+如果你担心使用特定于 Webpack 的语法，你可以将所有 CSS 放入 `src/index.css` 中，它依然会在 `src/index.js` 中被引入，但是如果以后需要迁移至其他构建工具，随时可以删除该引入。
