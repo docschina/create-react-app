@@ -1,28 +1,28 @@
 ---
 id: adding-css-reset
-title: Adding a CSS Reset
-sidebar_label: Adding CSS Reset
+title: 添加 CSS Reset
+sidebar_label: 添加 CSS Reset
 ---
 
-This project setup uses [PostCSS Normalize] for adding a [CSS Reset].
+该项目已使用 [PostCSS Normalize] 添加了 [CSS Reset]。
 
-To start using it, add `@import-normalize;` anywhere in your CSS file(s). You only need to include it once and duplicate imports are automatically removed. Since you only need to include it once, a good place to add it is `index.css` or `App.css`.
+要开始使用它，请在 CSS 文件中的任意位置添加 `@import-normalize;`。你只需添加一次，重复的引入会被自动删除。由于只需添加一次，因此添加它的最好位置是 `index.css` 或 `App.css`。
 
 ## `index.css`
 
 ```css
-@import-normalize; /* bring in normalize.css styles */
+@import-normalize; /* 引入 normalize.css 样式 */
 
-/* rest of app styles */
+/* 其余 app 样式 */
 ```
 
-You can control which parts of [normalize.css] to use via your project's [browserslist].
+你可以通过项目的 [browserslist] 控制使用 [normalize.css] 的哪些部分。
 
-Results when [browserslist] is `last 3 versions`:
+[browserslist] 为 `last 3 versions` 时的结果：
 
 ```css
 /**
- * Add the correct display in IE 9-.
+ * 为 IE 9- 添加正确的显示
  */
 
 audio,
@@ -31,7 +31,7 @@ video {
 }
 
 /**
- * Remove the border on images inside links in IE 10-.
+ * 删除 IE 10- 中链接内图片的边框
  */
 
 img {
@@ -39,11 +39,11 @@ img {
 }
 ```
 
-Results when [browserslist] is `last 2 versions`:
+[browserslist] 为 `last 2 versions` 时的结果:
 
 ```css
 /**
- * Remove the border on images inside links in IE 10-.
+ * 删除 IE 10- 中链接内图片的边框
  */
 
 img {
@@ -51,9 +51,9 @@ img {
 }
 ```
 
-## Browser support
+## 浏览器支持
 
-Browser support is dictated by what normalize.css [supports]. As of this writing, it includes:
+浏览器支持由 normalize.css [supports] 决定。在撰写本文时，它包括：
 
 - Chrome (last 3)
 - Edge (last 3)
