@@ -1,15 +1,15 @@
 ---
 id: post-processing-css
-title: Post-Processing CSS
+title: CSS 后期处理
 ---
 
-This project setup minifies your CSS and adds vendor prefixes to it automatically through [Autoprefixer](https://github.com/postcss/autoprefixer) so you don’t need to worry about it.
+该项目设置会最小化你的 CSS，并通过 [Autoprefixer](https://github.com/postcss/autoprefixer) 自动添加供应商前缀，因此你无需关心这些。
 
-Support for new CSS features like the [`all` property](https://developer.mozilla.org/en-US/docs/Web/CSS/all), [`break` properties](https://www.w3.org/TR/css-break-3/#breaking-controls), [custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables), and [media query ranges](https://www.w3.org/TR/mediaqueries-4/#range-context) are automatically polyfilled to add support for older browsers.
+新的 CSS 特性，诸如 [`all` 属性](https://developer.mozilla.org/en-US/docs/Web/CSS/all)，[`break` 属性](https://www.w3.org/TR/css-break-3/#breaking-controls)，[自定义属性](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables)，和 [媒体查询范围](https://www.w3.org/TR/mediaqueries-4/#range-context) 会自动添加 polyfill，以兼容老式浏览器。
 
-You can customize your target support browsers by adjusting the `browserslist` key in `package.json` according to the [Browserslist specification](https://github.com/browserslist/browserslist#readme).
+你可以根据 [Browserslist 规范](https://github.com/browserslist/browserslist#readme)，通过调整 `package.json` 中的 `browserlist` 属性来自定义需要兼容的浏览器。
 
-For example, this:
+例如，它会把如下文件：
 
 ```css
 .App {
@@ -19,7 +19,7 @@ For example, this:
 }
 ```
 
-becomes this:
+转换成这样：
 
 ```css
 .App {
@@ -36,9 +36,9 @@ becomes this:
 }
 ```
 
-If you need to disable autoprefixing for some reason, [follow this section](https://github.com/postcss/autoprefixer#disabling).
+如果你需要在出于某种特殊原因的情况下禁用自动前缀，请 [遵循本节](https://github.com/postcss/autoprefixer#disabling)。
 
-[CSS Grid Layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout) prefixing is disabled by default, but it will **not** strip manual prefixing.
-If you'd like to opt-in to CSS Grid prefixing, [first familiarize yourself about its limitations](https://github.com/postcss/autoprefixer#does-autoprefixer-polyfill-grid-layout-for-ie).
+[CSS 网格布局](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout)前缀默认情况下出于禁用状态，但它**不**会去除手工前缀。
+如果你想加入 CSS Grid 前缀，[请先了解一下它的局限性](https://github.com/postcss/autoprefixer#does-autoprefixer-polyfill-grid-layout-for-ie)。
 
-To enable CSS Grid prefixing, add `/* autoprefixer grid: autoplace */` to the top of your CSS file.
+要启用 CSS Grid 前缀，请在 CSS 文件顶部添加 `/* autoprefixer grid: autoplace */`。
