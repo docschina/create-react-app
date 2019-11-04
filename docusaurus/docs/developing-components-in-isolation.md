@@ -38,7 +38,7 @@ npx -p @storybook/cli sb init
 
 ## Styleguidist 入门
 
-Styleguidist 类似于 Storybook，有一个独立开发组件的环境，之外，结合了一个样式指南，每个组件包含它的属性文档和使用示例都展示在单个页面里。同时，你也可以用Markdown编写示例，在Markdown中，每个代码片段都呈现为可编辑的区域。
+Styleguidist 类似于 Storybook，有一个独立开发组件的环境，此外，它集成了样式指南，每个组件包含的属性文档和使用示例都会展示在单页面中。同时，你也可以用 Markdown 编写示例，在 Markdown 中，每个代码片段都呈现为可编辑的区域。
 首先，安装 Styleguidist：
 
 ```sh
