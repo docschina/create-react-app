@@ -15,7 +15,7 @@ npm start
 
 > 如果你此前已经通过执行 `npm install -g create-react-app` 全局安装了 `create-react-app`，我们建议你执行 `npm uninstall -g create-react-app` 将它卸载掉，目的是确保 `npx` 总是使用最新版本的 `create-react-app`。
 
-_([npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) 来自 npm 5.2+ 以及更高版本， 参阅 [instructions for older npm versions](https://gist.github.com/gaearon/4064d3c23a77c74a3614c498a8bb1c5f))_
+_([npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) 需要 npm 5.2+ 以及更高版本， 参阅 [instructions for older npm versions](https://gist.github.com/gaearon/4064d3c23a77c74a3614c498a8bb1c5f))_
 
 然后打开 [http://localhost:3000/](http://localhost:3000/) 可以看到你的应用。
 
@@ -27,7 +27,7 @@ _([npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7
 
 ### 直接开始
 
-你**不**需要安装或配置像 Webpack 或 Babel 那样的工具。它们是被预先配置和隐藏起来，以便你可以专注于代码。
+你**不需要**安装或配置像 Webpack 或 Babel 那样的工具。它们是被预先配置和隐藏起来，以便你可以专注于代码。
 
 创建一个项目，然后你就可以开始了。
 
@@ -43,7 +43,7 @@ _([npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7
 npx create-react-app my-app
 ```
 
-_([npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) 来自 npm 5.2+ 以及更高版本， 参阅 [instructions for older npm versions](https://gist.github.com/gaearon/4064d3c23a77c74a3614c498a8bb1c5f))_
+_([npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) 需要 npm 5.2+ 以及更高版本， 参阅 [instructions for older npm versions](https://gist.github.com/gaearon/4064d3c23a77c74a3614c498a8bb1c5f))_
 
 ### npm
 
@@ -77,13 +77,13 @@ npx create-react-app my-app --template [template-name]
 
 #### 创建 TypeScript 应用
 
-你可以用模板开始一个 TypeScript 应用。要使用我们提供的模板，只需把 `--template typescript` 附加到创建应用命令之后。
+你可以通过模板新建一个 TypeScript 应用。如需使用我们提供的 TypeScript 模板，只需在创建命令后加上 `--template typescript` 即可。
 
 ```sh
 npx create-react-app my-app --template typescript
 ```
 
-如果你已经有一个项目，想要添加 TypeScript, 请参阅我们的文档 [Adding TypeScript](adding-typescript.md) 。
+如果你希望在已有项目中引入 TypeScript, 请参阅我们的文档 [Adding TypeScript](adding-typescript.md) 。
 
 ### 选择包管理器
 
@@ -95,7 +95,7 @@ npx create-react-app my-app --use-npm
 
 ## 输出
 
-运行这些命令中的任意命令，都会在当前文件夹中创建一个名为 `my-app` 的目录。在该目录中，将会生成初始项目结构，并且安装传递依赖项：
+运行上述命令会在当前文件夹中创建一个名为 `my-app` 的目录。在该目录中，将会生成初始项目结构，并且安装传递依赖项：
 
 ```
 my-app
@@ -120,7 +120,7 @@ my-app
     └── serviceWorker.js
 ```
 
-没有配置或复杂的文件夹结构，只有你构建应用所需要的文件。安装完成后，可以打开你的项目文件夹：
+没有配置或复杂的文件夹结构，只有你构建应用所需要的文件。安装完成后，你可以执行以下命令打开你的项目目录：
 
 ```sh
 cd my-app
