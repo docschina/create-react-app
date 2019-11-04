@@ -21,6 +21,7 @@ Create React App 默认不包含任何查看组件状态的工具，但可以在
 ## Storybook 入门
 
 Storybook 是 React UI 组件的开发环境。它允许你浏览组件库，查看每个组件的不同状态，并进行交互式地开发以及组件测试。
+
 在应用程序的目录中运行以下命令：
 
 ```sh
@@ -39,6 +40,7 @@ npx -p @storybook/cli sb init
 ## Styleguidist 入门
 
 Styleguidist 类似于 Storybook，有一个独立开发组件的环境，此外，它集成了样式指南，每个组件包含的属性文档和使用示例都会展示在单页面中。同时，你也可以用 Markdown 编写示例，在 Markdown 中，每个代码片段都呈现为可编辑的区域。
+
 首先，安装 Styleguidist：
 
 ```sh
@@ -68,7 +70,6 @@ npm run styleguide
 
 最后，按照屏幕上的说明进行操作。
 
-Learn more about React Styleguidist:
 了解有关 React Styleguidist 更多信息：
 
 - [GitHub 地址](https://github.com/styleguidist/react-styleguidist)
