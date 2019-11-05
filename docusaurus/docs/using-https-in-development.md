@@ -1,7 +1,7 @@
 ---
 id: using-https-in-development
-title: Using HTTPS in Development
-sidebar_label: HTTPS in Development
+title: 在开发环境使用 HTTPS
+sidebar_label: 在开发环境使用 HTTPS
 ---
 
 > 注意：此功能只在 `react-scripts@0.4.0` 及更高版本中可用
