@@ -144,7 +144,7 @@ cd my-app
 
 在可交互监听模式中启用 test runner，默认情况下，对上次提交后更改的文件进行相关测试。
 
-[了解关于测试的更多内容](https://facebook.github.io/create-react-app/docs/running-tests).
+[了解关于测试的更多内容](https://facebook.github.io/create-react-app/docs/running-tests)。
 
 ### `npm run build` or `yarn build`
 
