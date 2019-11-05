@@ -15,7 +15,7 @@ npm start
 
 > 如果你此前已经通过执行 `npm install -g create-react-app` 全局安装了 `create-react-app`，我们建议你执行 `npm uninstall -g create-react-app` 将它卸载掉，目的是确保 `npx` 总是使用最新版本的 `create-react-app`。
 
-_([npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) 需要 npm 5.2+ 以及更高版本， 参阅 [instructions for older npm versions](https://gist.github.com/gaearon/4064d3c23a77c74a3614c498a8bb1c5f))_
+_([npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) 需要 npm 5.2+ 以及更高版本，请参阅 [instructions for older npm versions](https://gist.github.com/gaearon/4064d3c23a77c74a3614c498a8bb1c5f))_
 
 然后打开 [http://localhost:3000/](http://localhost:3000/) 可以看到你的应用。
 
