@@ -73,4 +73,4 @@ export default DangerButton;
 import Button from 'components/Button';
 ```
 
-有关这些配置文件的更多信息，请参阅 [jsconfig.json](https://code.visualstudio.com/docs/languages/jsconfig) 和 [tsconfig.json 参考](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) 相关文档。
+有关这些配置文件的更多信息，请参阅 [jsconfig.json](https://code.visualstudio.com/docs/languages/jsconfig) 和 [tsconfig.json](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) 相关文档。
