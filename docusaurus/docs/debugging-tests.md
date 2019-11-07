@@ -1,16 +1,17 @@
 ---
 id: debugging-tests
-title: Debugging Tests
-sidebar_label: Debugging Tests
+title: 调试测试
+sidebar_label: 调试测试
 ---
 
-There are various ways to setup a debugger for your Jest tests. We cover debugging in Chrome and [Visual Studio Code](https://code.visualstudio.com/).
+有多种方法可以为你的 `Jest` 测试设置调试器。我们将在 `Chrome` 和 [Visual Studio Code](https://code.visualstudio.com/) 中进行调试。
 
-> Note: debugging tests requires Node 8 or higher.
+> 注意：此功能只能在 `node` 8 或更高版本中使用。
 
-## Debugging Tests in Chrome
+## 在 `Chrome` 中调试测试
 
-Add the following to the `scripts` section in your project's `package.json`
+将以下内容添加到项目的 `package.json` 中的 `scripts` 部分
+
 
 ```json
 "scripts": {
@@ -18,29 +19,30 @@ Add the following to the `scripts` section in your project's `package.json`
   }
 ```
 
-Place `debugger;` statements in any test and run:
+在任何需要进行测试的地方加入 `debugger;` 语句，并且运行以下命令：
 
 ```sh
 $ npm run test:debug
 ```
 
-This will start running your Jest tests, but pause before executing to allow a debugger to attach to the process.
+在执行之前暂停，使调试器添加到进程，然后开始你的 `Jest` 测试。
 
-Open the following in Chrome
+在 `Chrome` 中打开以下内容
+
 
 ```
 about:inspect
 ```
 
-After opening that link, the Chrome Developer Tools will be displayed. Select `inspect` on your process and a breakpoint will be set at the first line of the react script (this is done to give you time to open the developer tools and to prevent Jest from executing before you have time to do so). Click the button that looks like a "play" button in the upper right hand side of the screen to continue execution. When Jest executes the test that contains the debugger statement, execution will pause and you can examine the current scope and call stack.
+打开这个链接后，Chrome 开发者工具就会展示出来。在你的进程中选择 `inspect` ，并且断点将设置在 `react` 脚本的第一行（这样做是为了给你时间打开开发者工具，并防止 `Jest` 此之前执行）。点击屏幕右上角类似”播放”按钮来继续执行。当 `Jest` 执行包含 `debugger` 的语句时，过程将暂停，你可以在当前范围内进行检查并调用堆栈。
 
-> Note: the --runInBand cli option makes sure Jest runs test in the same process rather than spawning processes for individual tests. Normally Jest parallelizes test runs across processes but it is hard to debug many processes at the same time.
+> Note: --runInBand cli 选项可确保 `Jest` 在同一进程中进行测试，而不是为单个测试创建进程。通常，`Jest` 可并行化跨进程的测试，但是很难同时调试多个进程。
 
-## Debugging Tests in Visual Studio Code
+## 在 Visual Studio Code 中调试测试
 
-Debugging Jest tests is supported out of the box for [Visual Studio Code](https://code.visualstudio.com).
+[Visual Studio Code](https://code.visualstudio.com) 支持调试 `Jest` 测试。
 
-Use the following [`launch.json`](https://code.visualstudio.com/docs/editor/debugging#_launch-configurations) configuration file:
+使用以下 [`launch.json`](https://code.visualstudio.com/docs/editor/debugging#_launch-configurations) 配置文件：
 
 ```json
 {
