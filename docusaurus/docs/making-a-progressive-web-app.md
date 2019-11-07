@@ -1,109 +1,53 @@
 ---
 id: making-a-progressive-web-app
-title: Making a Progressive Web App
+title: 开发 Progressive Web App
 ---
 
-The production build has all the tools necessary to generate a first-class
-[Progressive Web App](https://developers.google.com/web/progressive-web-apps/),
-but **the offline/cache-first behavior is opt-in only**. By default,
-the build process will generate a service worker file, but it will not be
-registered, so it will not take control of your production web app.
+生产环境具备所有生成初级[渐进式 Web 应用](https://developers.google.com/web/progressive-web-apps/)的必要工具，但是**离线/缓存优先行为是唯一可选的启用项**。默认情况下，构建过程中将会生成 service worker 文件，但是不会进行注册，因此它不会接管你的生产环境网络应用。
 
-In order to opt-in to the offline-first behavior, developers should look for the
-following in their [`src/index.js`](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/src/index.js) file:
+如果要启用离线优先行为，开发者们应该先在它们的 [`src/index.js`](https://github.com/facebook/create-react-app/blob/master/packages/cra-template/template/src/index.js) 中找到内容：
 
 ```js
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
+// 如果你希望你的应用能够离线运行，且加载的更快的话，则可以更改下面的 unregister() 至 register()。请注意，这存在一些陷阱。
+// 了解更多有关 service worker 的信息，请查阅 https://bit.ly/CRA-PWA
 serviceWorker.unregister();
 ```
 
-As the comment states, switching `serviceWorker.unregister()` to
-`serviceWorker.register()` will opt you in to using the service worker.
+如上所述，将 `serviceWorker.unregister()` 切换至 `serviceWorker.register()` 将启用 service worker。
 
-## Why Opt-in?
+## 为什么要启用它？
 
-Offline-first Progressive Web Apps are faster and more reliable than traditional web pages, and provide an engaging mobile experience:
+离线优先的渐进式 Web 应用比传统网页更快，更可靠，并提供更为优秀的移动体验：
 
-- All static site assets are cached so that your page loads fast on subsequent visits, regardless of network connectivity (such as 2G or 3G). Updates are downloaded in the background.
-- Your app will work regardless of network state, even if offline. This means your users will be able to use your app at 10,000 feet and on the subway.
-- On mobile devices, your app can be added directly to the user's home screen, app icon and all. This eliminates the need for the app store.
+- 所有静态站点资源已被缓存，因此无论网络连接如何（如 2G 或 3G 环境），你的页面在后续访问时都能快速加载。更新会在后台自动下载。
+- 即使网络处于离线状态，你的应用也能不受网络环境干扰并正常运行。这意味着你的用户甚至可以在 10,000 英尺高的地方或地铁中使用你的应用。
+在移动设备上，你的应用程序可以直接添加到用户的主页上，包括应用程序图标与其他所有功能。这解除了对应用商店的依赖。
 
-However, they [can make debugging deployments more challenging](https://github.com/facebook/create-react-app/issues/2398) so, starting with Create React App 2, service workers are opt-in.
+但是，它们[可能会使调试与部署变得更富有挑战性](https://github.com/facebook/create-react-app/issues/2398)，因此，从 Create React App 2 开始，service worker 变为了可选项。
 
-The [`workbox-webpack-plugin`](https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin)
-is integrated into production configuration,
-and it will take care of generating a service worker file that will automatically
-precache all of your local assets and keep them up to date as you deploy updates.
-The service worker will use a [cache-first strategy](https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/#cache-falling-back-to-network)
-for handling all requests for local assets, including
-[navigation requests](https://developers.google.com/web/fundamentals/primers/service-workers/high-performance-loading#first_what_are_navigation_requests)
-for your HTML, ensuring that your web app is consistently fast, even on a slow
-or unreliable network.
+[`workbox-webpack-plugin`](https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin) 已集成至生产环境配置中，它将负责生成 service worker 文件，该文件会自动预缓存所有本地资产，并在部署更新时使其保持最新状态。
+service worker 使用[缓存优先策略](https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/#cache-falling-back-to-network)来处理所有对本地资产的请求，包括用于 HTML 的[导航请求](https://developers.google.com/web/fundamentals/primers/service-workers/high-performance-loading#first_what_are_navigation_requests)，以确保你的应用程序在缓慢或不可靠的网络环境下依旧保持稳定。
 
-## Offline-First Considerations
+## 离线优先注意事项
 
-If you do decide to opt-in to service worker registration, please take the
-following into account:
+如果你决定启用 service worker 注册项，请预先阅读以下事项：
 
-1. After the initial caching is done, the [service worker lifecycle](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle)
-   controls when updated content ends up being shown to users. In order to guard against
-   [race conditions with lazy-loaded content](https://github.com/facebook/create-react-app/issues/3613#issuecomment-353467430),
-   the default behavior is to conservatively keep the updated service worker in the "[waiting](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#waiting)"
-   state. This means that users will end up seeing older content until they close (reloading is not
-   enough) their existing, open tabs. See [this blog post](https://jeffy.info/2018/10/10/sw-in-c-r-a.html)
-   for more details about this behavior.
+1. 完成初始缓存后，[service worker 生命周期](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle)控制何时将更新后的内容呈现给用户。为了防止[懒加载内容之间的相互竞争](https://github.com/facebook/create-react-app/issues/3613#issuecomment-353467430)，其默认行为是保守的将更新后的 service worker 放在"[待加载](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#waiting)"状态。这意味着直到用户关闭（刷新并不足够）当前 tab 页前，用户都只会看到旧一些的内容。查阅[这篇文章](https://jeffy.info/2018/10/10/sw-in-c-r-a.html)以了解此行为的更多细节。
 
-1. Users aren't always familiar with offline-first web apps. It can be useful to
-   [let the user know](https://developers.google.com/web/fundamentals/instant-and-offline/offline-ux#inform_the_user_when_the_app_is_ready_for_offline_consumption)
-   when the service worker has finished populating your caches (showing a "This web
-   app works offline!" message) and also let them know when the service worker has
-   fetched the latest updates that will be available the next time they load the
-   page (showing a "New content is available once existing tabs are closed." message). Showing
-   these messages is currently left as an exercise to the developer, but as a
-   starting point, you can make use of the logic included in [`src/serviceWorker.js`](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/src/serviceWorker.js), which
-   demonstrates which service worker lifecycle events to listen for to detect each
-   scenario, and which as a default, only logs appropriate messages to the
-   JavaScript console.
+ 2. 用户不一定熟悉离线优先 Web 应用。当 service worker 填充完毕你的缓存后（显示 "This web app works offline!"），需要让用户知道 service worker 提取了最新的内容只有在下一次访问此页面时才会生效（显示 "New content is available once existing tabs are closed."）。显示这些内容是针对开发人员的练习，但如果是入门的话，你可以直接调用 [`src/serviceWorker.js`](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/src/serviceWorker.js)，它演示了监听 service worker 的哪些生命周期以应对什么情况 ，默认情况下，仅将适当的信息记录至 JavaScript 控制台。
 
-1. Service workers [require HTTPS](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers#you_need_https),
-   although to facilitate local testing, that policy
-   [does not apply to `localhost`](https://stackoverflow.com/questions/34160509/options-for-testing-service-workers-via-http/34161385#34161385).
-   If your production web server does not support HTTPS, then the service worker
-   registration will fail, but the rest of your web app will remain functional.
+3. Service worker [需要 HTTPS 支持](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers#you_need_https)，但是为了本地开发的便捷性，该策略[不适用于 `localhost`](https://stackoverflow.com/questions/34160509/options-for-testing-service-workers-via-http/34161385#34161385)。如果你的生产环境服务器不支持 HTTPS，那么 service worker 的注册将会失败，但是 Web 应用的其余部分将会正常运行。
 
-1. The service worker is only enabled in the [production environment](deployment.md),
-   e.g. the output of `npm run build`. It's recommended that you do not enable an
-   offline-first service worker in a development environment, as it can lead to
-   frustration when previously cached assets are used and do not include the latest
-   changes you've made locally.
+4. service worker 仅在[生产环境](deployment.md)中被启用，例如 `npm run build` 的输出。建议你不要启用开发环境中的离线优先 service worker，这可能会导致一些问题，像是调用了之前缓存的 assets，其中不包含你在本地作出的最新修改。
 
-1. If you _need_ to test your offline-first service worker locally, build
-   the application (using `npm run build`) and run a standard http server from your
-   build directory. After running the build script, `create-react-app` will give
-   instructions for one way to test your production build locally and the [deployment instructions](deployment.md) have
-   instructions for using other methods. _Be sure to always use an
-   incognito window to avoid complications with your browser cache._
+5. 如果你 _需要_ 在本地测试你的离线优先 service worker，请先构建应用（执行 `npm run build` 命令），并在 build 文件夹中运行标准的 http 服务器。运行构建脚本后，`create-react-app` 将会提供一种在本地测试生产环境构建内容的方法说明，[部署说明](deployment.md)包含调用其他方法的说明，_请确保始终使用隐身窗口，以避免浏览器缓存复杂化。_
 
-1. By default, the generated service worker file will not intercept or cache any
-   cross-origin traffic, like HTTP [API requests](integrating-with-an-api-backend.md),
-   images, or embeds loaded from a different domain.
+6. 默认情况下，生成的 service worker 文件不会拦截或缓存任何跨域流量，例如 HTTP [API 请求](integrating-with-an-api-backend.md)、图片或从其他域加载的嵌入内容。
 
-## Progressive Web App Metadata
+## 渐进式 Web 应用元数据
 
-The default configuration includes a web app manifest located at
-[`public/manifest.json`](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/public/manifest.json), that you can customize with
-details specific to your web application.
+Web 应用清单的默认配置项位于 [`public/manifest.json`](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/public/manifest.json)，你可以在此为你的 Web 应用修改相关信息。
 
-When a user adds a web app to their homescreen using Chrome or Firefox on
-Android, the metadata in [`manifest.json`](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/public/manifest.json) determines what
-icons, names, and branding colors to use when the web app is displayed.
-[The Web App Manifest guide](https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/)
-provides more context about what each field means, and how your customizations
-will affect your users' experience.
+当用户在使用 Android 上的 Chrome 或 Firefox 将网络应用添加到主屏幕上时，[`manifest.json`](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/public/manifest.json) 中的元数据确定显示网络应用时使用什么图标、名称和商标颜色。[Web 应用清单指南](https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/)提供了每个相关字段的含义，以及你的自定义字段将如何影响用户体验的相关信息。
 
-Progressive web apps that have been added to the homescreen will load faster and
-work offline when there's an active service worker. That being said, the
-metadata from the web app manifest will still be used regardless of whether or
-not you opt-in to service worker registration.
+已添加到主屏幕的渐进式 Web 应用将加载的更快，同时在有活动的 service worker 时脱机工作。话虽如此，无论你是否选择加入 service worker 注册，依然会使用来自 Web 应用清单的元数据。
