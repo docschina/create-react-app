@@ -1,30 +1,27 @@
 ---
 id: integrating-with-an-api-backend
-title: Integrating with an API Backend
-sidebar_label: Integrating with an API
+title: 集成 API 后端
+sidebar_label: 集成一个 API
 ---
 
-These tutorials will help you to integrate your app with an API backend running on another port,
-using `fetch()` to access it.
+这些教程帮助你将应用集成至另一个端口上运行的 API 后端，使用 `fetch()` 来访问它。
 
 ## Node
 
-Check out [this tutorial](https://www.fullstackreact.com/articles/using-create-react-app-with-a-server/).
-You can find the companion GitHub repository [here](https://github.com/fullstackreact/food-lookup-demo).
+查阅这篇[教程](https://www.fullstackreact.com/articles/using-create-react-app-with-a-server/)。你可以在[这里](https://github.com/fullstackreact/food-lookup-demo)找到配套的 GitHub 仓库。
 
 ## Ruby on Rails
 
-Check out [this tutorial](https://www.fullstackreact.com/articles/how-to-get-create-react-app-to-work-with-your-rails-api/).
-You can find the companion GitHub repository [here](https://github.com/fullstackreact/food-lookup-demo-rails).
+查阅这篇[教程](https://www.fullstackreact.com/articles/how-to-get-create-react-app-to-work-with-your-rails-api/)。你可以在[这里](https://github.com/fullstackreact/food-lookup-demo-rails)找到配套的 GitHub 仓库。
 
-## API Platform (PHP and Symfony)
+## API 平台 (PHP and Symfony)
 
-[API Platform](https://api-platform.com) is a framework designed to build API-driven projects.
-It allows creating hypermedia and GraphQL APIs in minutes.
-It is shipped with an official Progressive Web App generator as well as a dynamic administration interface, both built for Create React App.
-Check out [this tutorial](https://api-platform.com/docs/distribution).
+[API 平台](https://api-platform.com) 是一个旨在构建 API 驱动的项目的框架。
+它允许你在短时间内创建超媒体与 GraphQL API。
+它附带了一个官方提供的渐进式 Web 应用生成器以及一个动态管理界面，两者均针对 Create React App 构建。
+查看[本教程](https://api-platform.com/docs/distribution)。
 
 
 ## C# (ASP.NET Core)
 
-ASP.NET Core has a React project template that uses Create React App. Check out [their documentation](https://docs.microsoft.com/en-us/aspnet/core/client-side/spa/react).
+ASP.NET 核心包含使用 Create React App 的项目模版。查阅[他们的文档](https://docs.microsoft.com/en-us/aspnet/core/client-side/spa/react)。
