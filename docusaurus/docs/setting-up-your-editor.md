@@ -1,6 +1,6 @@
 ---
 id: setting-up-your-editor
-title: 设定你的编辑器
+title: 自定义编辑器
 sidebar_label: 编辑器初始化
 ---
 
@@ -35,9 +35,9 @@ lint 并不是必须的，你应该在终端和浏览器控制台中都能看到
 }
 ```
 
-现在你的编辑器应该就可以显示 lint 错误信息了。
+此时你的编辑器应该就可以显示 lint 错误信息了。
 
-请注意，即使你自定义 ESLint 配置，这些更改也**仅会影响编辑器本身**。它们不会影响终端和浏览器内的 lint 输出，这是因为 Create React App 故意提供了最小规则集以定位常见错误。
+请注意，即使你自定义 ESLint 配置，这些更改也**仅会影响编辑器本身**。它们不会影响终端和浏览器内的 lint 输出，这是因为 Create React App 故意提供了最小的规则集以便于定位常见错误。
 
 如果要为项目强制启用代码风格规约的话，请考虑直接调用 [Prettier](https://github.com/jlongster/prettier) 而不是 ESLint 规则。
 
@@ -158,7 +158,7 @@ yarn add husky lint-staged prettier
 +  }
 ```
 
-随后添加 'lint-staged' 字段至 `package.json`，如下所示：
+随后在 `package.json` 中添加 'lint-staged' 字段，如下所示：
 
 ```diff
   "dependencies": {
@@ -173,6 +173,6 @@ yarn add husky lint-staged prettier
   "scripts": {
 ```
 
-现在，无论何时提交，Prettier 都会自动格式化修改的文件。你也可以通过运行 `./node_modules/.bin/prettier --write "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}"` 来初次格式化整个项目。
+现在，无论何时提交，Prettier 都会自动格式化修改的文件。你也可以通过运行 `./node_modules/.bin/prettier --write "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}"` 来格式化整个项目。
 
-接下来，你可能需要将 Prettier 集成至你喜欢的编辑器中，阅读 Prettier GitHub 页面上的 [编辑器集成](https://prettier.io/docs/en/editors.html) 部分以了解更多。
+接下来，你可能需要将 Prettier 集成至你喜欢的编辑器中，请参阅 Prettier GitHub 页面上的 [编辑器集成](https://prettier.io/docs/en/editors.html) 部分以了解更多。
