@@ -1,11 +1,11 @@
 ---
 id: updating-to-new-releases
-title: 升级至最新发行版本
+title: 更新至最新版本
 ---
 
 Create React App 可分为两个包：
 
-- `create-react-app` 是你用来创建新项目的命令行工具。
+- `create-react-app` 用于创建新项目的命令行工具。
 - `react-scripts` 是用于生成项目的开发依赖（包括此项目）。
 
 当你运行 `npm create-react-app my-app` 时，该命令会自动安装最新版本的 Create React App。
