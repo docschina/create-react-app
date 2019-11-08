@@ -1,62 +1,62 @@
 ---
 id: proxying-api-requests-in-development
-title: Proxying API Requests in Development
-sidebar_label: Proxying in Development
+title: 在开发环境中代理 API 请求
+sidebar_label: 开发环境中进行代理
 ---
 
-> Note: this feature is available with `react-scripts@0.2.3` and higher.
+> 注意：该功能仅支持 `react-scripts@0.2.3` 及以上版本。
 
-People often serve the front-end React app from the same host and port as their backend implementation.
+人们通常在与后端实例相同的主机和端口上为前端 React 应用提供服务。
 
-For example, a production setup might look like this after the app is deployed:
+例如，应用程序被部署后，生产环境可能如下所示：
 
-    /             - static server returns index.html with React app
-    /todos        - static server returns index.html with React app
-    /api/todos    - server handles any /api/* requests using the backend implementation
+    /             - 静态服务器返回 React 应用中的 index.html
+    /todos        - 静态服务器返回该路径下的 index.html
+    /api/todos    - 服务器使用后端实例处理所有 /api/* 请求
 
-Such setup is **not** required. However, if you **do** have a setup like this, it is convenient to write requests like `fetch('/api/todos')` without worrying about redirecting them to another host or port during development.
+这种设置**并非**必要。但是如果你确实**有**这样的设置，则可以方便的编写像 `fetch('api/todos')` 之类的请求，而且不必担心在开发过程中将其重定向到其他主机或端口。
 
-To tell the development server to proxy any unknown requests to your API server in development, add a `proxy` field to your `package.json`, for example:
+要告知开发服务器将所有未知请求代理到开发中的 API 服务器，请在你的 `package.json` 中添加一个 `proxy` 字段，例如：
 
 ```json
   "proxy": "http://localhost:4000",
 ```
 
-This way, when you `fetch('/api/todos')` in development, the development server will recognize that it’s not a static asset, and will proxy your request to `http://localhost:4000/api/todos` as a fallback. The development server will **only** attempt to send requests without `text/html` in its `Accept` header to the proxy.
+这样，当你在开发中 `fetch('/api/todos')` 时，开发服务器将识别出它不是静态 asset，并将你的请求代理至 `http://localhost:4000/api/todos` 作为后备方案。开发服务器**仅**尝试将其 `Accept` 报头中没有 `text/html` 的请求发送到代理。
 
-Conveniently, this avoids [CORS issues](https://stackoverflow.com/questions/21854516/understanding-ajax-cors-and-security-considerations) and error messages like this in development:
+这还顺带解决了[CORS 问题](https://stackoverflow.com/questions/21854516/understanding-ajax-cors-and-security-considerations)和开发中类似的错误信息。
 
 ```
 Fetch API cannot load http://localhost:4000/api/todos. No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin 'http://localhost:3000' is therefore not allowed access. If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled.
 ```
 
-Keep in mind that `proxy` only has effect in development (with `npm start`), and it is up to you to ensure that URLs like `/api/todos` point to the right thing in production. You don’t have to use the `/api` prefix. Any unrecognized request without a `text/html` accept header will be redirected to the specified `proxy`.
+请记住，`代理` 仅在开发中有效（执行 `npm start` 时），且必须要确保 `api/todos` 之类的 URL 正确指向生产环境中的正确对象。你不必使用 `/api` 前缀。任何不附带 `text/html` 接收报头的请求都会被重定向到指定的 `代理`。
 
-The `proxy` option supports HTTP, HTTPS and WebSocket connections.
+`proxy` 选项支持 HTTP、HTTPS 和 WebSocket 连接。
 
-If the `proxy` option is **not** flexible enough for you, alternatively you can:
+如果 `proxy` 选项对你来说**不够灵活**，你可以：
 
-- [Configure the proxy yourself](#configuring-the-proxy-manually)
-- Enable CORS on your server ([here’s how to do it for Express](https://enable-cors.org/server_expressjs.html)).
-- Use [environment variables](adding-custom-environment-variables.md) to inject the right server host and port into your app.
+- [自行配置代理](#configuring-the-proxy-manually)。
+- 在你的服务器上启用 CORS ([Express 下的详细教程如下](https://enable-cors.org/server_expressjs.html))。
+- 利用[环境变量](adding-custom-environment-variables.md)，将正确的服务器主机和端口注入你的应用程序。
 
-## "Invalid Host Header" Errors After Configuring Proxy
+## 配置代理后出现 "Invalid Host Header" 错误
 
-When you enable the `proxy` option, you opt into a more strict set of host checks. This is necessary because leaving the backend open to remote hosts makes your computer vulnerable to DNS rebinding attacks. The issue is explained in [this article](https://medium.com/webpack/webpack-dev-server-middleware-security-issues-1489d950874a) and [this issue](https://github.com/webpack/webpack-dev-server/issues/887).
+当启用 `proxy` 选项时，你默认接受了一套更为严格的主机检查。这一点是必要的，因为让后端保持对远程主机的开放状态，会使你的计算机容易受到 DNS 重定向攻击。[这篇文章](https://medium.com/webpack/webpack-dev-server-middleware-security-issues-1489d950874a)和[此问题](https://github.com/webpack/webpack-dev-server/issues/887)详细阐述了这一点。
 
-This shouldn’t affect you when developing on `localhost`, but if you develop remotely like [described here](https://github.com/facebook/create-react-app/issues/2271), you will see this error in the browser after enabling the `proxy` option:
+在 `localhost` 上进行开发时不会受到此选项影响，但是如果你像[本文所述](https://github.com/facebook/create-react-app/issues/2271)的那样进行远程开发，在启用 `proxy` 选项后会在浏览器中看到此错误：
 
 > Invalid Host header
 
-To work around it, you can specify your public development host in a file called `.env.development` in the root of your project:
+要解决此问题，你可以在项目根目录下创建名为 `.env.development` 的文件，以指定公共开发主机：
 
 ```
 HOST=mypublicdevhost.com
 ```
 
-If you restart the development server now and load the app from the specified host, it should work.
+现在，如果你现在重新启动服务器，并从指定的主机加载应用，它就会正常工作了。
 
-If you are still having issues or if you’re using a more exotic environment like a cloud editor, you can bypass the host check completely by adding a line to `.env.development.local`. **Note that this is dangerous and exposes your machine to remote code execution from malicious websites:**
+如果还存在问题，或者你使用的是云编辑器这种更为奇特的环境，则能够通过在 `.env.development.local` 中添加一行来完全跳过主机验证。**请注意，这样做很危险，这会使你的计算机容易受到恶意网站的远端代码注入：**
 
 ```
 # NOTE: THIS IS DANGEROUS!
@@ -64,17 +64,17 @@ If you are still having issues or if you’re using a more exotic environment li
 DANGEROUSLY_DISABLE_HOST_CHECK=true
 ```
 
-We don’t recommend this approach.
+我们不推荐使用这种方法。
 
-## Configuring the Proxy Manually
+## 手动配置代理
 
-> Note: this feature is available with `react-scripts@2.0.0` and higher.
+> 注意：该功能仅支持 `react-scripts@2.0.0` 及以上版本。
 
-If the `proxy` option is **not** flexible enough for you, you can get direct access to the Express app instance and hook up your own proxy middleware.
+如果 `proxy` 选项**不够**灵活，你可以直接访问 Express 应用实例并连接自己的代理中间件。
 
-You can use this feature in conjunction with the `proxy` property in `package.json`, but it is recommended you consolidate all of your logic into `src/setupProxy.js`.
+你可以将此功能与 `package.json` 中的 `proxy` 属性结合使用，但建议你将所有逻辑整合到 `src/setupProxy.js` 中。
 
-First, install `http-proxy-middleware` using npm or Yarn:
+首先，使用 npm 或 Yarn 安装 `http-proxy-middleware`：
 
 ```sh
 $ npm install http-proxy-middleware --save
@@ -82,7 +82,7 @@ $ # or
 $ yarn add http-proxy-middleware
 ```
 
-Next, create `src/setupProxy.js` and place the following contents in it:
+接下来，创建 `src/setupProxy.js`，并将一下内容放入其中：
 
 ```js
 const proxy = require('http-proxy-middleware');
@@ -92,7 +92,7 @@ module.exports = function(app) {
 };
 ```
 
-You can now register proxies as you wish! Here's an example using the above `http-proxy-middleware`:
+现在，你可以根据需要注册代理！这是使用上述 `http-proxy-middleware` 的相关示例：
 
 ```js
 const proxy = require('http-proxy-middleware');
@@ -108,8 +108,8 @@ module.exports = function(app) {
 };
 ```
 
-> **Note:** You do not need to import this file anywhere. It is automatically registered when you start the development server.
+> **注意：** 你无需导入该文件。启用开发服务器时，它将会被自动注册。
 
-> **Note:** This file only supports Node's JavaScript syntax. Be sure to only use supported language features (i.e. no support for Flow, ES Modules, etc).
+> **注意：**此文件仅支持 Node 的 JavaScript 语法，确保仅适用受支持的语言特性（即不支持Flow，ES模块等）。
 
-> **Note:** Passing the path to the proxy function allows you to use globbing and/or pattern matching on the path, which is more flexible than the express route matching.
+> **注意：**将路径传递给代理函数可让你使用通配符或模式匹配路径，这比 express 的路由匹配更加灵活。
