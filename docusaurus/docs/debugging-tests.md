@@ -1,7 +1,7 @@
 ---
 id: debugging-tests
-title: 调试测试
-sidebar_label: 调试测试
+title: Debugging 测试
+sidebar_label: Debugging 测试
 ---
 
 有多种方法可以为你的 Jest 测试设置调试器。我们将在 Chrome 和 [Visual Studio Code](https://code.visualstudio.com/) 中进行调试。
@@ -34,9 +34,9 @@ $ npm run test:debug
 about:inspect
 ```
 
-打开这个链接后，Chrome 开发者工具就会展示出来。在你的进程中选择 `inspect` ，并且断点将设置在 react 脚本的第一行（这样做是为了给你时间打开开发者工具，并防止 Jest 此之前执行）。点击屏幕右上角类似”播放”按钮来继续执行。当 Jest 执行包含 debugger 的语句时，过程将暂停，你可以在当前范围内进行检查并调用堆栈。
+打开这个链接后，屏幕上会显示 Chrome 开发者工具。在你的进程中选择 `inspect` ，同时断点将被设置在 react 脚本的第一行（这样做是为了给你时间打开开发者工具，并防止 Jest 此之前执行）。点击屏幕右上角类似”播放”按钮来继续执行。当 Jest 执行包含 debugger 的语句时，执行过程将被暂停，这样你就可以检查当前作用域与调用堆栈。
 
-> Note: --runInBand cli 选项可确保 Jest 在同一进程中进行测试，而不是为单个测试创建进程。通常，Jest 可并行化跨进程的测试，但是很难同时调试多个进程。
+> 注意: --runInBand 命令行选项可确保 Jest 在单一进程中进行测试，而不是为每个测试都创建一个进程。通常，Jest 可并行执行测试，但是同时调试多个进程是很难做到的。
 
 ## 在 Visual Studio Code 中调试测试
 
