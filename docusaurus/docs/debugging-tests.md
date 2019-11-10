@@ -12,7 +12,6 @@ sidebar_label: Debugging 测试
 
 将以下内容添加到项目的 `package.json` 中的 `scripts` 部分
 
-
 ```json
 "scripts": {
     "test:debug": "react-scripts --inspect-brk test --runInBand --no-cache"
