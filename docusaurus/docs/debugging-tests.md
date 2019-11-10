@@ -28,7 +28,6 @@ $ npm run test:debug
 
 在 Chrome 中打开以下内容
 
-
 ```
 about:inspect
 ```
