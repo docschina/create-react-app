@@ -40,7 +40,7 @@ export default DangerButton;
 
 请注意 [默认导出和命名导出是有区别的](https://stackoverflow.com/questions/36795819/react-native-es-6-when-should-i-use-curly-braces-for-import/36796281#36796281)。这是很常见的错误源。
 
-我们建议在模块只导出单个对象（例如，一个组件）时，坚持使用默认导入和导出。当导出 Button 组件时，你应使用 `export default Button` 导入并使用 `import Button from './Button'` 引入。 
+我们建议在模块只导出单个对象（例如，一个组件）时，坚持使用默认导入和导出。当导出 Button 组件时，你应使用 `export default Button` 导入并使用 `import Button from './Button'` 引入。
 
 命名导出对于导出多个函数的 utils 模块来说非常有用。一个模块最多可以有一个默认导出和任意多个命名导出。
 
@@ -65,7 +65,7 @@ export default DangerButton;
 }
 ```
 
-如果你项目使用的是typescript，则可以在项目的 `tsconfig.json` 文件的 `compilerOptions` 配置中设置 `baseUrl`。
+如果你项目使用的是 Typescript，则可以在项目的 `tsconfig.json` 文件的 `compilerOptions` 配置中设置 `baseUrl`。
 
 如果你已将项目配置为支持绝对导入，当要导入 `src/components/Button.js` 模块时，你可以按如下方式导入该模块：
 
