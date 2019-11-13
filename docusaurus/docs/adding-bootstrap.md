@@ -1,6 +1,6 @@
 ---
 id: adding-bootstrap
-title: 添加 Bootstrap
+title: 添加 Bootstrap 支持
 ---
 
 尽管你无需使用任何特定的库就能将 Bootstrap 和 React 应用集成，但通常来说比包装 Bootstrap jQuery 插件要简单一些。[React Bootstrap](https://react-bootstrap.netlify.com/) 是最受欢迎的选项，它力求与 Bootstrap 完全对等。[reactstrap](https://reactstrap.github.io/) 对于寻求以部分功能为代价，追求代码小而美的项目来说也是一个不错的选择。
