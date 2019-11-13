@@ -1,7 +1,7 @@
 ---
 id: adding-css-reset
-title: 添加 CSS Reset
-sidebar_label: 添加 CSS Reset
+title: 添加 CSS Reset 支持
+sidebar_label: 添加 CSS Reset 支持
 ---
 
 该项目已使用 [PostCSS Normalize] 添加了 [CSS Reset]。
