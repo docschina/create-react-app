@@ -11,7 +11,7 @@ Create React App 没有规定特定的路由解决方案，但是 [React Router]
 npm install --save react-router-dom
 ```
 
-或者你可以使用 `yarn` 代替
+或者你可以使用 `yarn` 代替：
 
 ```sh
 yarn add react-router-dom
