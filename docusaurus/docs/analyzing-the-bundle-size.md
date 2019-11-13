@@ -6,7 +6,7 @@ sidebar_label: 分析 bundle 大小
 
 [Source map 浏览器](https://www.npmjs.com/package/source-map-explorer) 通过 source maps 分析 JavaScript 的 bundle。这能帮助你了解代码中的冗余源于何处。
 
-遵循以下步骤，为 Create React App 项目添加 Source map 浏览器：
+遵循以下步骤，为 Create React App 项目添加 source map 浏览器：
 
 ```sh
 npm install --save source-map-explorer
