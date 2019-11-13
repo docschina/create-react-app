@@ -1,6 +1,6 @@
 ---
 id: adding-relay
-title: 添加 Relay
+title: 添加 Relay 支持
 ---
 
 Relay 是一个框架，用于构建由 GraphQL 支持的数据驱动 React 应用。当前版本的 Relay 可以借助 Babel 宏在 Creat React App 项目中实现开箱即用。按照 [Relay 文档](https://facebook.github.io/relay/) 设置项目，然后确保你的 babel 插件版本提供了宏。
