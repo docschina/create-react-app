@@ -1,6 +1,6 @@
 ---
 id: adding-typescript
-title: 添加 TypeScript
+title: 添加 TypeScript 支持
 ---
 
 > 注意：该功能仅支持 `react-scripts@2.1.0` 及以上版本。
