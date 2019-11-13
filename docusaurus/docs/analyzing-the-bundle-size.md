@@ -1,10 +1,10 @@
 ---
 id: analyzing-the-bundle-size
-title: 分析包的大小
-sidebar_label: 分析包的大小
+title: 分析 bundle 大小
+sidebar_label: 分析 bundle 大小
 ---
 
-[Source map 浏览器](https://www.npmjs.com/package/source-map-explorer) 通过 source maps 分析 JavaScript 包。这能帮助你了解代码中的冗余源于何处。
+[Source map 浏览器](https://www.npmjs.com/package/source-map-explorer) 通过 source maps 分析 JavaScript 的 bundle。这能帮助你了解代码中的冗余源于何处。
 
 遵循以下步骤，为 Create React App 项目添加 Source map 浏览器：
 
@@ -28,7 +28,7 @@ yarn add source-map-explorer
      "test": "react-scripts test",
 ```
 
-然后运行分析脚本以分析生产环境中的包。
+然后运行分析脚本以分析生产环境中的 bundle。
 
 ```sh
 npm run build
