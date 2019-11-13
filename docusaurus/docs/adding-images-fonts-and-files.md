@@ -1,6 +1,6 @@
 ---
 id: adding-images-fonts-and-files
-title: 添加图片、字体及文件
+title: 添加图片、字体及文件支持
 ---
 
 通过 Webpack，调用静态资源（例如图片和字体）的工作方式与 CSS 类似。
