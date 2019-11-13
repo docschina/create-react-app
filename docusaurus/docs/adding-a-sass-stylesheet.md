@@ -1,7 +1,7 @@
 ---
 id: adding-a-sass-stylesheet
-title: Adding a Sass Stylesheet
-sidebar_label: Adding Sass Stylesheets
+title: 添加 Sass 样式支持
+sidebar_label: 添加 Sass 样式支持
 ---
 
 > 注意：该功能仅支持 `react-scripts@2.0.0` 及以上版本。
