@@ -1,56 +1,56 @@
 ---
 id: adding-a-sass-stylesheet
-title: Adding a Sass Stylesheet
-sidebar_label: Adding Sass Stylesheets
+title: 添加 Sass 样式支持
+sidebar_label: 添加 Sass 样式支持
 ---
 
-> Note: this feature is available with `react-scripts@2.0.0` and higher.
+> 注意：该功能仅支持 `react-scripts@2.0.0` 及以上版本。
 
-Generally, we recommend that you don’t reuse the same CSS classes across different components. For example, instead of using a `.Button` CSS class in `<AcceptButton>` and `<RejectButton>` components, we recommend creating a `<Button>` component with its own `.Button` styles, that both `<AcceptButton>` and `<RejectButton>` can render (but [not inherit](https://facebook.github.io/react/docs/composition-vs-inheritance.html)).
+通常，我们建议你不要在不同组件中重复使用相同的 CSS 类。例如，我们建议创建 `<Button>` 组件与其自己的 `.Button` 样式，而不是在 `<AcceptButton>` 和 `<RejectButton>` 中重复使用 `.Button` 类，这样 `<AcceptButton>` 和 `<RejectButton>` 都能正常渲染（但是[不继承](https://facebook.github.io/react/docs/composition-vs-inheritance.html)）。
 
-Following this rule often makes CSS preprocessors less useful, as features like mixins and nesting are replaced by component composition. You can, however, integrate a CSS preprocessor if you find it valuable.
+遵循此规则会降低使用 CSS 预处理器的必要性，因为诸如 mixins 和 nesting 之类的功能均已被组件集成所取代。但是，如果你认为 CSS 预处理器有其必要性的话，可以对其进行集成。
 
-To use Sass, first install `node-sass`:
+要使用 Sass 的话，首先安装 `node-sass`：
 
 ```sh
 $ npm install node-sass --save
-$ # or
+$ # 或
 $ yarn add node-sass
 ```
 
-Now you can rename `src/App.css` to `src/App.scss` and update `src/App.js` to import `src/App.scss`.
-This file and any other file will be automatically compiled if imported with the extension `.scss` or `.sass`.
+现在，你可以将 `src/App.css` 重命名为 `src/App.scss`，并更新 `src/App.js` 以引入 `src/App.scss`。
+如果以扩展名 `.scss` 或 `.sass` 引入，则此文件和其他文件都将会自动编译。
 
-To share variables between Sass files, you can use Sass imports. For example, `src/App.scss` and other component style files could include `@import "./shared.scss";` with variable definitions.
+要在 Sass 文件间共享变量，可以使用 Sass import，例如，`src/App.scss` 和其他组件样式文件可以通过 `@import "./shared.scss";` 引入变量定义。
 
-This will allow you to do imports like
+这允许你像这样进行引入操作：
 
 ```scss
-@import 'styles/_colors.scss'; // assuming a styles directory under src/
-@import '~nprogress/nprogress'; // importing a css file from the nprogress node module
+@import 'styles/_colors.scss'; // 假设它在 src 下的 styles 目录
+@import '~nprogress/nprogress'; // 从 node module 中的 nprogress 中引入 css 文件
 ```
 
-> **Note:** You must prefix imports from `node_modules` with `~` as displayed above.
+> **注意：**如上所示，从 `node_modules` 引入文件前需要加上 `~`。
 
-`node-sass` also supports the `SASS_PATH` variable.
+`node-sass` 也支持 `SASS_PATH` 变量。
 
-To use imports relative to a path you specify, and from `node_modules` without adding the `~` prefix, you can add a [`.env` file](https://github.com/facebook/create-react-app/blob/master/docusaurus/docs/adding-custom-environment-variables.md#adding-development-environment-variables-in-env) at the project root with the variable `SASS_PATH=node_modules:src`. To specify more directories you can add them to `SASS_PATH` separated by a `:` like `path1:path2:path3`.
+要从你所指定的路径为源头进行相对路径引用，以及在不添加 `~` 的情况下从 `node_modules` 中引用文件，你可以在项目根目录下添加 [`.env` 文件](https://github.com/facebook/create-react-app/blob/master/docusaurus/docs/adding-custom-environment-variables.md#adding-development-environment-variables-in-env)，加入变量 `SASS_PATH=node_modules:src`。要指定更多目录，可以把它们用 `:` 分割加入 `SASS_PATH` 中，如 `path1:path2:path3`。
 
-If you set `SASS_PATH=node_modules:src`, this will allow you to do imports like
+如果你设定 `SASS_PATH=node_modules:src`，这将允许你像这样执行引入：
 ```scss
-@import 'styles/colors'; // assuming a styles directory under src/, where _colors.scss partial file exists.
-@import 'nprogress/nprogress'; // importing a css file from the nprogress node module
+@import 'styles/colors'; // 假定 src 下有 styles 目录，且存在 _colors.scss 文件
+@import 'nprogress/nprogress'; // 从 node module 中引入 nprogress css 文件
 ```
 
-> **Note:** For windows operating system, use below syntax
+> **注意：**对于 windows 操作系统，请使用以下语法：
 >
 > ```
 > SASS_PATH=./node_modules;./src
 > ```
 
-> **Tip:** You can opt into using this feature with [CSS modules](adding-a-css-modules-stylesheet.md) too!
+> **提示：**你也可以选择将此功能与 [CSS 模块](adding-a-css-modules-stylesheet.md)一起使用！
 
-> **Note:** If you're using Flow, override the [module.file_ext](https://flow.org/en/docs/config/options/#toc-module-file-ext-string) setting in your `.flowconfig` so it'll recognize `.sass` or `.scss` files. You will also need to include the `module.file_ext` default settings for `.js`, `.jsx`, `.mjs` and `.json` files.
+> **注意：**如果你正在使用 Flow，请在你的 `.flowconfig` 文件中覆盖 [module.file_ext](https://flow.org/en/docs/config/options/#toc-module-file-ext-string) 设置，以便其识别 `.sass` 或 `.scss` 文件。你还需要为 `.js`, `.jsx`, `.mjs` 和 `.json` 文件添加 `module.file_ext` 默认设置。
 >
 > ```
 > [options]
