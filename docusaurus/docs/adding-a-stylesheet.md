@@ -1,6 +1,6 @@
 ---
 id: adding-a-stylesheet
-title: 添加一个样式表
+title: 添加样式表
 sidebar_label: 添加样式表
 ---
 
