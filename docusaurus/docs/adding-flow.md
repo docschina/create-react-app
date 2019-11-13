@@ -1,6 +1,6 @@
 ---
 id: adding-flow
-title: 加入 Flow
+title: 添加 Flow 支持
 ---
 
 Flow 是一个静态类型检查器，可有效减少你书写代码时可能产生的 bugs。如果你不熟悉此概念，请查阅[在JavaScript中使用静态类型的介绍](https://medium.com/@preethikasireddy/why-use-static-types-in-javascript-part-1-8382da1e0adb)。
