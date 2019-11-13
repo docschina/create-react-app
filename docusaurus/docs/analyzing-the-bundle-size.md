@@ -1,26 +1,24 @@
 ---
 id: analyzing-the-bundle-size
-title: Analyzing the Bundle Size
-sidebar_label: Analyzing Bundle Size
+title: 分析 bundle 大小
+sidebar_label: 分析 bundle 大小
 ---
 
-[Source map explorer](https://www.npmjs.com/package/source-map-explorer) analyzes
-JavaScript bundles using the source maps. This helps you understand where code
-bloat is coming from.
+[Source map 浏览器](https://www.npmjs.com/package/source-map-explorer) 通过 source maps 分析 JavaScript 的 bundle。这能帮助你了解代码中的冗余源于何处。
 
-To add Source map explorer to a Create React App project, follow these steps:
+遵循以下步骤，为 Create React App 项目添加 source map 浏览器：
 
 ```sh
 npm install --save source-map-explorer
 ```
 
-Alternatively you may use `yarn`:
+或者，你也可以使用 `yarn`：
 
 ```sh
 yarn add source-map-explorer
 ```
 
-Then in `package.json`, add the following line to `scripts`:
+然后在 `package.json` 中，添加以下几行代码至 `scripts` 中：
 
 ```diff
    "scripts": {
@@ -30,8 +28,7 @@ Then in `package.json`, add the following line to `scripts`:
      "test": "react-scripts test",
 ```
 
-Then to analyze the bundle run the production build then run the analyze
-script.
+然后运行分析脚本以分析生产环境中的 bundle。
 
 ```sh
 npm run build
