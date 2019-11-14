@@ -3,7 +3,7 @@ id: post-processing-css
 title: CSS 后处理
 ---
 
-该项目设置会最小化你的 CSS，并通过 [Autoprefixer](https://github.com/postcss/autoprefixer) 自动添加供应商前缀，因此你无需关心这些。
+该项目设置会最小化你的 CSS，并通过 [Autoprefixer](https://github.com/postcss/autoprefixer) 自动添加浏览器前缀，因此你无需关心这些。
 
 新的 CSS 特性，诸如 [`all` 属性](https://developer.mozilla.org/en-US/docs/Web/CSS/all)，[`break` 属性](https://www.w3.org/TR/css-break-3/#breaking-controls)，[自定义属性](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables)，和 [媒体查询范围](https://www.w3.org/TR/mediaqueries-4/#range-context) 会自动添加 polyfill，以兼容老式浏览器。
 
