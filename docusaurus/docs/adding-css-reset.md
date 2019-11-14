@@ -4,7 +4,7 @@ title: 添加 CSS Reset 支持
 sidebar_label: 添加 CSS Reset 支持
 ---
 
-该项目已使用 [PostCSS Normalize] 添加了 [CSS Reset]。
+本项目使用了 [PostCSS Normalize] 为项目添加了 [CSS Reset] 的支持。
 
 要开始使用它，请在 CSS 文件中的任意位置添加 `@import-normalize;`。你只需添加一次，重复的引入会被自动删除。由于只需添加一次，因此添加它的最好位置是 `index.css` 或 `App.css`。
 
