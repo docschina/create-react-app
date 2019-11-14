@@ -1,6 +1,6 @@
 ---
 id: post-processing-css
-title: CSS 后期处理
+title: CSS 后处理
 ---
 
 该项目设置会最小化你的 CSS，并通过 [Autoprefixer](https://github.com/postcss/autoprefixer) 自动添加供应商前缀，因此你无需关心这些。
