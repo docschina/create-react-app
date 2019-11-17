@@ -1,20 +1,20 @@
 {
   "docs": {
-    "Welcome": ["documentation-intro"],
-    "Getting Started": [
+    "欢迎使用": ["documentation-intro"],
+    "快速上手": [
       "getting-started",
       "folder-structure",
       "available-scripts",
       "supported-browsers-features",
       "updating-to-new-releases"
     ],
-    "Development": [
+    "开发": [
       "setting-up-your-editor",
       "developing-components-in-isolation",
       "analyzing-the-bundle-size",
       "using-https-in-development"
     ],
-    "Styles and Assets": [
+    "样式及资源文件": [
       "adding-a-stylesheet",
       "adding-a-css-modules-stylesheet",
       "adding-a-sass-stylesheet",
@@ -25,7 +25,7 @@
       "using-the-public-folder",
       "code-splitting"
     ],
-    "Building your App": [
+    "构建": [
       "installing-a-dependency",
       "importing-a-component",
       "using-global-variables",
@@ -38,20 +38,20 @@
       "making-a-progressive-web-app",
       "production-build"
     ],
-    "Testing": ["running-tests", "debugging-tests"],
-    "Back-End Integration": [
+    "测试": ["running-tests", "debugging-tests"],
+    "后端整合": [
       "proxying-api-requests-in-development",
       "fetching-data-with-ajax-requests",
       "integrating-with-an-api-backend",
       "title-and-meta-tags"
     ],
-    "Deployment": ["deployment"],
-    "Advanced Usage": [
+    "部署": ["deployment"],
+    "高级用法": [
       "can-i-use-decorators",
       "pre-rendering-into-static-html-files",
       "advanced-configuration",
       "alternatives-to-ejecting"
     ],
-    "Support": ["troubleshooting"]
+    "支持": ["troubleshooting"]
   }
 }
