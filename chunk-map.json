@@ -1,7 +1,7 @@
 {
   "main": [
     "/main.c96838aeda9906bbe2c3.css",
-    "/main.8091e995c64b18a2b82d.js"
+    "/main.439143b7919649a17f86.js"
   ],
   "component---site-src-pages-index-jsc-4-f-f99": [
     "/component---site-src-pages-index-jsc-4-f-f99.eefa51f400e5c0b5a52f.css",
@@ -12,7 +12,7 @@
     "/component---theme-doc-page-1-be-9be.ff51142faa7213238523.js"
   ],
   "docsMetadata---docs-1-da-721": [
-    "/docsMetadata---docs-1-da-721.e0960707b58febf10fca.js"
+    "/docsMetadata---docs-1-da-721.dd44d5648ad04d07b7cc.js"
   ],
   "component---theme-doc-item-178-a40": [
     "/component---theme-doc-item-178-a40.de2648345892298aff25.css",
@@ -30,35 +30,35 @@
   "metadata---docs-adding-a-router-73-d-177": [
     "/metadata---docs-adding-a-router-73-d-177.dac59da13bbac8444a05.js"
   ],
-  "content---docs-adding-a-sass-stylesheet-993-977": [
-    "/content---docs-adding-a-sass-stylesheet-993-977.c792a78c8747521e6515.js"
-  ],
-  "metadata---docs-adding-a-sass-stylesheetbee-f78": [
-    "/metadata---docs-adding-a-sass-stylesheetbee-f78.a482206c8c3edb8ced61.js"
-  ],
   "content---docs-adding-a-stylesheetf-87-dcf": [
-    "/content---docs-adding-a-stylesheetf-87-dcf.1ba7b16d1b75c39ac410.js"
+    "/content---docs-adding-a-stylesheetf-87-dcf.94279c4f8c6fdc105574.js"
   ],
   "metadata---docs-adding-a-stylesheet-86-a-a0e": [
-    "/metadata---docs-adding-a-stylesheet-86-a-a0e.4114fc5933ba28f3de07.js"
+    "/metadata---docs-adding-a-stylesheet-86-a-a0e.a6c73ae6fc901733b78a.js"
   ],
   "content---docs-adding-bootstrap-903-029": [
-    "/content---docs-adding-bootstrap-903-029.ebbe9139dacfd9a1b27f.js"
+    "/content---docs-adding-bootstrap-903-029.ad7abdbf9a485009b62d.js"
   ],
   "metadata---docs-adding-bootstrapc-3-e-5cc": [
-    "/metadata---docs-adding-bootstrapc-3-e-5cc.f2ab53edfebacb524e8a.js"
+    "/metadata---docs-adding-bootstrapc-3-e-5cc.2ba03f495845800e048a.js"
+  ],
+  "content---docs-adding-a-sass-stylesheet-993-977": [
+    "/content---docs-adding-a-sass-stylesheet-993-977.5c3a3edf6b39ef0d2c50.js"
+  ],
+  "metadata---docs-adding-a-sass-stylesheetbee-f78": [
+    "/metadata---docs-adding-a-sass-stylesheetbee-f78.b4e030f4fa81e8c7979f.js"
+  ],
+  "content---docs-adding-custom-environment-variables-2-cc-a37": [
+    "/content---docs-adding-custom-environment-variables-2-cc-a37.fa16648bb1ea6cfb389d.js"
+  ],
+  "metadata---docs-adding-custom-environment-variablesd-4-a-ad5": [
+    "/metadata---docs-adding-custom-environment-variablesd-4-a-ad5.c6ca426a5bc5c84a4f44.js"
   ],
   "content---docs-adding-css-resetb-9-a-f67": [
-    "/content---docs-adding-css-resetb-9-a-f67.2ea84bc31efbbef13f86.js"
+    "/content---docs-adding-css-resetb-9-a-f67.968287cb999e4d8e6b58.js"
   ],
   "metadata---docs-adding-css-reset-48-e-68b": [
-    "/metadata---docs-adding-css-reset-48-e-68b.4f21c493b87e9b701b18.js"
-  ],
-  "content---docs-adding-images-fonts-and-fileseb-0-ffd": [
-    "/content---docs-adding-images-fonts-and-fileseb-0-ffd.797b142e9861dcfe9fb7.js"
-  ],
-  "metadata---docs-adding-images-fonts-and-files-16-e-f47": [
-    "/metadata---docs-adding-images-fonts-and-files-16-e-f47.45d52995b42c6fd964bc.js"
+    "/metadata---docs-adding-css-reset-48-e-68b.291f483e7692c7712241.js"
   ],
   "content---docs-adding-flowd-5-c-bec": [
     "/content---docs-adding-flowd-5-c-bec.cefee2619e8bb3d45d62.js"
@@ -66,35 +66,35 @@
   "metadata---docs-adding-flowd-11-a30": [
     "/metadata---docs-adding-flowd-11-a30.472f16ece93379b9dab5.js"
   ],
-  "content---docs-adding-typescript-761-14a": [
-    "/content---docs-adding-typescript-761-14a.a62a8446a2e27b695ef3.js"
+  "content---docs-adding-images-fonts-and-fileseb-0-ffd": [
+    "/content---docs-adding-images-fonts-and-fileseb-0-ffd.0763fcd5950faac6d951.js"
   ],
-  "metadata---docs-adding-typescript-414-964": [
-    "/metadata---docs-adding-typescript-414-964.bd09240effc19f161254.js"
-  ],
-  "content---docs-adding-custom-environment-variables-2-cc-a37": [
-    "/content---docs-adding-custom-environment-variables-2-cc-a37.2ef67e96200681512a69.js"
-  ],
-  "metadata---docs-adding-custom-environment-variablesd-4-a-ad5": [
-    "/metadata---docs-adding-custom-environment-variablesd-4-a-ad5.15498bf6bb32d53e06bf.js"
-  ],
-  "content---docs-advanced-configuration-0-a-8-6b9": [
-    "/content---docs-advanced-configuration-0-a-8-6b9.2ffe56776526487b5ac9.js"
-  ],
-  "metadata---docs-advanced-configurationdbb-607": [
-    "/metadata---docs-advanced-configurationdbb-607.654bfe20a0d673496b36.js"
+  "metadata---docs-adding-images-fonts-and-files-16-e-f47": [
+    "/metadata---docs-adding-images-fonts-and-files-16-e-f47.c8278fa6c78d419a7012.js"
   ],
   "content---docs-adding-relaye-8-b-a72": [
-    "/content---docs-adding-relaye-8-b-a72.cdae844b755fa96e2c5c.js"
+    "/content---docs-adding-relaye-8-b-a72.2d4c15e3301047f68174.js"
   ],
   "metadata---docs-adding-relaya-55-41b": [
-    "/metadata---docs-adding-relaya-55-41b.56d7bb8261cce016842e.js"
+    "/metadata---docs-adding-relaya-55-41b.2394dccd1a7a31e47d77.js"
+  ],
+  "content---docs-adding-typescript-761-14a": [
+    "/content---docs-adding-typescript-761-14a.1c83d8317dce3c9315bb.js"
+  ],
+  "metadata---docs-adding-typescript-414-964": [
+    "/metadata---docs-adding-typescript-414-964.3430f64a0353c01b596a.js"
   ],
   "content---docs-alternatives-to-ejectingfe-6-478": [
-    "/content---docs-alternatives-to-ejectingfe-6-478.9ef09dc3ac484c29ae71.js"
+    "/content---docs-alternatives-to-ejectingfe-6-478.2813a8ce67aab01ee1cb.js"
   ],
   "metadata---docs-alternatives-to-ejectingdd-0-051": [
-    "/metadata---docs-alternatives-to-ejectingdd-0-051.215a13c9939af20a1a2f.js"
+    "/metadata---docs-alternatives-to-ejectingdd-0-051.813139f8b470066314f7.js"
+  ],
+  "content---docs-advanced-configuration-0-a-8-6b9": [
+    "/content---docs-advanced-configuration-0-a-8-6b9.26d95b9567f4b1ca0511.js"
+  ],
+  "metadata---docs-advanced-configurationdbb-607": [
+    "/metadata---docs-advanced-configurationdbb-607.ccb76b1aff36fc0ff403.js"
   ],
   "content---docs-analyzing-the-bundle-sizeb-33-843": [
     "/content---docs-analyzing-the-bundle-sizeb-33-843.0875e424ee1628934fab.js"
@@ -162,29 +162,29 @@
   "metadata---docs-getting-started-57-d-ca5": [
     "/metadata---docs-getting-started-57-d-ca5.723ea93eb542cd3bedb4.js"
   ],
-  "content---docs-importing-a-componentea-3-096": [
-    "/content---docs-importing-a-componentea-3-096.94442ae99807b5f22b70.js"
-  ],
-  "metadata---docs-importing-a-componente-80-708": [
-    "/metadata---docs-importing-a-componente-80-708.cfd7b79db25298f47ee7.js"
-  ],
-  "content---docs-integrating-with-an-api-backendbd-4-3c4": [
-    "/content---docs-integrating-with-an-api-backendbd-4-3c4.91aff8d35cd2d7ed5c9b.js"
-  ],
-  "metadata---docs-integrating-with-an-api-backend-0-b-7-74e": [
-    "/metadata---docs-integrating-with-an-api-backend-0-b-7-74e.c806536e0195299967be.js"
-  ],
   "content---docs-installing-a-dependency-235-a29": [
-    "/content---docs-installing-a-dependency-235-a29.eacf8a2f6f4b78d6d5e2.js"
+    "/content---docs-installing-a-dependency-235-a29.43a0ff6378580487ba72.js"
   ],
   "metadata---docs-installing-a-dependencyf-94-06a": [
-    "/metadata---docs-installing-a-dependencyf-94-06a.d9b912591b8524afffab.js"
+    "/metadata---docs-installing-a-dependencyf-94-06a.fd4e18f0804c597439d3.js"
+  ],
+  "content---docs-importing-a-componentea-3-096": [
+    "/content---docs-importing-a-componentea-3-096.5849eb94f8cd5aabeaf4.js"
+  ],
+  "metadata---docs-importing-a-componente-80-708": [
+    "/metadata---docs-importing-a-componente-80-708.2580ce684233366058c3.js"
+  ],
+  "content---docs-integrating-with-an-api-backendbd-4-3c4": [
+    "/content---docs-integrating-with-an-api-backendbd-4-3c4.73980b8d84f0837dc7af.js"
+  ],
+  "metadata---docs-integrating-with-an-api-backend-0-b-7-74e": [
+    "/metadata---docs-integrating-with-an-api-backend-0-b-7-74e.22a8935a6e02d0b384ea.js"
   ],
   "content---docs-loading-graphql-filesaa-9-117": [
     "/content---docs-loading-graphql-filesaa-9-117.e42950b399c4de1865b2.js"
   ],
   "metadata---docs-loading-graphql-filesd-85-24d": [
-    "/metadata---docs-loading-graphql-filesd-85-24d.e06ce02c9863a4d0067a.js"
+    "/metadata---docs-loading-graphql-filesd-85-24d.02f1b9581524c07e2ee7.js"
   ],
   "content---docs-making-a-progressive-web-appb-0-e-aca": [
     "/content---docs-making-a-progressive-web-appb-0-e-aca.971808a1d4c32c615546.js"
@@ -196,7 +196,7 @@
     "/content---docs-post-processing-csscdf-a22.f4fb2e15a5ef18832678.js"
   ],
   "metadata---docs-post-processing-css-5-e-9-417": [
-    "/metadata---docs-post-processing-css-5-e-9-417.5d47ea857a9b534c5112.js"
+    "/metadata---docs-post-processing-css-5-e-9-417.fbf5ac1402e878b4e057.js"
   ],
   "content---docs-pre-rendering-into-static-html-files-283-4ad": [
     "/content---docs-pre-rendering-into-static-html-files-283-4ad.147e037d889c56ad477a.js"
@@ -222,17 +222,17 @@
   "metadata---docs-running-testsa-6-a-ff8": [
     "/metadata---docs-running-testsa-6-a-ff8.bb3fbf66a43b2def8713.js"
   ],
-  "content---docs-setting-up-your-editor-81-e-516": [
-    "/content---docs-setting-up-your-editor-81-e-516.513ec397206fa45b9818.js"
-  ],
-  "metadata---docs-setting-up-your-editorbd-0-159": [
-    "/metadata---docs-setting-up-your-editorbd-0-159.76d602567ff151018acc.js"
-  ],
   "content---docs-supported-browsers-features-7-fc-c56": [
-    "/content---docs-supported-browsers-features-7-fc-c56.de70b82f207d4c500626.js"
+    "/content---docs-supported-browsers-features-7-fc-c56.9704c2b2c9730c5d59f1.js"
   ],
   "metadata---docs-supported-browsers-features-23-d-801": [
-    "/metadata---docs-supported-browsers-features-23-d-801.1e44e3eea5b984efb9a8.js"
+    "/metadata---docs-supported-browsers-features-23-d-801.81ac0e9f06d5e94d26d9.js"
+  ],
+  "content---docs-setting-up-your-editor-81-e-516": [
+    "/content---docs-setting-up-your-editor-81-e-516.f8a5e9d4d7ba7d531812.js"
+  ],
+  "metadata---docs-setting-up-your-editorbd-0-159": [
+    "/metadata---docs-setting-up-your-editorbd-0-159.8cfadd185afde1ceae47.js"
   ],
   "content---docs-title-and-meta-tags-579-6f8": [
     "/content---docs-title-and-meta-tags-579-6f8.b2dd7e92f07a8097d40d.js"
@@ -240,34 +240,34 @@
   "metadata---docs-title-and-meta-tags-7-ef-241": [
     "/metadata---docs-title-and-meta-tags-7-ef-241.9fcf3afc38ba60fd467e.js"
   ],
-  "content---docs-troubleshooting-992-211": [
-    "/content---docs-troubleshooting-992-211.216cac8c48d0bb670103.js"
-  ],
-  "metadata---docs-troubleshootingac-9-9ea": [
-    "/metadata---docs-troubleshootingac-9-9ea.6ffd208f894ab45a16b4.js"
-  ],
-  "content---docs-updating-to-new-releases-65-e-670": [
-    "/content---docs-updating-to-new-releases-65-e-670.6962384511c80be51bb4.js"
-  ],
-  "metadata---docs-updating-to-new-releases-6-b-3-070": [
-    "/metadata---docs-updating-to-new-releases-6-b-3-070.b8bb2c3be917ccac7ce0.js"
-  ],
   "content---docs-using-global-variables-469-9fd": [
-    "/content---docs-using-global-variables-469-9fd.28b6f29efa1ed445317f.js"
+    "/content---docs-using-global-variables-469-9fd.9e44ba3841f2d1760c6a.js"
   ],
   "metadata---docs-using-global-variables-553-bbb": [
-    "/metadata---docs-using-global-variables-553-bbb.b86ebde2ffbd3dad3e1b.js"
+    "/metadata---docs-using-global-variables-553-bbb.80999eb5c40e98160e99.js"
   ],
   "content---docs-using-https-in-developmenta-9-c-f34": [
-    "/content---docs-using-https-in-developmenta-9-c-f34.de09f0d3d62b65332bbf.js"
+    "/content---docs-using-https-in-developmenta-9-c-f34.b47e6054f6fb96390157.js"
   ],
   "metadata---docs-using-https-in-developmenta-1-a-afd": [
-    "/metadata---docs-using-https-in-developmenta-1-a-afd.2c35f461d2d8fbf6ff80.js"
+    "/metadata---docs-using-https-in-developmenta-1-a-afd.0000e92692abc37bbd9c.js"
   ],
   "content---docs-using-the-public-folderd-01-1ab": [
-    "/content---docs-using-the-public-folderd-01-1ab.02ac4be16356316b5a9b.js"
+    "/content---docs-using-the-public-folderd-01-1ab.18cbdc635f4ebe28d34e.js"
   ],
   "metadata---docs-using-the-public-folder-04-a-87b": [
-    "/metadata---docs-using-the-public-folder-04-a-87b.1fb1666dfddc2d2b0ff9.js"
+    "/metadata---docs-using-the-public-folder-04-a-87b.9cd6e1d265666a923225.js"
+  ],
+  "content---docs-troubleshooting-992-211": [
+    "/content---docs-troubleshooting-992-211.990fa5951b6106a19a7d.js"
+  ],
+  "metadata---docs-troubleshootingac-9-9ea": [
+    "/metadata---docs-troubleshootingac-9-9ea.e5d0f4eb06785986f2a2.js"
+  ],
+  "content---docs-updating-to-new-releases-65-e-670": [
+    "/content---docs-updating-to-new-releases-65-e-670.576e681b41e87e542e64.js"
+  ],
+  "metadata---docs-updating-to-new-releases-6-b-3-070": [
+    "/metadata---docs-updating-to-new-releases-6-b-3-070.124e283574e723612866.js"
   ]
 }
