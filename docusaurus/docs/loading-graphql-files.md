@@ -1,22 +1,22 @@
 ---
 id: loading-graphql-files
-title: Loading .graphql Files
-sidebar_label: Loading .graphql Files
+title: 加载 .graphql 文件
+sidebar_label: 加载 .graphql 文件
 ---
 
-To load `.gql` and `.graphql` files, first install the [`graphql`](https://www.npmjs.com/package/graphql) and [`graphql.macro`](https://www.npmjs.com/package/graphql.macro) packages by running:
+要加载 `.gql` 和 `.graphql` 文件，请先执行以下命令，安装 [`graphql`](https://www.npmjs.com/package/graphql) 和 [`graphql.macro`](https://www.npmjs.com/package/graphql.macro)：
 
 ```sh
 npm install --save graphql graphql.macro
 ```
 
-Alternatively you may use `yarn`:
+或者，你可以使用 `yarn`：
 
 ```sh
 yarn add graphql graphql.macro
 ```
 
-Then, whenever you want to load `.gql` or `.graphql` files, import the `loader` from the macro package:
+然后，每当你要加载 `.gql` 或 `.graphql` 文件时，请从 macro 包中引入 `loader`：
 
 ```js
 import { loader } from 'graphql.macro';
@@ -24,7 +24,7 @@ import { loader } from 'graphql.macro';
 const query = loader('./foo.graphql');
 ```
 
-And your results get automatically inlined! This means that if the file above, `foo.graphql`, contains the following:
+你的结果将会自动内联！这意味着如果上面的文件，`foo.graphql`，包含以下内容：
 
 ```graphql
 query {
@@ -34,7 +34,7 @@ query {
 }
 ```
 
-The previous example turns into:
+之前的示例会变为：
 
 ```javascript
 const query = {
@@ -53,7 +53,7 @@ const query = {
 };
 ```
 
-You can also use the `gql` template tag the same way you would use the non-macro version from `graphql-tag` package with the added benefit of inlined parsing results.
+你还可以使用 `gql` 模版标签，就像使用 `graphql-tag` 包中的 non-macro 版本一样，同样拥有内联解析结果的优点。
 
 ```js
 import { gql } from 'graphql.macro';
