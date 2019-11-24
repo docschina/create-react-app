@@ -55,7 +55,7 @@ render() {
 
 ## 何时使用 `public` 文件夹
 
-通常，我们建议从 JavaScript 导入 [样式表](adding-a-stylesheet.md)、[图像和字体](adding-images-fonts-and-files.md)。
+通常，我们建议从 JavaScript 引入[样式表](adding-a-stylesheet.md)、[图像和字体](adding-images-fonts-and-files.md)。
 在一些不太常见的场景下，`public` 文件夹可作为解决方案：
 
 - 你需要在构建结果中使用特定名称的文件，例如 [`manifest.webmanifest`](https://developer.mozilla.org/en-US/docs/Web/Manifest)。
