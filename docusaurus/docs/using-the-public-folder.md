@@ -14,8 +14,8 @@ title: 使用 Public 文件夹
 
 你也可以将其他 assets 添加到 `public` 文件夹中。
 
-请注意，我们通常鼓励你在 JavaScript 文件中`引入` assets。
-样例可参考[添加样式表](adding-a-stylesheet.md)和[添加图片和字体](adding-images-fonts-and-files.md)部分。
+请注意，通常我们建议在 JavaScript 文件中`引入` assets。
+你可以参考[添加样式表支持](adding-a-stylesheet.md)与[添加图片和字体支持](adding-images-fonts-and-files.md)相关章节。
 该机制具备很多优势：
 
 - 将脚本和样式表压缩并一起打包，以避免额外的网络请求。
