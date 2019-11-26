@@ -1,13 +1,13 @@
 ---
 id: code-splitting
-title: 代码拆分
+title: 代码分割
 ---
 
-代码拆分允许你将代码拆分成小的 chunks，然后按需加载，而不是在用户使用前下载整个应用程序。
+代码分割可以将代码拆分成小的 chunks，然后按需加载，而非在用户使用前下载整个应用程序。
 
-该项目设置支持通过 [dynamic `import()`](http://2ality.com/2017/01/import-operator.html#loading-code-on-demand) 进行代码拆分。该[提案](https://github.com/tc39/proposal-dynamic-import)处于第四阶段。与 `import()` 类似的函数形式将模块名称作为参数，并返回一个包含始终被解析为模块的命名空间对象的 [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)。
+该项目设置支持通过 [dynamic `import()`](http://2ality.com/2017/01/import-operator.html#loading-code-on-demand) 进行代码分割。该[提案](https://github.com/tc39/proposal-dynamic-import)处于第四阶段。与 `import()` 类似的函数形式将模块名称作为参数，并返回一个包含始终被解析为模块的命名空间对象的 [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)。
 
-以下是一个简单的范例：
+以下是一个简单的示例：
 
 ## `moduleA.js`
 
