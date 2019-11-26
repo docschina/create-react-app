@@ -3,9 +3,9 @@ id: can-i-use-decorators
 title: 我能使用装饰器吗?
 ---
 
-一些流行的库在开发中使用可[装饰器](https://medium.com/google-developers/exploring-es7-decorators-76ecb65fb841)
+一些流行的库在开发中使用了[装饰器](https://medium.com/google-developers/exploring-es7-decorators-76ecb65fb841)
 
-目前，Create React App 故意不支持装饰器语法，原因是：
+目前，Create React App 有意不支持装饰器语法，原因是：
 
 - 这是一项实验性提案，可能会有所更改（实际上，它已经有过一次修改，而且可能还会作出新的修改）。
 - 大多数库目前仅支持该提案的旧版本 - 这永远不会成为既定标准。
