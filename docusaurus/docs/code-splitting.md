@@ -53,4 +53,4 @@ export default App;
 
 如果你使用的是 React Router，请查看 [本教程](https://reactjs.org/docs/code-splitting.html#route-based-code-splitting)
 
-还可以查看 React 文档中的 [Code-Splitting](https://reactjs.org/docs/code-splitting.html) 部分
+还可以查看 React 文档中的[代码分割](https://reactjs.org/docs/code-splitting.html)章节。
