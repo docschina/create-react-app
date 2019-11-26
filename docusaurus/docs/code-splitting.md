@@ -1,13 +1,13 @@
 ---
 id: code-splitting
-title: Code Splitting
+title: 代码分割
 ---
 
-Instead of downloading the entire app before users can use it, code splitting allows you to split your code into small chunks which you can then load on demand.
+代码分割可以将代码拆分成小的 chunks，然后按需加载，而非在用户使用前下载整个应用程序。
 
-This project setup supports code splitting via [dynamic `import()`](http://2ality.com/2017/01/import-operator.html#loading-code-on-demand). Its [proposal](https://github.com/tc39/proposal-dynamic-import) is in stage 4. The `import()` function-like form takes the module name as an argument and returns a [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) which always resolves to the namespace object of the module.
+该项目设置支持通过 [dynamic `import()`](http://2ality.com/2017/01/import-operator.html#loading-code-on-demand) 进行代码分割。该[提案](https://github.com/tc39/proposal-dynamic-import)处于第四阶段。与 `import()` 类似的函数形式将模块名称作为参数，并返回一个包含始终被解析为模块的命名空间对象的 [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)。
 
-Here is an example:
+以下是一个简单的示例：
 
 ## `moduleA.js`
 
@@ -45,12 +45,12 @@ class App extends Component {
 export default App;
 ```
 
-This will make `moduleA.js` and all its unique dependencies as a separate chunk that only loads after the user clicks the 'Load' button. For more information on the chunks that are created, see the [production build](production-build.md) section.
+这将使 `moduleA.js` 及其所有唯一依赖项成为单独的 chunk，仅在用户点击 '加载' 按钮后才会加载。有关创建的 chunk 的更多信息，请参见  [生产环境构建](production-build.md) 部分。
 
-You can also use it with `async` / `await` syntax if you prefer it.
+如果你喜欢的话，也可以将其与 `async` / `await` 语法一起使用。
 
-## With React Router
+## 使用 React Router
 
-If you are using React Router check out [this tutorial](https://reactjs.org/docs/code-splitting.html#route-based-code-splitting)
+如果你使用的是 React Router，请查看 [本教程](https://reactjs.org/docs/code-splitting.html#route-based-code-splitting)
 
-Also check out the [Code Splitting](https://reactjs.org/docs/code-splitting.html) section in React documentation.
+还可以查看 React 文档中的[代码分割](https://reactjs.org/docs/code-splitting.html)章节。
