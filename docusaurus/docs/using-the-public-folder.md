@@ -1,66 +1,66 @@
 ---
 id: using-the-public-folder
-title: Using the Public Folder
+title: 使用 Public 文件夹
 ---
 
-> Note: this feature is available with `react-scripts@0.5.0` and higher.
+> 注意：该功能仅支持 `react-scripts@0.5.0` 及以上版本。
 
-## Changing the HTML
+## 修改 HTML
 
-The `public` folder contains the HTML file so you can tweak it, for example, to [set the page title](title-and-meta-tags.md).
-The `<script>` tag with the compiled code will be added to it automatically during the build process.
+`public` 文件夹中包含 HTML 文件，因此你可以对其进行调整，例如，[设置页面标题](title-and-meta-tags.md)。
+包含编译后代码的 `<script>` 标签将在构建过程中自动添加到 HTML 文件中。
 
-## Adding Assets Outside of the Module System
+## 在模块系统外添加 Assets
 
-You can also add other assets to the `public` folder.
+你也可以将其他 assets 添加到 `public` 文件夹中。
 
-Note that we normally encourage you to `import` assets in JavaScript files instead.
-For example, see the sections on [adding a stylesheet](adding-a-stylesheet.md) and [adding images and fonts](adding-images-fonts-and-files.md).
-This mechanism provides a number of benefits:
+请注意，通常我们建议在 JavaScript 文件中`引入` assets。
+你可以参考[添加样式表支持](adding-a-stylesheet.md)与[添加图片和字体支持](adding-images-fonts-and-files.md)相关章节。
+该机制具备很多优势：
 
-- Scripts and stylesheets get minified and bundled together to avoid extra network requests.
-- Missing files cause compilation errors instead of 404 errors for your users.
-- Result filenames include content hashes so you don’t need to worry about browsers caching their old versions.
+- 将脚本和样式表压缩并一起打包，以避免额外的网络请求。
+- 缺少文件将会导致为用户提供编译错误，而不是 404 错误。
+- 输出文件名中包含内容哈希，因此你无需担心浏览器会缓存其旧版本。
 
-However there is an **escape hatch** that you can use to add an asset outside of the module system.
+但是，你可以另辟蹊径，在模块系统外添加 asset 的**应急方案**依然是存在的。
 
-If you put a file into the `public` folder, it will **not** be processed by Webpack. Instead it will be copied into the build folder untouched. To reference assets in the `public` folder, you need to use an environment variable called `PUBLIC_URL`.
+如果将文件放入 `public` 文件夹，Webpack 将**不**会对其进行处理，而是将其原封不动的复制到 build 文件夹中。要引用 `public` 文件夹中的 asset，你需要使用一个名为 `PUBLIC_URL` 的环境变量。
 
-Inside `index.html`, you can use it like this:
+在 `index.html` 中，你可以这样调用它：
 
 ```html
 <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
 ```
 
-Only files inside the `public` folder will be accessible by `%PUBLIC_URL%` prefix. If you need to use a file from `src` or `node_modules`, you’ll have to copy it there to explicitly specify your intention to make this file a part of the build.
+只有 `public` 文件夹中的文件才能通过 `%PUBLIC_URL%` 前缀访问。如果你需要使用 `src` 或 `node_modules` 中的文件，则必须将其复制到此处，以明确指定需要将此文件作为构建的一部分。
 
-When you run `npm run build`, Create React App will substitute `%PUBLIC_URL%` with a correct absolute path so your project works even if you use client-side routing or host it at a non-root URL.
+当你运行 `npm run build` 时，Create React App 将会用正确的绝对路径替换 `%PUBLIC_URL%`，因此即使你使用客户端路由/将其托管在非根 URL 上，你的项目也可以正常工作。
 
-In JavaScript code, you can use `process.env.PUBLIC_URL` for similar purposes:
+在 JavaScript 代码中，你可以将 `process.env.PUBLIC_URL` 用于类似场景：
 
 ```js
 render() {
-  // Note: this is an escape hatch and should be used sparingly!
-  // Normally we recommend using `import` for getting asset URLs
-  // as described in “Adding Images and Fonts” above this section.
+  // 注意：这是一种应急方案，应该谨慎使用！
+  // 通常情况下，我们建议使用 `import` 来获取 asset URLs
+  // 详情参考"添加图片和字体"
   return <img src={process.env.PUBLIC_URL + '/img/logo.png'} />;
 }
 ```
 
-Keep in mind the downsides of this approach:
+请记住此方法的缺点：
 
-- None of the files in `public` folder get post-processed or minified.
-- Missing files will not be called at compilation time, and will cause 404 errors for your users.
-- Result filenames won’t include content hashes so you’ll need to add query arguments or rename them every time they change.
+- `public` 文件夹中的所有文件均未进行处理或压缩。
+- 丢失的文件将不会在编译时调用，且会导致为你的用户抛出 404 错误。
+- 输出文件名中不包含内容哈希，因此你需要添加查询参数，或在每次更改文件时对其进行重命名。
 
-## When to Use the `public` Folder
+## 何时使用 `public` 文件夹
 
-Normally we recommend importing [stylesheets](adding-a-stylesheet.md), [images, and fonts](adding-images-fonts-and-files.md) from JavaScript.
-The `public` folder is useful as a workaround for a number of less common cases:
+通常，我们建议从 JavaScript 引入[样式表](adding-a-stylesheet.md)、[图像和字体](adding-images-fonts-and-files.md)。
+在一些不太常见的场景下，`public` 文件夹可作为解决方案：
 
-- You need a file with a specific name in the build output, such as [`manifest.webmanifest`](https://developer.mozilla.org/en-US/docs/Web/Manifest).
-- You have thousands of images and need to dynamically reference their paths.
-- You want to include a small script like [`pace.js`](https://github.hubspot.com/pace/docs/welcome/) outside of the bundled code.
-- Some library may be incompatible with Webpack and you have no other option but to include it as a `<script>` tag.
+- 你需要在构建结果中使用特定名称的文件，例如 [`manifest.webmanifest`](https://developer.mozilla.org/en-US/docs/Web/Manifest)。
+- 你拥有数千张图片，且需要动态引用其路径。
+- 你想要在打包代码外引入一个像 [`pace.js`](https://github.hubspot.com/pace/docs/welcome/) 这样的小型脚本。
+- 某些库可能与 Webpack 不兼容，你别无选择，只能将其作为 `<script>` 标签来引入。
 
-Note that if you add a `<script>` that declares global variables, you also need to read the next section on using them.
+注意，如果添加一个用于声明全局变量的 `<script>`，可能还需要阅读随后的章节，以了解如何使用它们。
