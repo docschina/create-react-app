@@ -13,4 +13,4 @@ const $ = window.$;
 
 这样可以表明你希望调用全局变量，而不是单纯的拼写错误。
 
-另外，你可以通过在代码前添加 `// eslint-disable-line` 来强制 linter 忽略某一行
+另外，你可以通过在代码前添加 `// eslint-disable-line` 来强制 linter 忽略某一行。
