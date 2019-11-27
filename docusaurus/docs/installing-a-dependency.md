@@ -15,4 +15,4 @@ npm install --save react-router-dom
 yarn add react-router-dom
 ```
 
-不仅是 `react-router-dom`，其他库也适用于此
+不仅是 `react-router-dom`，其他库也适用于此。
