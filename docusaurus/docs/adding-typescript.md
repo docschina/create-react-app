@@ -9,7 +9,7 @@ title: 添加 TypeScript 支持
 
 ## 安装
 
-要使用 [TypeScript](https://www.typescriptlang.org/) 生成一个新的 Create React App 项目，你可以执行：
+要生成一个使用 [TypeScript](https://www.typescriptlang.org/) 的新 Create React App 项目，你可以执行：
 
 ```sh
 npx create-react-app my-app --template typescript
@@ -19,7 +19,7 @@ npx create-react-app my-app --template typescript
 yarn create react-app my-app --template typescript
 ```
 
-> 如果你先前已通过 `npm install -g create-react-app` 全局安装过 `create-react-app`，我们建议你使用 `npm uninstall -g create-react-app` 卸载软件包，以确保 `npm` 始终是最新版本。
+> 如果你先前已通过 `npm install -g create-react-app` 全局安装过 `create-react-app`，我们建议你使用 `npm uninstall -g create-react-app` 卸载软件包，以确保 `npx` 始终使用最新版本。
 >
 > 全局安装的 `create-react-app` 版本将不再提供相关支持。
 
@@ -47,7 +47,7 @@ yarn add typescript @types/node @types/react @types/react-dom @types/jest
 
 ## 故障排除
 
-如果你的项目不是在启用 TypeScript 的情况下创建的，npm 也许会使用 `create-react-app` 的缓存版本。执行命令 `npm uninstall -g crete-react-app` 移除之前安装过的版本（请查阅 issue[#6119](https://github.com/facebook/create-react-app/issues/6119#issuecomment-451614035)）。
+如果你的项目不是在启用 TypeScript 的情况下创建的，npx 也许会使用 `create-react-app` 的缓存版本。执行命令 `npm uninstall -g crete-react-app` 移除之前安装过的版本（请查阅 issue[#6119](https://github.com/facebook/create-react-app/issues/6119#issuecomment-451614035)）。
 
 如果你当前正在使用 [create-react-app-typescript](https://github.com/wmonk/create-react-app-typescript/)，请参阅[此博客文章](https://vincenttunru.com/migrate-create-react-app-typescript-to-create-react-app/)有关如何迁移到 Create React App 的相关说明。
 
