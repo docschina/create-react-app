@@ -21,7 +21,7 @@ yarn add bootstrap
 
 ```js
 import 'bootstrap/dist/css/bootstrap.css';
-// 将所有其他导入内容放在下面，以便你的 CSS 组件样式优先于默认样式
+// 将所有其他导入内容放在下面，以便你的 CSS 组件样式优先于默认样式。
 ```
 
 ## 使用自定义主题
@@ -56,7 +56,7 @@ $body-bg: #000;
 
 > **注意：**如上所示，你必须在 `node_modules` 的导入前面加上 `~`。
 
-最后，在你的 `src/index.js` 文件的开头导入新建的 `.scss 文件`，而不是默认的 Bootstrap `.css`，例如：
+最后，在你的 `src/index.js` 文件的开头导入新建的 `.scss ` 文件，而不是默认的 Bootstrap `.css`，例如：
 
 ```javascript
 import './custom.scss';
