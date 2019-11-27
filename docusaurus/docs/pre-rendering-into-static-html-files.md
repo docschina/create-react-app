@@ -4,7 +4,7 @@ title: 预渲染静态 HTML 文件
 sidebar_label: 预渲染静态 HTML 文件
 ---
 
-如果你使用静态托管服务商托管自己的 `构建版本`,则可以使用 [react-snapshot](https://www.npmjs.com/package/react-snapshot) 或 [react-snap](https://github.com/stereobooster/react-snap) 为应用程序中的每个路由或相对链接生成 HTML 页面。然后，当 JavaScript 包加载完成时，这些页面将会无缝切换至活动状态（被"活性化"）。
+如果你使用静态托管服务商托管自己的 `构建版本`，则可以使用 [react-snapshot](https://www.npmjs.com/package/react-snapshot) 或 [react-snap](https://github.com/stereobooster/react-snap) 为应用程序中的每个路由或相对链接生成 HTML 页面。然后，当 JavaScript 包加载完成时，这些页面将会无缝切换至活动状态（被"活性化"）。
 
 也有在静态托管外使用该功能的选择，以在生成和缓存路由时减轻服务器的压力。
 
