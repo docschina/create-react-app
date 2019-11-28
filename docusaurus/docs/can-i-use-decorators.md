@@ -1,6 +1,6 @@
 ---
 id: can-i-use-decorators
-title: 我能使用装饰器吗?
+title: 能否使用装饰器?
 ---
 
 一些流行的库在开发中使用了[装饰器](https://medium.com/google-developers/exploring-es7-decorators-76ecb65fb841)
