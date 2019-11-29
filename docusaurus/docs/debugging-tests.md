@@ -24,7 +24,7 @@ sidebar_label: Debugging 测试
 $ npm run test:debug
 ```
 
-在执行之前暂停，使调试器添加到进程，然后开始你的 Jest 测试。
+这会启动你的 Jest 测试，而且允许调试器添加到进程之前暂停
 
 在 Chrome 中打开以下内容
 
