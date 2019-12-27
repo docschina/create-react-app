@@ -1,16 +1,16 @@
 ---
 id: using-global-variables
-title: Using Global Variables
+title: 使用全局变量
 ---
 
-When you include a script in the HTML file that defines global variables and try to use one of these variables in the code, the linter will complain because it cannot see the definition of the variable.
+当你在 HTML 文件中引入定义全局变量的脚本，并尝试在代码中使用这些变量时，lint 会作出错误提示，因为它找不到变量的定义。
 
-You can avoid this by reading the global variable explicitly from the `window` object, for example:
+你可以通过从 `window` 对象中显式读取全局变量来避免这种情况，例如：
 
 ```js
 const $ = window.$;
 ```
 
-This makes it clear you are using a global variable intentionally rather than because of a typo.
+这样可以表明你希望调用全局变量，而不是单纯的拼写错误。
 
-Alternatively, you can force the linter to ignore any line by adding `// eslint-disable-line` after it.
+另外，你可以通过在代码前添加 `// eslint-disable-line` 来强制 linter 忽略某一行。
