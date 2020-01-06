@@ -1,63 +1,62 @@
 ---
 id: adding-bootstrap
-title: Adding Bootstrap
+title: 添加 Bootstrap 支持
 ---
 
-While you don’t have to use any specific library to integrate Bootstrap with React apps, it's often easier than trying to wrap the Bootstrap jQuery plugins. [React Bootstrap](https://react-bootstrap.netlify.com/) is the most popular option that strives for complete parity with Bootstrap. [reactstrap](https://reactstrap.github.io/) is also a good choice for projects looking for smaller builds at the expense of some features.
+尽管你无需使用任何特定的库就能将 Bootstrap 和 React 应用集成，但通常来说比包装 Bootstrap jQuery 插件要简单一些。[React Bootstrap](https://react-bootstrap.netlify.com/) 是最受欢迎的选项，它力求与 Bootstrap 完全对等。[reactstrap](https://reactstrap.github.io/) 对于寻求以部分功能为代价，追求代码小而美的项目来说也是一个不错的选择。
 
-Each project's respective documentation site has detailed instructions for installing and using them. Both depend on the Bootstrap css file so install that as well:
+每个项目的文档站点都拥有详细的安装与使用说明。它们都需要依赖 Bootstrap css 文件，因此需要先安装它：
 
 ```sh
 npm install --save bootstrap
 ```
 
-Alternatively you may use `yarn`:
+或者你可以使用 `yarn` 代替：
 
 ```sh
 yarn add bootstrap
 ```
 
-Import Bootstrap CSS and optionally Bootstrap theme CSS in the beginning of your `src/index.js` file:
+在 `src/index.js` 文件的开头引入 Bootstrap CSS 和可选的 Bootstrap 主题 CSS：
 
 ```js
 import 'bootstrap/dist/css/bootstrap.css';
-// Put any other imports below so that CSS from your
-// components takes precedence over default styles.
+// 将所有其他导入内容放在下面，以便你的 CSS 组件样式优先于默认样式。
 ```
 
-## Using a Custom Theme
+## 使用自定义主题
 
-> Note: this feature is available with `react-scripts@2.0.0` and higher.
+> 注意：该功能仅支持 `react-scripts@2.0.0` 及以上版本。
 
-Sometimes you might need to tweak the visual styles of Bootstrap (or equivalent package).
+有时你可能需要调整 Bootstrap（或与其相似的包）的视觉样式。
 
-As of `react-scripts@2.0.0` you can import `.scss` files. This makes it possible to use a package's built-in Sass variables for global style preferences.
+从 `react-scripts@2.0.0` 开始，你可以导入 `.scss` 文件。这样就可以将包的内置 Sass 变量用于全局样式。
 
-To enable `scss` in Create React App you will need to install `node-sass`.
+要在 Create React App 中启用 `scss`，你需要先安装 `node-sass`。
 
 ```sh
 npm install --save node-sass
 ```
 
-Alternatively you may use `yarn`:
+或者你可以使用 `yarn` 代替：
 
 ```sh
 yarn add node-sass
 ```
 
-To customize Bootstrap, create a file called `src/custom.scss` (or similar) and import the Bootstrap source stylesheet. Add any overrides _before_ the imported file(s). You can reference [Bootstrap's documentation](https://getbootstrap.com/docs/4.1/getting-started/theming/#css-variables) for the names of the available variables.
+要自定义 Bootstrap，请创建一个名为 `src/custom.scss`（或类似文件）的文件，然后导入 Bootstrap 源样式表。在导入文件 _前_ 添加覆盖样式文件。你可以参考[Bootstrap 文档](https://getbootstrap.com/docs/4.1/getting-started/theming/#css-variables) 以获取可用变量的名称。
 
 ```scss
-// Override default variables before the import
+// 在导入前覆盖默认变量
 $body-bg: #000;
 
-// Import Bootstrap and its default variables
+// 导入 Bootstrap 及其默认变量
 @import '~bootstrap/scss/bootstrap.scss';
 ```
 
-> **Note:** You must prefix imports from `node_modules` with `~` as displayed above.
+> **注意：**如上所示，你必须在 `node_modules` 的导入前面加上 `~`。
 
-Finally, import the newly created `.scss` file instead of the default Bootstrap `.css` in the beginning of your `src/index.js` file, for example:
+最后，在你的 `src/index.js` 文件的开头导入新建的 `.scss ` 文件，而不是默认的 Bootstrap `.css`，例如：
 
 ```javascript
 import './custom.scss';
