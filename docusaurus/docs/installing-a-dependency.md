@@ -1,18 +1,18 @@
 ---
 id: installing-a-dependency
-title: Installing a Dependency
+title: 安装依赖
 ---
 
-The generated project includes React and ReactDOM as dependencies. It also includes a set of scripts used by Create React App as a development dependency. You may install other dependencies (for example, React Router) with `npm`:
+该工具生成的项目包括依赖项 React 和 ReactDOM。它还包括一些被 Create React App 作为开发依赖项的脚本。你可以使用 `npm` 安装其他依赖项（例如 React Router）。
 
 ```sh
 npm install --save react-router-dom
 ```
 
-Alternatively you may use `yarn`:
+或者你可以使用 `yarn` 代替：
 
 ```sh
 yarn add react-router-dom
 ```
 
-This works for any library, not only `react-router-dom`.
+不仅是 `react-router-dom`，其他库也适用于此。
