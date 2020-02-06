@@ -1,7 +1,7 @@
 {
   "main": [
     "/main.c96838aeda9906bbe2c3.css",
-    "/main.c56fad0aae2f6487543a.js"
+    "/main.bc2298b0454eeaaa3d83.js"
   ],
   "component---site-src-pages-index-jsc-4-f-f99": [
     "/component---site-src-pages-index-jsc-4-f-f99.eefa51f400e5c0b5a52f.css",
@@ -12,7 +12,7 @@
     "/component---theme-doc-page-1-be-9be.ff51142faa7213238523.js"
   ],
   "docsMetadata---docs-1-da-721": [
-    "/docsMetadata---docs-1-da-721.34ef0a2e707870fdec82.js"
+    "/docsMetadata---docs-1-da-721.b145c226f90a07ce35fe.js"
   ],
   "component---theme-doc-item-178-a40": [
     "/component---theme-doc-item-178-a40.de2648345892298aff25.css",
@@ -30,35 +30,35 @@
   "metadata---docs-adding-a-router-73-d-177": [
     "/metadata---docs-adding-a-router-73-d-177.97b20974aabb808c6e74.js"
   ],
-  "content---docs-adding-a-stylesheetf-87-dcf": [
-    "/content---docs-adding-a-stylesheetf-87-dcf.94279c4f8c6fdc105574.js"
-  ],
-  "metadata---docs-adding-a-stylesheet-86-a-a0e": [
-    "/metadata---docs-adding-a-stylesheet-86-a-a0e.a6c73ae6fc901733b78a.js"
-  ],
   "content---docs-adding-a-sass-stylesheet-993-977": [
-    "/content---docs-adding-a-sass-stylesheet-993-977.b9b0073c3bc8cf902d36.js"
+    "/content---docs-adding-a-sass-stylesheet-993-977.c792a78c8747521e6515.js"
   ],
   "metadata---docs-adding-a-sass-stylesheetbee-f78": [
-    "/metadata---docs-adding-a-sass-stylesheetbee-f78.5e45362d5fa986625fd0.js"
+    "/metadata---docs-adding-a-sass-stylesheetbee-f78.a482206c8c3edb8ced61.js"
   ],
-  "content---docs-adding-bootstrap-903-029": [
-    "/content---docs-adding-bootstrap-903-029.f6b213921cfa398aab1a.js"
+  "content---docs-adding-a-stylesheetf-87-dcf": [
+    "/content---docs-adding-a-stylesheetf-87-dcf.1ba7b16d1b75c39ac410.js"
   ],
-  "metadata---docs-adding-bootstrapc-3-e-5cc": [
-    "/metadata---docs-adding-bootstrapc-3-e-5cc.1d1183600c9620f4d769.js"
-  ],
-  "content---docs-adding-custom-environment-variables-2-cc-a37": [
-    "/content---docs-adding-custom-environment-variables-2-cc-a37.97236bcf39ed3f77aaed.js"
-  ],
-  "metadata---docs-adding-custom-environment-variablesd-4-a-ad5": [
-    "/metadata---docs-adding-custom-environment-variablesd-4-a-ad5.5eccb502e3f1f94e00a0.js"
+  "metadata---docs-adding-a-stylesheet-86-a-a0e": [
+    "/metadata---docs-adding-a-stylesheet-86-a-a0e.4114fc5933ba28f3de07.js"
   ],
   "content---docs-adding-css-resetb-9-a-f67": [
-    "/content---docs-adding-css-resetb-9-a-f67.968287cb999e4d8e6b58.js"
+    "/content---docs-adding-css-resetb-9-a-f67.203565ea88e61bfa63f7.js"
   ],
   "metadata---docs-adding-css-reset-48-e-68b": [
-    "/metadata---docs-adding-css-reset-48-e-68b.291f483e7692c7712241.js"
+    "/metadata---docs-adding-css-reset-48-e-68b.348ca340812b5b5eec70.js"
+  ],
+  "content---docs-adding-bootstrap-903-029": [
+    "/content---docs-adding-bootstrap-903-029.f7ad529fac8e7723c16d.js"
+  ],
+  "metadata---docs-adding-bootstrapc-3-e-5cc": [
+    "/metadata---docs-adding-bootstrapc-3-e-5cc.f3aee316d56c6a616902.js"
+  ],
+  "content---docs-adding-custom-environment-variables-2-cc-a37": [
+    "/content---docs-adding-custom-environment-variables-2-cc-a37.9fd662d36dda4a0378bb.js"
+  ],
+  "metadata---docs-adding-custom-environment-variablesd-4-a-ad5": [
+    "/metadata---docs-adding-custom-environment-variablesd-4-a-ad5.8154c825091bb0e6fabc.js"
   ],
   "content---docs-adding-flowd-5-c-bec": [
     "/content---docs-adding-flowd-5-c-bec.543146af08819ae0816b.js"
@@ -66,41 +66,41 @@
   "metadata---docs-adding-flowd-11-a30": [
     "/metadata---docs-adding-flowd-11-a30.3a5b9cb6e85d5ad1f5de.js"
   ],
-  "content---docs-adding-images-fonts-and-fileseb-0-ffd": [
-    "/content---docs-adding-images-fonts-and-fileseb-0-ffd.0763fcd5950faac6d951.js"
-  ],
-  "metadata---docs-adding-images-fonts-and-files-16-e-f47": [
-    "/metadata---docs-adding-images-fonts-and-files-16-e-f47.22054bdd0da2cb55cb88.js"
-  ],
-  "content---docs-advanced-configuration-0-a-8-6b9": [
-    "/content---docs-advanced-configuration-0-a-8-6b9.3f40770dbe243fe802f9.js"
-  ],
-  "metadata---docs-advanced-configurationdbb-607": [
-    "/metadata---docs-advanced-configurationdbb-607.a0832c971e8bcd30f263.js"
-  ],
   "content---docs-adding-typescript-761-14a": [
-    "/content---docs-adding-typescript-761-14a.30e06acec96867280429.js"
+    "/content---docs-adding-typescript-761-14a.ae600ee8dce8e23dca7a.js"
   ],
   "metadata---docs-adding-typescript-414-964": [
-    "/metadata---docs-adding-typescript-414-964.0f7f246995b7c7eaa553.js"
-  ],
-  "content---docs-alternatives-to-ejectingfe-6-478": [
-    "/content---docs-alternatives-to-ejectingfe-6-478.e0e981d7388aceafbe7f.js"
-  ],
-  "metadata---docs-alternatives-to-ejectingdd-0-051": [
-    "/metadata---docs-alternatives-to-ejectingdd-0-051.9f7c118bcfb4034c15d4.js"
+    "/metadata---docs-adding-typescript-414-964.345548369120d47c5e4d.js"
   ],
   "content---docs-adding-relaye-8-b-a72": [
-    "/content---docs-adding-relaye-8-b-a72.5aaa48a2548eedb4ad9d.js"
+    "/content---docs-adding-relaye-8-b-a72.8331ddeee0841f03abf9.js"
   ],
   "metadata---docs-adding-relaya-55-41b": [
-    "/metadata---docs-adding-relaya-55-41b.5e527d18402a17b29ca7.js"
+    "/metadata---docs-adding-relaya-55-41b.2a0d0179db4b9fc72ba0.js"
   ],
-  "content---docs-can-i-use-decoratorse-54-cef": [
-    "/content---docs-can-i-use-decoratorse-54-cef.2ede9e0e085782d3ef18.js"
+  "content---docs-advanced-configuration-0-a-8-6b9": [
+    "/content---docs-advanced-configuration-0-a-8-6b9.6a37232674059b4b3d55.js"
   ],
-  "metadata---docs-can-i-use-decorators-0-fa-fc5": [
-    "/metadata---docs-can-i-use-decorators-0-fa-fc5.f04ecccd42a88722fc33.js"
+  "metadata---docs-advanced-configurationdbb-607": [
+    "/metadata---docs-advanced-configurationdbb-607.3f6c9f796d26a9187670.js"
+  ],
+  "content---docs-adding-images-fonts-and-fileseb-0-ffd": [
+    "/content---docs-adding-images-fonts-and-fileseb-0-ffd.cc2494bd8546fa7a156d.js"
+  ],
+  "metadata---docs-adding-images-fonts-and-files-16-e-f47": [
+    "/metadata---docs-adding-images-fonts-and-files-16-e-f47.261b10153a84fa322256.js"
+  ],
+  "content---docs-alternatives-to-ejectingfe-6-478": [
+    "/content---docs-alternatives-to-ejectingfe-6-478.a84c7135561b2b2f28f7.js"
+  ],
+  "metadata---docs-alternatives-to-ejectingdd-0-051": [
+    "/metadata---docs-alternatives-to-ejectingdd-0-051.866b8eff0c79adef3c8a.js"
+  ],
+  "content---docs-analyzing-the-bundle-sizeb-33-843": [
+    "/content---docs-analyzing-the-bundle-sizeb-33-843.0875e424ee1628934fab.js"
+  ],
+  "metadata---docs-analyzing-the-bundle-sizeacc-347": [
+    "/metadata---docs-analyzing-the-bundle-sizeacc-347.aff218fdfcfb6fca628d.js"
   ],
   "content---docs-available-scripts-652-9b8": [
     "/content---docs-available-scripts-652-9b8.7c30a718254104813d6b.js"
@@ -108,23 +108,23 @@
   "metadata---docs-available-scriptsc-17-7e7": [
     "/metadata---docs-available-scriptsc-17-7e7.b6883eb063cc4cee342a.js"
   ],
-  "content---docs-code-splittingeae-502": [
-    "/content---docs-code-splittingeae-502.8102e3b6d734a8a4fbe5.js"
+  "content---docs-can-i-use-decoratorse-54-cef": [
+    "/content---docs-can-i-use-decoratorse-54-cef.b8821b03801ff2f6c5bb.js"
   ],
-  "metadata---docs-code-splitting-029-270": [
-    "/metadata---docs-code-splitting-029-270.32a18eeb8736f24cf985.js"
-  ],
-  "content---docs-analyzing-the-bundle-sizeb-33-843": [
-    "/content---docs-analyzing-the-bundle-sizeb-33-843.f61d41754a144dcde21e.js"
-  ],
-  "metadata---docs-analyzing-the-bundle-sizeacc-347": [
-    "/metadata---docs-analyzing-the-bundle-sizeacc-347.db03894a8e258b7fee6f.js"
+  "metadata---docs-can-i-use-decorators-0-fa-fc5": [
+    "/metadata---docs-can-i-use-decorators-0-fa-fc5.699693e9ee0b3ef9dac9.js"
   ],
   "content---docs-debugging-tests-530-53a": [
-    "/content---docs-debugging-tests-530-53a.d966f946724a71be36e8.js"
+    "/content---docs-debugging-tests-530-53a.5aa59a9b80e4830bcfff.js"
   ],
   "metadata---docs-debugging-tests-064-ee5": [
-    "/metadata---docs-debugging-tests-064-ee5.54660a7932773f519fa2.js"
+    "/metadata---docs-debugging-tests-064-ee5.0ec719bda62b80046ff5.js"
+  ],
+  "content---docs-code-splittingeae-502": [
+    "/content---docs-code-splittingeae-502.d7437e1457e22b206576.js"
+  ],
+  "metadata---docs-code-splitting-029-270": [
+    "/metadata---docs-code-splitting-029-270.a018dceddc3d3f561588.js"
   ],
   "content---docs-developing-components-in-isolationd-43-423": [
     "/content---docs-developing-components-in-isolationd-43-423.fba5f84ae5b98546e084.js"
@@ -132,11 +132,11 @@
   "metadata---docs-developing-components-in-isolationbdd-26e": [
     "/metadata---docs-developing-components-in-isolationbdd-26e.50a5cf00892eb5a5d5e3.js"
   ],
-  "content---docs-fetching-data-with-ajax-requests-14-d-242": [
-    "/content---docs-fetching-data-with-ajax-requests-14-d-242.1a3e1fdf1c4a5aae4899.js"
+  "content---docs-deploymente-33-fd8": [
+    "/content---docs-deploymente-33-fd8.9a1ce845dccdd04e0458.js"
   ],
-  "metadata---docs-fetching-data-with-ajax-requestse-91-a04": [
-    "/metadata---docs-fetching-data-with-ajax-requestse-91-a04.e999db7f947d1c80f477.js"
+  "metadata---docs-deploymentfe-3-d7f": [
+    "/metadata---docs-deploymentfe-3-d7f.2cf9238ea6050e4f4bd9.js"
   ],
   "content---docs-documentation-intro-8-f-1-b0b": [
     "/content---docs-documentation-intro-8-f-1-b0b.8311024ea9a4fcf57c3d.js"
@@ -144,17 +144,17 @@
   "metadata---docs-documentation-introf-00-92f": [
     "/metadata---docs-documentation-introf-00-92f.e000961354114e49f657.js"
   ],
-  "content---docs-deploymente-33-fd8": [
-    "/content---docs-deploymente-33-fd8.55b7a260735ad57fb208.js"
-  ],
-  "metadata---docs-deploymentfe-3-d7f": [
-    "/metadata---docs-deploymentfe-3-d7f.dbc2ee23f456787f1260.js"
-  ],
   "content---docs-folder-structuree-9-c-afa": [
-    "/content---docs-folder-structuree-9-c-afa.0e6472f92698c5362895.js"
+    "/content---docs-folder-structuree-9-c-afa.060611683ac5fb3640d1.js"
   ],
   "metadata---docs-folder-structure-92-f-29d": [
-    "/metadata---docs-folder-structure-92-f-29d.5416f78b8eac3c3f9501.js"
+    "/metadata---docs-folder-structure-92-f-29d.48e71aca9567d2febf25.js"
+  ],
+  "content---docs-fetching-data-with-ajax-requests-14-d-242": [
+    "/content---docs-fetching-data-with-ajax-requests-14-d-242.9c24d1dc8730a0202af2.js"
+  ],
+  "metadata---docs-fetching-data-with-ajax-requestse-91-a04": [
+    "/metadata---docs-fetching-data-with-ajax-requestse-91-a04.c343ff5830f474bee702.js"
   ],
   "content---docs-getting-started-8-d-0-4ab": [
     "/content---docs-getting-started-8-d-0-4ab.12ce8d82289cb4200821.js"
@@ -162,65 +162,65 @@
   "metadata---docs-getting-started-57-d-ca5": [
     "/metadata---docs-getting-started-57-d-ca5.723ea93eb542cd3bedb4.js"
   ],
-  "content---docs-installing-a-dependency-235-a29": [
-    "/content---docs-installing-a-dependency-235-a29.6e7ee9f20fbb3989f74b.js"
-  ],
-  "metadata---docs-installing-a-dependencyf-94-06a": [
-    "/metadata---docs-installing-a-dependencyf-94-06a.c28af34e3f77777c9d78.js"
-  ],
   "content---docs-importing-a-componentea-3-096": [
-    "/content---docs-importing-a-componentea-3-096.5849eb94f8cd5aabeaf4.js"
+    "/content---docs-importing-a-componentea-3-096.94442ae99807b5f22b70.js"
   ],
   "metadata---docs-importing-a-componente-80-708": [
-    "/metadata---docs-importing-a-componente-80-708.a426b652a8cb179a4bb4.js"
+    "/metadata---docs-importing-a-componente-80-708.6601317fda5da9acd5d5.js"
   ],
-  "content---docs-loading-graphql-filesaa-9-117": [
-    "/content---docs-loading-graphql-filesaa-9-117.2778d641b7b72280cf6c.js"
+  "content---docs-installing-a-dependency-235-a29": [
+    "/content---docs-installing-a-dependency-235-a29.1c37b1e6fd96966f433e.js"
   ],
-  "metadata---docs-loading-graphql-filesd-85-24d": [
-    "/metadata---docs-loading-graphql-filesd-85-24d.9d7b0d4514c13ecad518.js"
+  "metadata---docs-installing-a-dependencyf-94-06a": [
+    "/metadata---docs-installing-a-dependencyf-94-06a.7ab606451da02cd31056.js"
   ],
   "content---docs-integrating-with-an-api-backendbd-4-3c4": [
-    "/content---docs-integrating-with-an-api-backendbd-4-3c4.274db10368d4cfc5a564.js"
+    "/content---docs-integrating-with-an-api-backendbd-4-3c4.8718a13484fdf7ad6854.js"
   ],
   "metadata---docs-integrating-with-an-api-backend-0-b-7-74e": [
-    "/metadata---docs-integrating-with-an-api-backend-0-b-7-74e.2962ec44c7fa9a4349e4.js"
-  ],
-  "content---docs-making-a-progressive-web-appb-0-e-aca": [
-    "/content---docs-making-a-progressive-web-appb-0-e-aca.3d737da1676518ba9db1.js"
-  ],
-  "metadata---docs-making-a-progressive-web-app-26-b-766": [
-    "/metadata---docs-making-a-progressive-web-app-26-b-766.b4d767b764e4fa9b71ea.js"
+    "/metadata---docs-integrating-with-an-api-backend-0-b-7-74e.5644799143ce61471579.js"
   ],
   "content---docs-post-processing-csscdf-a22": [
-    "/content---docs-post-processing-csscdf-a22.f4fb2e15a5ef18832678.js"
+    "/content---docs-post-processing-csscdf-a22.449109373bf11c803741.js"
   ],
   "metadata---docs-post-processing-css-5-e-9-417": [
-    "/metadata---docs-post-processing-css-5-e-9-417.fbf5ac1402e878b4e057.js"
+    "/metadata---docs-post-processing-css-5-e-9-417.f856c5e1c7b01d29ec7c.js"
   ],
-  "content---docs-production-build-7-b-4-5c2": [
-    "/content---docs-production-build-7-b-4-5c2.2611cab8905ece569b61.js"
+  "content---docs-loading-graphql-filesaa-9-117": [
+    "/content---docs-loading-graphql-filesaa-9-117.0b2b00d32905a2d99652.js"
   ],
-  "metadata---docs-production-buildbd-5-1df": [
-    "/metadata---docs-production-buildbd-5-1df.9c24500661c90f9e168d.js"
+  "metadata---docs-loading-graphql-filesd-85-24d": [
+    "/metadata---docs-loading-graphql-filesd-85-24d.7390d17043f0762f949e.js"
+  ],
+  "content---docs-making-a-progressive-web-appb-0-e-aca": [
+    "/content---docs-making-a-progressive-web-appb-0-e-aca.e342bef56dbd7d5f10b6.js"
+  ],
+  "metadata---docs-making-a-progressive-web-app-26-b-766": [
+    "/metadata---docs-making-a-progressive-web-app-26-b-766.6af2922a8513fe352fc3.js"
   ],
   "content---docs-pre-rendering-into-static-html-files-283-4ad": [
-    "/content---docs-pre-rendering-into-static-html-files-283-4ad.d472fd532703135e3b38.js"
+    "/content---docs-pre-rendering-into-static-html-files-283-4ad.5da212a03c789a47975e.js"
   ],
   "metadata---docs-pre-rendering-into-static-html-filese-87-3cb": [
-    "/metadata---docs-pre-rendering-into-static-html-filese-87-3cb.c03e7bf9e15e54200c2c.js"
+    "/metadata---docs-pre-rendering-into-static-html-filese-87-3cb.09ea7f5bc804088916d5.js"
   ],
-  "content---docs-proxying-api-requests-in-development-5-f-5-67c": [
-    "/content---docs-proxying-api-requests-in-development-5-f-5-67c.6c8a86e69ecd75b8d513.js"
+  "content---docs-production-build-7-b-4-5c2": [
+    "/content---docs-production-build-7-b-4-5c2.cd643418993c68b735b0.js"
   ],
-  "metadata---docs-proxying-api-requests-in-developmentbe-0-b24": [
-    "/metadata---docs-proxying-api-requests-in-developmentbe-0-b24.01a70000e5ad606b2e36.js"
+  "metadata---docs-production-buildbd-5-1df": [
+    "/metadata---docs-production-buildbd-5-1df.81f263635235640dfad7.js"
   ],
   "content---docs-running-tests-0-d-4-18f": [
-    "/content---docs-running-tests-0-d-4-18f.7dd4da5d854960b70a66.js"
+    "/content---docs-running-tests-0-d-4-18f.7d6aac8c5aa5ad2b5f21.js"
   ],
   "metadata---docs-running-testsa-6-a-ff8": [
-    "/metadata---docs-running-testsa-6-a-ff8.d8aa0ce0ba83b52cdde9.js"
+    "/metadata---docs-running-testsa-6-a-ff8.a7b997a101e022aa97d7.js"
+  ],
+  "content---docs-proxying-api-requests-in-development-5-f-5-67c": [
+    "/content---docs-proxying-api-requests-in-development-5-f-5-67c.7281a308e965efdeac10.js"
+  ],
+  "metadata---docs-proxying-api-requests-in-developmentbe-0-b24": [
+    "/metadata---docs-proxying-api-requests-in-developmentbe-0-b24.0df17c6202800c6d9df4.js"
   ],
   "content---docs-setting-up-your-editor-81-e-516": [
     "/content---docs-setting-up-your-editor-81-e-516.513ec397206fa45b9818.js"
@@ -240,29 +240,29 @@
   "metadata---docs-title-and-meta-tags-7-ef-241": [
     "/metadata---docs-title-and-meta-tags-7-ef-241.2e94d6e5040cda636b0e.js"
   ],
-  "content---docs-updating-to-new-releases-65-e-670": [
-    "/content---docs-updating-to-new-releases-65-e-670.9f6998812ca0a0b7a7fa.js"
-  ],
-  "metadata---docs-updating-to-new-releases-6-b-3-070": [
-    "/metadata---docs-updating-to-new-releases-6-b-3-070.c5bb24dd0d3710fad7c3.js"
-  ],
   "content---docs-troubleshooting-992-211": [
-    "/content---docs-troubleshooting-992-211.f8ce7ba875b955b080b2.js"
+    "/content---docs-troubleshooting-992-211.216cac8c48d0bb670103.js"
   ],
   "metadata---docs-troubleshootingac-9-9ea": [
-    "/metadata---docs-troubleshootingac-9-9ea.bd9b567fd0e4f9bb8318.js"
+    "/metadata---docs-troubleshootingac-9-9ea.367c79b5c42910091199.js"
   ],
-  "content---docs-using-https-in-developmenta-9-c-f34": [
-    "/content---docs-using-https-in-developmenta-9-c-f34.7c91c591d9a697929aa1.js"
+  "content---docs-updating-to-new-releases-65-e-670": [
+    "/content---docs-updating-to-new-releases-65-e-670.6962384511c80be51bb4.js"
   ],
-  "metadata---docs-using-https-in-developmenta-1-a-afd": [
-    "/metadata---docs-using-https-in-developmenta-1-a-afd.af42a8b918e6119729f1.js"
+  "metadata---docs-updating-to-new-releases-6-b-3-070": [
+    "/metadata---docs-updating-to-new-releases-6-b-3-070.b8bb2c3be917ccac7ce0.js"
   ],
   "content---docs-using-global-variables-469-9fd": [
-    "/content---docs-using-global-variables-469-9fd.9db97715ead5e77980be.js"
+    "/content---docs-using-global-variables-469-9fd.f2534019dbadb5a91505.js"
   ],
   "metadata---docs-using-global-variables-553-bbb": [
-    "/metadata---docs-using-global-variables-553-bbb.5bfcff4ecf1d0452ed8c.js"
+    "/metadata---docs-using-global-variables-553-bbb.a26f7ee1bfb5bbba1bf5.js"
+  ],
+  "content---docs-using-https-in-developmenta-9-c-f34": [
+    "/content---docs-using-https-in-developmenta-9-c-f34.de09f0d3d62b65332bbf.js"
+  ],
+  "metadata---docs-using-https-in-developmenta-1-a-afd": [
+    "/metadata---docs-using-https-in-developmenta-1-a-afd.2c35f461d2d8fbf6ff80.js"
   ],
   "content---docs-using-the-public-folderd-01-1ab": [
     "/content---docs-using-the-public-folderd-01-1ab.dfa4c55322f81c7f3b9e.js"
