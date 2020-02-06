@@ -1,28 +1,28 @@
 ---
 id: adding-custom-environment-variables
-title: Adding Custom Environment Variables
-sidebar_label: Environment Variables
+title: 添加自定义环境变量
+sidebar_label: 环境变量
 ---
 
-> Note: this feature is available with `react-scripts@0.2.3` and higher.
+> 注意：该功能仅支持 `react-scripts@0.2.3` 及以上版本。
 
-Your project can consume variables declared in your environment as if they were declared locally in your JS files. By default you will have `NODE_ENV` defined for you, and any other environment variables starting with `REACT_APP_`.
+你的项目可以使用在开发环境中声明的变量，就好像它们直接声明在你的 JS 文件中一样。默认情况下，你会获得预定义 `NODE_ENV` 以及其他以 `REACT_APP_` 开头的环境变量。
 
-> WARNING: Do not store any secrets (such as private API keys) in your React app!
+> 警告：请勿在你的 React 应用中存储私密信息（例如私有 API 密钥）！
 >
-> Environment variables are embedded into the build, meaning anyone can view them by inspecting your app's files.
+> 环境变量会在构建过程中嵌入，这意味着所有人都可以通过直接检查应用文件来查阅它们。
 
-**The environment variables are embedded during the build time**. Since Create React App produces a static HTML/CSS/JS bundle, it can’t possibly read them at runtime. To read them at runtime, you would need to load HTML into memory on the server and replace placeholders in runtime, as [described here](title-and-meta-tags.md#injecting-data-from-the-server-into-the-page). Alternatively you can rebuild the app on the server anytime you change them.
+**环境变量是在构建阶段嵌入的**。由于 Create React App 会生成静态的 HTML/CSS/JS 包，因此你无法在运行时读取它们。要在运行时读取它们，你需要将 HTML 加载到服务器内存中，并在运行时中替换占位符，就像[这篇文章](title-and-meta-tags.md#injecting-data-from-the-server-into-the-page)说的那样。另外，你可以在更改它们时随时在服务器上重新进行构建。
 
-> Note: You must create custom environment variables beginning with `REACT_APP_`. Any other variables except `NODE_ENV` will be ignored to avoid accidentally [exposing a private key on the machine that could have the same name](https://github.com/facebook/create-react-app/issues/865#issuecomment-252199527). Changing any environment variables will require you to restart the development server if it is running.
+> 注意：你必须创建以 `REACT_APP_` 开头的自定义环境变量。为了防止意外[在机器上暴露可能具有相同名称的私钥](https://github.com/facebook/create-react-app/issues/865#issuecomment-252199527)，`NODE_ENV` 意外的任何其他变量都会被忽略。更改任何环境变量都需要你重启开发服务器（如果正在运行的话）。
 
-These environment variables will be defined for you on `process.env`. For example, having an environment variable named `REACT_APP_NOT_SECRET_CODE` will be exposed in your JS as `process.env.REACT_APP_NOT_SECRET_CODE`.
+这些环境变量将会为你定义在 `process.env` 上。例如，一个名为 `REACT_APP_NOTE_SECRET_CODE` 的环境变量将会在你的 JS 中显示为 `process.env.REACT_APP_NOT_SECRET_CODE`。
 
-There is also a built-in environment variable called `NODE_ENV`. You can read it from `process.env.NODE_ENV`. When you run `npm start`, it is always equal to `'development'`, when you run `npm test` it is always equal to `'test'`, and when you run `npm run build` to make a production bundle, it is always equal to `'production'`. **You cannot override `NODE_ENV` manually.** This prevents developers from accidentally deploying a slow development build to production.
+还有一个内置环境变量叫做 `NODE_ENV`，你可以从 `process.env.NODE_ENV` 中对其进行读取。当你执行 `npm start` 时，它总是等于 `'development'`，当你执行 `npm test` 时，它总是等于 `'test'`；当你执行 `npm run build` 以生成生产环境构建包时，它始终等于 `'production'`。**你不能手动覆盖 `NODE_ENV`**，这样可以防止开发人员将运行缓慢的开发版本意外部署至生产环境。
 
-These environment variables can be useful for displaying information conditionally based on where the project is deployed or consuming sensitive data that lives outside of version control.
+这些环境变量在根据项目的部署位置有条件地显示信息，或消费版本控制外的敏感数据来说很有用。
 
-First, you need to have environment variables defined. For example, let’s say you wanted to consume an environment variable inside a `<form>`:
+首先，你需要定义环境变量。例如，假设你要在 `<form>` 中使用一个环境变量：
 
 ```jsx
 render() {
@@ -37,9 +37,9 @@ render() {
 }
 ```
 
-During the build, `process.env.REACT_APP_NOT_SECRET_CODE` will be replaced with the current value of the `REACT_APP_NOT_SECRET_CODE` environment variable. Remember that the `NODE_ENV` variable will be set for you automatically.
+在构建过程中，`process.env.REACT_APP_NOT_SECRET_CODE` 将被替换为 `REACT_APP_NOT_SECRET_CODE` 环境变量的值。请记住，`NODE_ENV` 变量将会被自动设定。
 
-When you load the app in the browser and inspect the `<input>`, you will see its value set to `abcdef`, and the bold text will show the environment provided when using `npm start`:
+在浏览器中加载应用程序并检查 `<input>` 时，你会看到它的值被设定为 `abcdef`，在执行 `npm start` 时，粗体文本将会显示当前环境。
 
 <!-- prettier-ignore-start -->
 
@@ -54,9 +54,9 @@ When you load the app in the browser and inspect the `<input>`, you will see its
 
 <!-- prettier-ignore-end -->
 
-The above form is looking for a variable called `REACT_APP_NOT_SECRET_CODE` from the environment. In order to consume this value, we need to have it defined in the environment. This can be done using two ways: either in your shell or in a `.env` file. Both of these ways are described in the next few sections.
+上面的表格正在当前环境中寻找叫做 `REACT_APP_NOT_SECRET_CODE` 的环境变量。为了使用这个值，我们需要在环境中对其进行定义。这可以通过两种方式完成：在 shell 中或在 `.env` 文件中。之后的章节中将会介绍这两种方式。
 
-Having access to the `NODE_ENV` is also useful for performing actions conditionally:
+可以访问 `NODE_ENV` 对于有条件的执行操作来说也很有用：
 
 ```js
 if (process.env.NODE_ENV !== 'production') {
@@ -64,26 +64,26 @@ if (process.env.NODE_ENV !== 'production') {
 }
 ```
 
-When you compile the app with `npm run build`, the minification step will strip out this condition, and the resulting bundle will be smaller.
+当你执行 `npm run build` 编译程序时，压缩步骤将会跳过此判断条件，且最终的打包文件将会比以往更小。
 
-## Referencing Environment Variables in the HTML
+## 在 HTML 中引用环境变量
 
-> Note: this feature is available with `react-scripts@0.9.0` and higher.
+> 注意：该功能仅支持 `react-scripts@0.9.0` 及以上版本。
 
-You can also access the environment variables starting with `REACT_APP_` in the `public/index.html`. For example:
+你还可以在 `public/index.html` 中访问以 `REACT_APP_` 开头的环境变量，例如：
 
 ```html
 <title>%REACT_APP_WEBSITE_NAME%</title>
 ```
 
-Note that the caveats from the above section apply:
+请注意，以上部分的警告适用于：
 
-- Apart from a few built-in variables (`NODE_ENV` and `PUBLIC_URL`), variable names must start with `REACT_APP_` to work.
-- The environment variables are injected at build time. If you need to inject them at runtime, [follow this approach instead](title-and-meta-tags.md#generating-dynamic-meta-tags-on-the-server).
+- 除了一些内置变量（`NODE_ENV` 与 `PUBLIC_URL`）以外，变量名称必须以 `REACT_APP_` 开头才能起作用。
+- 在构建时注入环境变量。如果需要在运行时注入它们，[请遵循此方法](title-and-meta-tags.md#generating-dynamic-meta-tags-on-the-server)。
 
-## Adding Temporary Environment Variables In Your Shell
+## 在你的 Shell 中添加临时环境变量
 
-Defining environment variables can vary between OSes. It’s also important to know that this manner is temporary for the life of the shell session.
+定义环境变量可能会因操作系统而异。同样重要的是，理解这种方式仅在 shell 临时会话的生命周期中起作用。
 
 ### Windows (cmd.exe)
 
@@ -91,7 +91,7 @@ Defining environment variables can vary between OSes. It’s also important to k
 set "REACT_APP_NOT_SECRET_CODE=abcdef" && npm start
 ```
 
-(Note: Quotes around the variable assignment are required to avoid a trailing whitespace.)
+（注意：必须在变量赋值周围加上引号，以避免出现空格）
 
 ### Windows (Powershell)
 
@@ -105,51 +105,51 @@ set "REACT_APP_NOT_SECRET_CODE=abcdef" && npm start
 REACT_APP_NOT_SECRET_CODE=abcdef npm start
 ```
 
-## Adding Development Environment Variables In `.env`
+## 在 `.env` 中添加开发环境变量
 
-> Note: this feature is available with `react-scripts@0.5.0` and higher.
+> 注意：该功能仅支持 `react-scripts@0.5.0` 及以上版本。
 
-To define permanent environment variables, create a file called `.env` in the root of your project:
+要定义永久性环境变量，请在项目的根目录下创建一个名为 `.env` 的文件：
 
 ```
 REACT_APP_NOT_SECRET_CODE=abcdef
 ```
 
-> Note: You must create custom environment variables beginning with `REACT_APP_`. Any other variables except `NODE_ENV` will be ignored to avoid [accidentally exposing a private key on the machine that could have the same name](https://github.com/facebook/create-react-app/issues/865#issuecomment-252199527). Changing any environment variables will require you to restart the development server if it is running.
+> 注意：你必须创建以 `REACT_APP_` 开头的自定义环境变量，除 `NODE_ENV` 外的任意其他变量都将被忽略，以避免[在机器上暴露可能具有相同名称的私钥](https://github.com/facebook/create-react-app/issues/865#issuecomment-252199527)。更改任何环境变量都需要你重新启动开发服务器（如果正在运行）。
 
-> Note: You need to restart the development server after changing `.env` files.
+> 注意：你需要在修改 `.env` 文件后重新启动开发服务器。
 
-`.env` files **should be** checked into source control (with the exclusion of `.env*.local`).
+`.env` 文件**应该**被纳入源代码管理中（不包含 `.env*.local`）。
 
-### What other `.env` files can be used?
+## 还可以使用哪些 `.env` 文件？
 
-> Note: this feature is **available with `react-scripts@1.0.0` and higher**.
+> 注意：该功能**仅支持 `react-scripts@1.0.0` 及以上版本。**
 
-- `.env`: Default.
-- `.env.local`: Local overrides. **This file is loaded for all environments except test.**
-- `.env.development`, `.env.test`, `.env.production`: Environment-specific settings.
-- `.env.development.local`, `.env.test.local`, `.env.production.local`: Local overrides of environment-specific settings.
+- `.env`：默认。
+- `.env.local`：本地覆盖。**此文件适用于除测试环境以外的所有环境。**
+- `.env.development`、`.env.test`、`.env.production`：针对特定环境的设置。
+- `.env.development.local`、`.env.test.local`、`.env.production.local`：针对特定环境的本地覆盖。
 
-Files on the left have more priority than files on the right:
+左边的文件比右边的文件优先级更高：
 
 - `npm start`: `.env.development.local`, `.env.development`, `.env.local`, `.env`
 - `npm run build`: `.env.production.local`, `.env.production`, `.env.local`, `.env`
 - `npm test`: `.env.test.local`, `.env.test`, `.env` (note `.env.local` is missing)
 
-These variables will act as the defaults if the machine does not explicitly set them.
+如果计算机未明确对其进行设定，它们将会被设定为默认值。
 
-Please refer to the [dotenv documentation](https://github.com/motdotla/dotenv) for more details.
+请参阅 [dotenv 文档](https://github.com/motdotla/dotenv)以了解更多信息。
 
-> Note: If you are defining environment variables for development, your CI and/or hosting platform will most likely need
-> these defined as well. Consult their documentation how to do this. For example, see the documentation for [Travis CI](https://docs.travis-ci.com/user/environment-variables/) or [Heroku](https://devcenter.heroku.com/articles/config-vars).
+> 注意：如果要为开发环境定义环境变量，你很可能需要 CI 和/或托管平台。
+> 这些环境变量也会被定义。请参阅他们的文档了解如何执行此操作。例如 [Travis CI](https://docs.travis-ci.com/user/environment-variables/) 或 [Heroku](https://devcenter.heroku.com/articles/config-vars) 的文档。
 
-### Expanding Environment Variables In `.env`
+### 在 `.env` 中扩展环境变量
 
-> Note: this feature is available with `react-scripts@1.1.0` and higher.
+> 注意：该功能**仅支持 `react-scripts@1.1.0` 及以上版本。**
 
-Expand variables already on your machine for use in your `.env` file (using [dotenv-expand](https://github.com/motdotla/dotenv-expand)).
+扩展机器上已存在的变量，以便在你的 `.env` 文件中使用（使用[dotenv-expand](https://github.com/motdotla/dotenv-expand)）。
 
-For example, to get the environment variable `npm_package_version`:
+例如，要获取环境变量 `npm_package_version`：
 
 ```
 REACT_APP_VERSION=$npm_package_version
@@ -157,7 +157,7 @@ REACT_APP_VERSION=$npm_package_version
 # REACT_APP_VERSION=${npm_package_version}
 ```
 
-Or expand variables local to the current `.env` file:
+或在本地扩展当前 `.env` 文件中的变量：
 
 ```
 DOMAIN=www.example.com
