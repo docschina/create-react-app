@@ -1,22 +1,22 @@
 ---
 id: title-and-meta-tags
-title: Title and Meta Tags
-sidebar_label: Title & Meta Tags
+title: 标题与元标签
+sidebar_label: 标题 & 元标签
 ---
 
-## Changing the title tag
+## 更改标题标签
 
-You can find the source HTML file in the `public` folder of the generated project. You may edit the `<title>` tag in it to change the title from “React App” to anything else.
+你可以在生成的项目内的 `public` 文件夹中找到源 HTML 文件，然后在文件内部编辑 `<title>` 标签，以将标题从 "React App" 更改为其他任何内容。
 
-Note that normally you wouldn’t edit files in the `public` folder very often. For example, [adding a stylesheet](adding-a-stylesheet.md) is done without touching the HTML.
+请注意，通常情况下你不会经常编辑 `public` 文件夹内的文件。例如，[添加样式表](adding-a-stylesheet.md) 就不需要修改 HTML。
 
-If you need to dynamically update the page title based on the content, you can use the browser [`document.title`](https://developer.mozilla.org/en-US/docs/Web/API/Document/title) API. For more complex scenarios when you want to change the title from React components, you can use [React Helmet](https://github.com/nfl/react-helmet), a third party library.
+如果你需要根据内容动态更新页面标题，则可以使用浏览器 [`document.title`](https://developer.mozilla.org/en-US/docs/Web/API/Document/title) API。如果你想要在更复杂的场景下，在 React 组件中修改标题的话，你可以使用 [React Helmet](https://github.com/nfl/react-helmet) 这种第三方库。
 
-If you use a custom server for your app in production and want to modify the title before it gets sent to the browser, you can follow advice in [this section](#generating-dynamic-meta-tags-on-the-server). Alternatively, you can pre-build each page as a static HTML file which then loads the JavaScript bundle, which is covered [here](pre-rendering-into-static-html-files.md).
+如果你在生产环境中为你的应用启用了自定义服务器，并且想要在标题发送至浏览器前对其进行修改，则可以按照 [本章节](#generating-dynamic-meta-tags-on-the-server) 中的建议操作。另外，你可以将每个页面先预渲染为静态 HTML 文件，然后再加载 JavaScript 包，该功能在 [此处](pre-rendering-into-static-html-files.md) 有详细介绍。
 
-## Generating Dynamic `<meta>` Tags on the Server
+## 在服务器上生成动态 `<meta>` 标签
 
-Since Create React App doesn’t support server rendering, you might be wondering how to make `<meta>` tags dynamic and reflect the current URL. To solve this, we recommend to add placeholders into the HTML, like this:
+因为 Create React App 不支持服务器渲染，你可能想知道如何让 `<meta>` 标签动态反映当前 URL。为了解决这额问题，我们建议在 HTML 中添加占位符，如下所示：
 
 ```html
 <!DOCTYPE html>
@@ -28,13 +28,13 @@ Since Create React App doesn’t support server rendering, you might be wonderin
 </html>
 ```
 
-Then, on the server, regardless of the backend you use, you can read `index.html` into memory and replace `__OG_TITLE__`, `__OG_DESCRIPTION__`, and any other placeholders with values depending on the current URL. Make sure to sanitize and escape the interpolated values so that they are safe to embed into HTML!
+然后，在服务器上，无论使用哪种后端，你都可以将 `index.html` 读入内存，并将 `__OG_TITLE__`、`__OG_DESCRIPTION__` 及其他占位符替换为由当前 URL 决定的值。确保清理并转义插值，以便将它们安全的嵌入 HTML！
 
-If you use a Node server, you can even share the route matching logic between the client and the server. However duplicating it also works fine in basic cases.
+如果使用 Node 服务器，你甚至可以在客户端和服务器之间共享路由匹配逻辑，不过复制它也能在基础情况下正常工作。
 
-## Injecting Data from the Server into the Page
+## 将数据从服务器注入页面
 
-Similarly to the previous section, you can leave some placeholders in the HTML that inject global variables, for example:
+与上一节类似，你可以在 HTML 中保留一些用于插入全局变量的占位符，例如：
 
 ```js
 <!doctype html>
@@ -45,4 +45,4 @@ Similarly to the previous section, you can leave some placeholders in the HTML t
     </script>
 ```
 
-Then, on the server, you can replace `__SERVER_DATA__` with a JSON of real data right before sending the response. The client code can then read `window.SERVER_DATA` to use it. **Make sure to [sanitize the JSON before sending it to the client](https://medium.com/node-security/the-most-common-xss-vulnerability-in-react-js-applications-2bdffbcc1fa0) as it makes your app vulnerable to XSS attacks.**
+然后，在服务器上，你可以在发送响应之前，将 `__SERVER_DATA__` 替换为真实的 JSON 数据。客户端代码可以读取 `window.SERVER_DATA` 以使用它。**请确保 [在将 JSON 发送到客户端之前先对其进行无害化处理](https://medium.com/node-security/the-most-common-xss-vulnerability-in-react-js-applications-2bdffbcc1fa0)，以免你的应用收到 XSS 攻击。**
