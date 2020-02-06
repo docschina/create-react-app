@@ -1,37 +1,37 @@
 ---
 id: deployment
-title: Deployment
-sidebar_label: Deployment
+title: 部署
+sidebar_label: 部署
 ---
 
-`npm run build` creates a `build` directory with a production build of your app. Set up your favorite HTTP server so that a visitor to your site is served `index.html`, and requests to static paths like `/static/js/main.<hash>.js` are served with the contents of the `/static/js/main.<hash>.js` file. For more information see the [production build](production-build.md) section.
+`npm run build` 在 `build` 目录下为你的应用创建了生产环境构建版本。设置你喜欢的 HTTP 服务器，以便访问者能够通过 `index.html` 访问你的站点，并向 `/static/js/main.<hash>.js` 这种静态路径进行请求，以获得 `/static/js/main.<hash>.js` 文件内容。有关更多信息，请查阅[生产环境构建](production-build.md)部分。
 
-## Static Server
+## 静态服务器
 
-For environments using [Node](https://nodejs.org/), the easiest way to handle this would be to install [serve](https://github.com/zeit/serve) and let it handle the rest:
+对于使用[Node](https://nodejs.org/)的环境，最简单的解决途径是安装 [serve](https://github.com/zeit/serve)，并让其处理剩下的内容：
 
 ```sh
 npm install -g serve
 serve -s build
 ```
 
-The last command shown above will serve your static site on the port **5000**. Like many of [serve](https://github.com/zeit/serve)’s internal settings, the port can be adjusted using the `-l` or `--listen` flags:
+上面显示的最后一个命令将在 **5000** 端口上为你的静态站点提供服务。与 [serve](https://github.com/zeit/serve) 的许多内部设置一样，可以使用 `-l` 或 `--listen` 选项来调整端口：
 
 ```sh
 serve -s build -l 4000
 ```
 
-Run this command to get a full list of the options available:
+运行此命令以获取可用选项的完整列表：
 
 ```sh
 serve -h
 ```
 
-## Other Solutions
+## 其他解决方案
 
-You don’t necessarily need a static server in order to run a Create React App project in production. It also works well when integrated into an existing server side app.
+你不一定需要静态服务器来在生产环境下运行 Create React App 项目，将其集成至已有的服务端应用程序时也能很好的工作。
 
-Here’s a programmatic example using [Node](https://nodejs.org/) and [Express](https://expressjs.com/):
+这是一个使用[Node](https://nodejs.org/)和[Express](https://expressjs.com/)的程序示例：
 
 ```javascript
 const express = require('express');
@@ -47,17 +47,17 @@ app.get('/', function(req, res) {
 app.listen(9000);
 ```
 
-The choice of your server software isn’t important either. Since Create React App is completely platform-agnostic, there’s no need to explicitly use Node.
+服务器软件的选择并不重要。因为 Create React App 完全不依赖于平台，所以并不是一定要使用 Node。
 
-The `build` folder with static assets is the only output produced by Create React App.
+`build` 文件夹下的静态 assets 是 Create React App 生成的唯一输出。
 
-However this is not quite enough if you use client-side routing. Read the next section if you want to support URLs like `/todos/42` in your single-page app.
+但是，这对于使用客户端路由来说还远远不够。阅读下一章节，以了解如何在你的单页面应用中支持像 `/todos/42` 之类的 URLs。
 
-## Serving Apps with Client-Side Routing
+## 通过客户端路由提供服务
 
-If you use routers that use the HTML5 [`pushState` history API](https://developer.mozilla.org/en-US/docs/Web/API/History_API#Adding_and_modifying_history_entries) under the hood (for example, [React Router](https://github.com/ReactTraining/react-router) with `browserHistory`), many static file servers will fail. For example, if you used React Router with a route for `/todos/42`, the development server will respond to `localhost:3000/todos/42` properly, but an Express serving a production build as above will not.
+如果你使用基于 HTML5 [`pushState` history API](https://developer.mozilla.org/en-US/docs/Web/API/History_API#Adding_and_modifying_history_entries) 构建的路由（例如搭配 `browserHistory` 的 [React Router](https://github.com/ReactTraining/react-router)），许多静态服务器都将报错。如果你混用 React Router 与路径 `/todos/42`，开发服务器将会正确响应 `localhost:3000/todos/42`，但是将其部署在 Express 服务器上时则不会正确响应。
 
-This is because when there is a fresh page load for a `/todos/42`, the server looks for the file `build/todos/42` and does not find it. The server needs to be configured to respond to a request to `/todos/42` by serving `index.html`. For example, we can amend our Express example above to serve `index.html` for any unknown paths:
+这是因为当我们为 `/todos/42` 生成新页面时，服务器找不到名为 `build/todos/42` 的文件。需要修改服务器配置以通过 `index.html` 响应针对 `/todos/42` 的请求。例如，我们可以修改上述 Express 实例，为所有未知路径提供 `index.html`：
 
 ```diff
  app.use(express.static(path.join(__dirname, 'build')));
@@ -68,7 +68,7 @@ This is because when there is a fresh page load for a `/todos/42`, the server lo
  });
 ```
 
-If you’re using [Apache HTTP Server](https://httpd.apache.org/), you need to create a `.htaccess` file in the `public` folder that looks like this:
+如果你使用的是 [Apache HTTP 服务器](https://httpd.apache.org/)，则需要在 `public` 文件夹中创建一个 `.htaccess` 文件，如下所示：
 
 ```
     Options -MultiViews
@@ -77,77 +77,70 @@ If you’re using [Apache HTTP Server](https://httpd.apache.org/), you need to c
     RewriteRule ^ index.html [QSA,L]
 ```
 
-It will get copied to the `build` folder when you run `npm run build`.
+当你执行 `npm run build` 时，它会被复制到 `build` 文件夹。
 
-If you’re using [Apache Tomcat](https://tomcat.apache.org/), you need to follow [this Stack Overflow answer](https://stackoverflow.com/a/41249464/4878474).
+如果你使用的是 [Apache Tomcat](https://tomcat.apache.org/)，则需要参照[这篇 Stack Overflow 答案](https://stackoverflow.com/a/41249464/4878474)。
 
-Now requests to `/todos/42` will be handled correctly both in development and in production.
+现在，所有对 `todos/42` 的请求在开发和生产环境中都会得到正确的处理。
 
-On a production build, and when you've [opted-in](making-a-progressive-web-app.md#why-opt-in),
-a [service worker](https://developers.google.com/web/fundamentals/primers/service-workers/) will automatically handle all navigation requests, like for
-`/todos/42`, by serving the cached copy of your `index.html`. This
-service worker navigation routing can be configured or disabled by
-[`eject`ing](available-scripts.md#npm-run-eject) and then modifying the
-[`navigateFallback`](https://github.com/GoogleChrome/sw-precache#navigatefallback-string)
-and [`navigateFallbackWhitelist`](https://github.com/GoogleChrome/sw-precache#navigatefallbackwhitelist-arrayregexp)
-options of the `SWPrecachePlugin` [configuration](../config/webpack.config.prod.js).
+在生产环境构建版本中，当你选择[开启 PWA](making-a-progressive-web-app.md#why-opt-in) 时，[service worker](https://developers.google.com/web/fundamentals/primers/service-workers/) 将会自动处理所有导航请求，像 `/todos/42` 这种就会提供一个 `index.html` 的缓存拷贝。service worker 导航路由可以进行相关配置，或通过 [`eject`ing](available-scripts.md#npm-run-eject) 禁用，然后修改 `SWPrecachePlugin` [配置项](../config/webpack.config.prod.js)中的 [`navigateFallback`](https://github.com/GoogleChrome/sw-precache#navigatefallback-string) 和 [`navigateFallbackWhitelist`](https://github.com/GoogleChrome/sw-precache#navigatefallbackwhitelist-arrayregexp)。
 
-When users install your app to the homescreen of their device the default configuration will make a shortcut to `/index.html`. This may not work for client-side routers which expect the app to be served from `/`. Edit the web app manifest at [`public/manifest.json`](public/manifest.json) and change `start_url` to match the required URL scheme, for example:
+当用户将你的应用安装至设备主屏幕时，默认配置将会提供一个 `/index.html` 快捷方式。对于希望通过 `/` 来提供应用的客户端路由来说可能会导致失效。在 [`public/manifest.json`](public/manifest.json) 上修改 web 应用清单，并修改 `start_url` 以匹配所需的 URL scheme，例如：
 
 ```js
   "start_url": ".",
 ```
 
-## Building for Relative Paths
+## 相对路径构建
 
-By default, Create React App produces a build assuming your app is hosted at the server root.
+默认情况下，Create React App 会生成一个假定你的应用被托管在服务器根目录下的构建。
 
-To override this, specify the `homepage` in your `package.json`, for example:
+要覆盖此设置，请指定 `package.json` 中的 `homepage` 项，例如：
 
 ```js
   "homepage": "http://mywebsite.com/relativepath",
 ```
 
-This will let Create React App correctly infer the root path to use in the generated HTML file.
+这将使 Create React App 正确判断要生成的 HTML 文件中该使用的根路径。
 
-**Note**: If you are using `react-router@^4`, you can root `<Link>`s using the `basename` prop on any `<Router>`.
+**注意**：如果你使用的是 `react-router@^4`，则可以在任何 `<Router>` 上使用 `basename` 属性生成 `<Link>`
 
-More information [here](https://reacttraining.com/react-router/web/api/BrowserRouter/basename-string).
+更多信息请参阅[此处](https://reacttraining.com/react-router/web/api/BrowserRouter/basename-string)。
 
-For example:
+例如：
 
 ```js
 <BrowserRouter basename="/calendar"/>
 <Link to="/today"/> // renders <a href="/calendar/today">
 ```
 
-### Serving the Same Build from Different Paths
+### 对不同路径提供相同的构建
 
-> Note: this feature is available with `react-scripts@0.9.0` and higher.
+> 注意：该功能仅支持 `react-scripts@0.9.0` 及以上版本。
 
-If you are not using the HTML5 `pushState` history API or not using client-side routing at all, it is unnecessary to specify the URL from which your app will be served. Instead, you can put this in your `package.json`:
+如果你没有调用 HTML5 `pushState` history API 或根本没有使用客户端路由，则无需指定解析应用的 URL。作为代替，你可以将其放在 `package.json` 中：
 
 ```js
   "homepage": ".",
 ```
 
-This will make sure that all the asset paths are relative to `index.html`. You will then be able to move your app from `http://mywebsite.com` to `http://mywebsite.com/relativepath` or even `http://mywebsite.com/relative/path` without having to rebuild it.
+这将确保所有 asset 路径都是相对于 `index.html` 的。你可以在不重新构建将应用程序从 `http://mywebsite.com` 移动到 `http://mywebsite.com/relativepath`，甚至是 `http://mywebsite.com/relative/path`。
 
-## Customizing Environment Variables for Arbitrary Build Environments
+## 为任意构建环境定制环境变量
 
-You can create an arbitrary build environment by creating a custom `.env` file and loading it using [env-cmd](https://www.npmjs.com/package/env-cmd).
+你可以通过创建自定义 `.env` 文件来创建一个定制构建环境，并使用 [env-cmd](https://www.npmjs.com/package/env-cmd) 对其进行加载。
 
-For example, to create a build environment for a staging environment:
+例如，要为 staging 环境创建构建环境：
 
-1. Create a file called `.env.staging`
-1. Set environment variables as you would any other `.env` file (e.g. `REACT_APP_API_URL=http://api-staging.example.com`)
-1. Install [env-cmd](https://www.npmjs.com/package/env-cmd)
+1. 创建一个名为 `.env.staging` 的文件
+2. 像设置其他 `.env` 文件一样设置环境变量（例如 `REACT_APP_API_URL=http://api-staging.example.com`）
+3. 安装 [env-cmd](https://www.npmjs.com/package/env-cmd)
    ```sh
    $ npm install env-cmd --save
    $ # or
    $ yarn add env-cmd
    ```
-1. Add a new script to your `package.json`, building with your new environment:
+4. 在你的 `package.json` 中添加一个新脚本，使用新环境进行构建：
    ```json
    {
      "scripts": {
@@ -156,33 +149,33 @@ For example, to create a build environment for a staging environment:
    }
    ```
 
-Now you can run `npm run build:staging` to build with the staging environment config.
-You can specify other environments in the same way.
+现在你可以运行 `npm run build:staging` 以使用 staging 环境配置进行构建。
+你可以用相同的方式指定其他环境。
 
-Variables in `.env.production` will be used as fallback because `NODE_ENV` will always be set to `production` for a build.
+`.env.production` 中的变量将用作后备选项，因为构建时 `NODE_ENV` 将始终被设定为 `production`。
 
 ## [AWS Amplify](http://console.amplify.aws)
 
-The AWS Amplify Console provides continuous deployment and hosting for modern web apps (single page apps and static site generators) with serverless backends. The Amplify Console offers globally available CDNs, custom domain setup, feature branch deployments, and password protection.
+AWS Amplify 控制台通过 serverless backends 为现代 Web 应用（单页应用和静态网站生成器）提供持续性部署与托管。Amplify Console 提供了全球可用的 CDNS，自定义域名设置，功能分支部署以及密码保护。
 
-1. Login to the Amplify Console [here](https://console.aws.amazon.com/amplify/home).
-1. Connect your Create React App repo and pick a branch. If you're looking for a Create React App+Amplify starter, try the [create-react-app-auth-amplify starter](https://github.com/swaminator/create-react-app-auth-amplify) that demonstrates setting up auth in 10 minutes with Create React App.
-1. The Amplify Console automatically detects the build settings. Choose Next.
-1. Choose _Save and deploy_.
+1. 从[这里](https://console.aws.amazon.com/amplify/home)登入 Amplify 控制台
+2. 连接你的 Create React App 仓库并选择一个分支。如果你在寻找 Create React App + Amplify 的入门选择，请尝试[create-react-app-auth-amplify 入门程序](https://github.com/swaminator/create-react-app-auth-amplify)，它演示了如何在 10 分支内使用 Create React App 设置身份验证。
+3. Amplify Console 自动检测构建设置，点击下一步。
+4. 选择 _保存并部署_。
 
-If the build succeeds, the app is deployed and hosted on a global CDN with an amplifyapp.com domain. You can now continuously deploy changes to your frontend or backend. Continuous deployment allows developers to deploy updates to their frontend and backend on every code commit to their Git repository.
+如果构建成功，该应用会被部署并托管至拥有 amplifyapp.com 域名的全局 CDN 上。现在，你可以将更改持续部署至你的前端或后端。持续部署允许开发人员在每次修改代码并提交至 Git 仓库时，将更新自动部署至前端与后端。
 
 ## [Azure](https://azure.microsoft.com/)
 
-See [this](https://medium.com/@to_pe/deploying-create-react-app-on-microsoft-azure-c0f6686a4321) blog post on how to deploy your React app to Microsoft Azure.
+查阅[这篇博文](https://medium.com/@to_pe/deploying-create-react-app-on-microsoft-azure-c0f6686a4321)以了解如何将 React 应用部署至 Microsoft Azure。
 
-See [this](https://medium.com/@strid/host-create-react-app-on-azure-986bc40d5bf2#.pycfnafbg) blog post or [this](https://github.com/ulrikaugustsson/azure-appservice-static) repo for a way to use automatic deployment to Azure App Service.
+查阅[这篇博文](https://medium.com/@strid/host-create-react-app-on-azure-986bc40d5bf2#.pycfnafbg)或[这个仓库](https://github.com/ulrikaugustsson/azure-appservice-static)，以了解自动部署至 Azure App Service 的方法。
 
 ## [Firebase](https://firebase.google.com/)
 
-Install the Firebase CLI if you haven’t already by running `npm install -g firebase-tools`. Sign up for a [Firebase account](https://console.firebase.google.com/) and create a new project. Run `firebase login` and login with your previous created Firebase account.
+如果尚未安装 Firebase 命令行工具，请执行 `npm install -g firebase-tools`。注册一个 [Firebase 账户](https://console.firebase.google.com/)并创建一个新项目。运行 `firebase login` 并使用你先前创建的 Firebase 账户登入。
 
-Then run the `firebase init` command from your project’s root. You need to choose the **Hosting: Configure and deploy Firebase Hosting sites** and choose the Firebase project you created in the previous step. You will need to agree with `database.rules.json` being created, choose `build` as the public directory, and also agree to **Configure as a single-page app** by replying with `y`.
+随后在项目的根目录下执行 `firebase init` 命令。你需要选择 **Hosting: Configure and deploy Firebase Hosting sites**，然后选择上一步创建的 Firebase 项目。你需要统一创建的 `database.rules.json`，选择 `build` 作为公共目录，并选择 `y` 以同意 **Configure as a single-page app**。
 
 ```sh
     === Project Setup
@@ -219,7 +212,7 @@ Then run the `firebase init` command from your project’s root. You need to cho
     ✔  Firebase initialization complete!
 ```
 
-IMPORTANT: you need to set proper HTTP caching headers for `service-worker.js` file in `firebase.json` file or you will not be able to see changes after first deployment ([issue #2440](https://github.com/facebook/create-react-app/issues/2440)). It should be added inside `"hosting"` key like next:
+重要提示：你需要在 `firebase.json` 文件中为 `service-worker.js` 设置正确的 HTTP 缓存报头，否则你无法在第一次以后的部署中看到更改（[issue #2440](https://github.com/facebook/create-react-app/issues/2440)）。应该如下所示将其添加到 `host` 中：
 
 ```json
 {
@@ -231,7 +224,7 @@ IMPORTANT: you need to set proper HTTP caching headers for `service-worker.js` f
     ...
 ```
 
-Now, after you create a production build with `npm run build`, you can deploy it by running `firebase deploy`.
+现在，执行 `npm run build` 创建生产环境版本后，可以通过执行 `firebase deploy` 来部署它。
 
 ```sh
     === Deploying to 'example-app-fd690'...
@@ -249,55 +242,55 @@ Now, after you create a production build with `npm run build`, you can deploy it
     Hosting URL: https://example-app-fd690.firebaseapp.com
 ```
 
-For more information see [Firebase Hosting](https://firebase.google.com/docs/hosting).
+请查阅 [Firebase 托管](https://firebase.google.com/docs/hosting)以了解更多相关信息。
 
 ## [GitHub Pages](https://pages.github.com/)
 
-> Note: this feature is available with `react-scripts@0.2.0` and higher.
+> 注意：该功能仅支持 `react-scripts@0.2.0` 及以上版本。
 
-### Step 1: Add `homepage` to `package.json`
+### 步骤 1：将 `homepage` 添加到 `package.json`
 
-**The step below is important!**<br/>
+**以下步骤非常重要！**<br />
 
-**If you skip it, your app will not deploy correctly.**
+**如果你跳过它，你的应用可能无法被正常部署。**
 
-Open your `package.json` and add a `homepage` field for your project:
+打开你的 `package.json` 文件，并为你的项目添加 `homepage` 字段：
 
 ```json
   "homepage": "https://myusername.github.io/my-app",
 ```
 
-or for a GitHub user page:
+或 Github user 页面：
 
 ```json
   "homepage": "https://myusername.github.io",
 ```
 
-or for a custom domain page:
+或自定义域名页面：
 
 ```json
   "homepage": "https://mywebsite.com",
 ```
 
-Create React App uses the `homepage` field to determine the root URL in the built HTML file.
+Crete React App 使用 `homepage` 字段来确定被构建的 HTML 文件的根 URL。
 
-### Step 2: Install `gh-pages` and add `deploy` to `scripts` in `package.json`
+### 步骤 2：安装 `gh-pages` 并将 `deploy` 与 `scripts` 添加至 `package.json` 中
 
-Now, whenever you run `npm run build`, you will see a cheat sheet with instructions on how to deploy to GitHub Pages.
+现在，每当你执行 `npm run build`，你都会看到一个关于如何部署到 GitHub Pages 的备忘单。
 
-To publish it at [https://myusername.github.io/my-app](https://myusername.github.io/my-app), run:
+要在 [https://myusername.github.io/my-app](https://myusername.github.io/my-app) 上发布，执行：
 
 ```sh
 npm install --save gh-pages
 ```
 
-Alternatively you may use `yarn`:
+或者你可以使用 `yarn` 代替：
 
 ```sh
 yarn add gh-pages
 ```
 
-Add the following scripts in your `package.json`:
+将下列脚本添加到 `package.json` 中：
 
 ```diff
   "scripts": {
@@ -307,12 +300,11 @@ Add the following scripts in your `package.json`:
     "build": "react-scripts build",
 ```
 
-The `predeploy` script will run automatically before `deploy` is run.
+`predeploy` 将在 `deploy` 命令执行前自动运行。
 
-If you are deploying to a GitHub user page instead of a project page you'll need to make one
-additional modification:
+如果要部署到 Github user 页面，而不是项目页面，则需要添加一个额外修改：
 
-1. Tweak your `package.json` scripts to push deployments to **master**:
+1. 调整你的 `package.json` 脚本以将部署推送至 **master**：
 
 ```diff
   "scripts": {
@@ -321,68 +313,68 @@ additional modification:
 +   "deploy": "gh-pages -b master -d build",
 ```
 
-### Step 3: Deploy the site by running `npm run deploy`
+### 步骤 3：执行 `npm run deploy` 以部署站点
 
-Then run:
+随后执行：
 
 ```sh
 npm run deploy
 ```
 
-### Step 4: For a project page, ensure your project’s settings use `gh-pages`
+### 步骤 4：对于项目页面，确保你的项目设置中使用 `gh-pages`
 
-Finally, make sure **GitHub Pages** option in your GitHub project settings is set to use the `gh-pages` branch:
+最后，确保将 GitHub 项目设置中的 **Github Pages** 选项设定为使用 `gh-pages` 分支：
 
 <img src="https://i.imgur.com/HUjEr9l.png" width="500" alt="gh-pages branch setting" />
 
-### Step 5: Optionally, configure the domain
+### 步骤 5：配置域名（可选）
 
-You can configure a custom domain with GitHub Pages by adding a `CNAME` file to the `public/` folder.
+你可以通过将 `CNAME` 文件添加至 `public/` 文件夹中为 GitHub Pages 配置自定义域名。
 
-Your CNAME file should look like this:
+你的 CNAME 文件应该如下所示：
 
 ```
 mywebsite.com
 ```
 
-### Notes on client-side routing
+### 有关客户端路由的说明
 
-GitHub Pages doesn’t support routers that use the HTML5 `pushState` history API under the hood (for example, React Router using `browserHistory`). This is because when there is a fresh page load for a url like `http://user.github.io/todomvc/todos/42`, where `/todos/42` is a frontend route, the GitHub Pages server returns 404 because it knows nothing of `/todos/42`. If you want to add a router to a project hosted on GitHub Pages, here are a couple of solutions:
+Github Pages 不支持使用基于 HTML5 `pushState` history API 的路由（例如，使用 `browserHistory` 的 React Router）。这是因为当通过类似于 `http://user.github.io/todomvc/todos/42` 这样的 url 访问新页面时，`/todo/42` 是前端路由，Github Pages 服务器会返回 404，因为它完全不了解 `/todos/42` 的相关信息。如果要为托管在 GitHub Pages 上的项目添加路由的话，有以下两种解决方案：
 
-- You could switch from using HTML5 history API to routing with hashes. If you use React Router, you can switch to `hashHistory` for this effect, but the URL will be longer and more verbose (for example, `http://user.github.io/todomvc/#/todos/42?_k=yknaj`). [Read more](https://reacttraining.com/react-router/web/api/Router) about different history implementations in React Router.
-- Alternatively, you can use a trick to teach GitHub Pages to handle 404s by redirecting to your `index.html` page with a custom redirect parameter. You would need to add a `404.html` file with the redirection code to the `build` folder before deploying your project, and you’ll need to add code handling the redirect parameter to `index.html`. You can find a detailed explanation of this technique [in this guide](https://github.com/rafrex/spa-github-pages).
+你可以从调用 HTML5 history API 转至使用哈希路由。如果使用 React Router，可以切换至 `hashHistory` 来达到这种效果，但是 URL 会变得更长且更复杂（例如, `http://user.github.io/todomvc/#/todos/42?_k=yknaj`）。阅读此文以[了解更多](https://reacttraining.com/react-router/web/api/Router)关于 React Router 中不同历史记录实现的详细说明。
+或者，你可以使用黑魔法来告诉 GitHub Pages 如何处理 404，方法是使用自定义的重定向参数以重定向至你的 `index.html` 页面。在部署项目之前，你需要将带有重定向代码的 `404.html` 文件添加到 `build` 文件夹中，且需要在 `index.html` 中添加处理重定向参数的代码。你可以在[这篇指南](https://github.com/rafrex/spa-github-pages)中找到有关此技巧的详细说明。
 
-### Troubleshooting
+### 故障排除
 
 #### "/dev/tty: No such a device or address"
 
-If, when deploying, you get `/dev/tty: No such a device or address` or a similar error, try the following:
+如果在部署时看到 `/dev/tty: No such a device or address` 或与之类似的错误，请尝试以下操作：
 
-1. Create a new [Personal Access Token](https://github.com/settings/tokens)
+1. 创建一个新的[个人访问 Token](https://github.com/settings/tokens)
 2. `git remote set-url origin https://<user>:<token>@github.com/<user>/<repo>` .
-3. Try `npm run deploy` again
+3. 再次执行 `npm run deploy`
 
 #### "Cannot read property 'email' of null"
 
-If, when deploying, you get `Cannot read property 'email' of null`, try the following:
+如果在部署时看到 `Cannot read property 'email' of null`，请尝试以下操作：
 
 1. `git config --global user.name '<your_name>'`
 2. `git config --global user.email '<your_email>'`
-3. Try `npm run deploy` again
+3. 再次执行 `npm run deploy`
 
 ## [Heroku](https://www.heroku.com/)
 
-Use the [Heroku Buildpack for Create React App](https://github.com/mars/create-react-app-buildpack).
+使用[为 Create React App 定制的 Heroku 构建工具](https://github.com/mars/create-react-app-buildpack)
 
-You can find instructions in [Deploying React with Zero Configuration](https://blog.heroku.com/deploying-react-with-zero-configuration).
+你可以在[零配置部署 React](https://blog.heroku.com/deploying-react-with-zero-configuration)中找到说明。
 
-### Resolving Heroku Deployment Errors
+### 解决 Heroku 部署错误
 
-Sometimes `npm run build` works locally but fails during deploy via Heroku. Following are the most common cases.
+有时 `npm run build` 运行在本地，但是在线上部署至 Heroku 时失败。以下是最常见的情况。
 
 #### "Module not found: Error: Cannot resolve 'file' or 'directory'"
 
-If you get something like this:
+如果你得到这样的信息：
 
 ```
 remote: Failed to create a production build. Reason:
@@ -390,13 +382,13 @@ remote: Module not found: Error: Cannot resolve 'file' or 'directory'
 MyDirectory in /tmp/build_1234/src
 ```
 
-It means you need to ensure that the lettercase of the file or directory you `import` matches the one you see on your filesystem or on GitHub.
+这意味着你需要确保 `import` 的文件或目录本身的字母大小写和文件系统或 GitHub 上的字母大小写相匹配。
 
-This is important because Linux (the operating system used by Heroku) is case sensitive. So `MyDirectory` and `mydirectory` are two distinct directories and thus, even though the project builds locally, the difference in case breaks the `import` statements on Heroku remotes.
+这很重要，因为 Linux（Heroku 所使用的操作系统）区分大小写。因此，`MyDirectory` 和 `mydirectory` 代表着两个不同的目录，同样的，即使项目在本地构建，大小写的差异也会导致 Heroku 远程服务器上的 `import` 语句被破坏。
 
 #### "Could not find a required file."
 
-If you exclude or ignore necessary files from the package you will see a error similar this one:
+如果你从包中排除或忽略了必要的文件，你将会看到类似这样的错误：
 
 ```
 remote: Could not find a required file.
@@ -407,91 +399,91 @@ remote: npm ERR! Linux 3.13.0-105-generic
 remote: npm ERR! argv "/tmp/build_a2875fc163b209225122d68916f1d4df/.heroku/node/bin/node" "/tmp/build_a2875fc163b209225122d68916f1d4df/.heroku/node/bin/npm" "run" "build"
 ```
 
-In this case, ensure that the file is there with the proper lettercase and that’s not ignored on your local `.gitignore` or `~/.gitignore_global`.
+在这种情况下，请确保文件大小写正确，且不会在本地 `.gitignore` 或 `~/.gitignore_global` 中被忽略。
 
 ## [Netlify](https://www.netlify.com/)
 
-**To do a manual deploy to Netlify’s CDN:**
+**要手动部署到Netlify的CDN：**
 
 ```sh
 npm install netlify-cli -g
 netlify deploy
 ```
 
-Choose `build` as the path to deploy.
+选择“ build”作为部署路径。
 
-**To setup continuous delivery:**
+**要配置持续部署：**
 
-With this setup Netlify will build and deploy when you push to git or open a pull request:
+按照以下步骤执行，以使 Netlify 在你推送到 git 或开启 pull request 时自动构建并部署：
 
-1. [Start a new netlify project](https://app.netlify.com/signup)
-2. Pick your Git hosting service and select your repository
-3. Click `Build your site`
+1. [开启一个新的 netlify 项目](https://app.netlify.com/signup)
+2. 选择你的 Git 托管服务，然后选择你的仓库
+3. 点击 `Build your site`
 
-**Support for client-side routing:**
+**客户端路由支持：**
 
-To support `pushState`, make sure to create a `public/_redirects` file with the following rewrite rules:
+为了支持  `pushState`，请确保使用以下重写规则创建 `public/_redirects` 文件：
 
 ```
 /*  /index.html  200
 ```
 
-When you build the project, Create React App will place the `public` folder contents into the build output.
+在构建项目时，Create React App 将把 `public` 文件夹内容置入构建输出中。
 
 ## [ZEIT Now](https://zeit.co)
 
-[ZEIT Now](https://zeit.co) is a cloud platform for websites and serverless APIs, that you can use to deploy your Create React App projects to your personal domain (or a free `.now.sh` suffixed URL).
+[ZEIT Now](https://zeit.co) 是一个针对网站和 serverless APIs 的云平台，可用于将你的 Create React App 项目部署个人域名（或免费的 `.now.sh` 后缀 URL）。
 
-This guide will show you how to get started in a few quick steps:
+该指南将像你展示快速入门的相关步骤：
 
-### Step 1: Installing Now CLI
+### 步骤 1：安装 Now 命令行工具
 
-To install their command-line interface with [npm](https://www.npmjs.com/package/now), run the following command:
+要使用 [npm](https://www.npmjs.com/package/now) 安装命令行工具，请执行以下命令：
 
 ```shell
 npm i -g now
 ```
 
-### Step 2: Deploying
+### 步骤 2：部署
 
-You can deploy your application by running the following command in the root of the project directory:
+你可以通过在项目目录的根路径下执行以下命令来部署应用程序：
 
 ```shell
 now
 ```
 
-**Alternatively**, you can also use their integration for [GitHub](https://zeit.co/github) or [GitLab](https://zeit.co/gitlab).
+**或者**，你也可以使用他们的 [GitHub](https://zeit.co/github) 或 [GitLab](https://zeit.co/gitlab) 集成。
 
-That’s all!
+这样就可以了！
 
-Your site will now deploy, and you will receive a link similar to the following: https://react.now-examples.now.sh
+现在将会部署你的站点，同时你将会收到类似以下内容的链接：https://react.now-examples.now.sh
 
-Out of the box, you are preconfigured for client-side routing compatibility and appropriate default caching headers. This behaviour can be overwritten [like this](https://zeit.co/docs/v2/advanced/routes/).
+开箱即用，同时你已经自动配置了客户端路由兼容与适当的默认缓存头部。这种行为可以被[这样覆盖](https://zeit.co/docs/v2/advanced/routes/)。
 
 ## [Render](https://render.com)
 
-Render offers free [static site](https://render.com/docs/static-sites) hosting with fully managed SSL, a global CDN and continuous auto deploys from GitHub.
+Render 提供免费[静态站点](https://render.com/docs/static-sites)托管，该托管具备 SSL，全局 CDM 以及来自 GitHub 的持续自动部署。
 
-Deploy your app in only a few minutes by following the [Create React App deployment guide](https://render.com/docs/deploy-create-react-app).
+ 遵循 [Create React App 开发指南](https://render.com/docs/deploy-create-react-app)，短时间内即可完成你的应用部署。
 
-Use invite code `cra` to sign up or use [this link](https://render.com/i/cra).
+使用邀请码 `cra` 进行注册或使用[该链接](https://render.com/i/cra)。
 
-## [S3](https://aws.amazon.com/s3) and [CloudFront](https://aws.amazon.com/cloudfront/)
+## [S3](https://aws.amazon.com/s3) 和 [CloudFront](https://aws.amazon.com/cloudfront/)
 
-See this [blog post](https://medium.com/@omgwtfmarc/deploying-create-react-app-to-s3-or-cloudfront-48dae4ce0af) on how to deploy your React app to Amazon Web Services S3 and CloudFront. If you are looking to add a custom domain, HTTPS and continuous deployment see this [blog post](https://medium.com/dailyjs/a-guide-to-deploying-your-react-app-with-aws-s3-including-https-a-custom-domain-a-cdn-and-58245251f081).
+有关如何将 React 应用部署至 Amazon Web Service S3 和 CloudFront 的相关信息，请查阅[这篇博文](https://medium.com/@omgwtfmarc/deploying-create-react-app-to-s3-or-cloudfront-48dae4ce0af)。如果你要添加自定义域名、HTTPS 和持续部署，请参阅[这篇博文](https://medium.com/dailyjs/a-guide-to-deploying-your-react-app-with-aws-s3-including-https-a-custom-domain-a-cdn-and-58245251f081)。
 
 ## [Surge](https://surge.sh/)
 
-Install the Surge CLI if you haven’t already by running `npm install -g surge`. Run the `surge` command and log in you or create a new account.
+如果尚未安装 Surge 命令行工具，请执行 `npm install -g surge`。运行 `surge` 命令以登入或创建一个新账户。
 
-When asked about the project path, make sure to specify the `build` folder, for example:
+当询问有关项目路径的信息时，请确保指定 `build` 文件夹，像这样：
 
 ```sh
        project path: /path/to/project/build
 ```
 
-Note that in order to support routers that use HTML5 `pushState` API, you may want to rename the `index.html` in your build folder to `200.html` before deploying to Surge. This [ensures that every URL falls back to that file](https://surge.sh/help/adding-a-200-page-for-client-side-routing).
+请注意，为了兼容基于 HTML5 `pushState` API 的路由，你可能需要在部署到 Surge 前将 build 文件夹中的 `index.html` 文件重命名为 `200.html`。这样[能确保每个 URL 都能回退到该文件](https://surge.sh/help/adding-a-200-page-for-client-side-routing)。
 
-## Publishing Components To npm
+## 将组件发布至 npm
 
-Create React App doesn't provide any built-in functionality to publish a component to npm. If you're ready to extract a component from your project so other people can use it, we recommend moving it to a separate directory outside of your project and then using a tool like [nwb](https://github.com/insin/nwb#react-components-and-libraries) to prepare it for publishing.
+Create React App 不提供任何将组件发布至 npm 的内置功能。如果你准备从项目中提取组件，以便其他人可以使用它，我们建议将其移动到项目外部的单个文件夹中，然后使用 [nwb](https://github.com/insin/nwb#react-components-and-libraries) 这样的工具进行发布前准备。
