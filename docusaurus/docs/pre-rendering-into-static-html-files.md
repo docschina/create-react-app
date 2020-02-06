@@ -1,13 +1,13 @@
 ---
 id: pre-rendering-into-static-html-files
-title: Pre-Rendering into Static HTML Files
-sidebar_label: Pre-Rendering Static HTML
+title: 预渲染静态 HTML 文件
+sidebar_label: 预渲染静态 HTML 文件
 ---
 
-If you’re hosting your `build` with a static hosting provider you can use [react-snapshot](https://www.npmjs.com/package/react-snapshot) or [react-snap](https://github.com/stereobooster/react-snap) to generate HTML pages for each route, or relative link, in your application. These pages will then seamlessly become active, or “hydrated”, when the JavaScript bundle has loaded.
+如果你使用静态托管服务商托管自己的 `构建版本`，则可以使用 [react-snapshot](https://www.npmjs.com/package/react-snapshot) 或 [react-snap](https://github.com/stereobooster/react-snap) 为应用程序中的每个路由或相对链接生成 HTML 页面。然后，当 JavaScript 包加载完成时，这些页面将会无缝切换至活动状态（被"活性化"）。
 
-There are also opportunities to use this outside of static hosting, to take the pressure off the server when generating and caching routes.
+也有在静态托管外使用该功能的选择，以在生成和缓存路由时减轻服务器的压力。
 
-The primary benefit of pre-rendering is that you get the core content of each page _with_ the HTML payload—regardless of whether or not your JavaScript bundle successfully downloads. It also increases the likelihood that each route of your application will be picked up by search engines.
+预渲染的主要好处是，无论 JavaScript 是否成功下载，你都可以 _通过_ HTML 负载获得每个页面的核心内容。这也增加了搜索引擎录入你的应用程序内每个路由的可能性。
 
-You can read more about [zero-configuration pre-rendering (also called snapshotting) here](https://medium.com/superhighfives/an-almost-static-stack-6df0a2791319).
+你可以在此处阅读关于 [零配置预渲染（也被称为快照）](https://medium.com/superhighfives/an-almost-static-stack-6df0a2791319) 的相关信息
