@@ -10,15 +10,15 @@ sidebar_label: 疑难解答
 
 如果浏览器没有刷新，请尝试以下解决方法：
 
-- 检查你的入口点是否已导入文件。TypeScript 将在你的任何源文件上显示错误，但是 webpack 只有在文件被某个入口点直接或间接导入时才会重新加载文件。
+- 检查你的入口是否已引入文件。TypeScript 将在你的任何源文件上显示错误，但是 webpack 只有在文件被某个入口直接或间接引入时才会重新加载文件。
 - 如果你的项目在 Dropbox 文件夹中，请尝试将其移出。
-- 如果你通过文件夹名称进行引用，但 watcher 没有在文件夹内找到名为 `index.js` 的文件，那么由于 Webpack 的 bug ，你[需要重启 watcher](https://github.com/facebook/create-react-app/issues/1164)。
+- 如果你通过文件夹名称进行引用，但 watcher 没有在文件夹内找到名为 `index.js` 的文件，那么由于 Webpack 的 bug，你可能[需要重启 watcher](https://github.com/facebook/create-react-app/issues/1164)。
 - 像 Vim 和 IntelliJ 这样的一些编辑器有一个“安全写入”的特性，这个特性目前会破坏 watcher。你需要禁用它，并按照 [“调整文本编辑器”](https://webpack.js.org/guides/development/#adjusting-your-text-editor)中的说明操作。
-- 如果项目路径包含圆括号，请尝试将项目移动到没有圆括号的路径。这是 [Webpack watcher bug](https://github.com/webpack/watchpack/issues/42)导致的。
+- 如果项目路径包含圆括号，请尝试将项目移动到没有圆括号的路径。这是 [Webpack watcher bug](https://github.com/webpack/watchpack/issues/42) 导致的。
 - 在 Linux 和 macOS 上，你可能需要 [调整系统设置](https://github.com/webpack/docs/wiki/troubleshooting#not-enough-watchers) 来允许更多 watcher。
 - 如果项目在虚拟机（例如，配置了 Vagrant 的 VirtualBox ）中运行，请在项目目录中创建一个 `.env` 文件，如果该文件不存在，需要向其添加 `CHOKIDAR_USEPOLLING=true` 。 这样可以确保下次运行 `npm start` 时，watcher 根据需要在 VM 内部使用轮询模式。
 
-如果这些解决方案均无帮助，请在 [此帖](https://github.com/facebook/create-react-app/issues/659) 中留言
+如果这些解决方案均无帮助，请在 [此 issues](https://github.com/facebook/create-react-app/issues/659) 中留言
 
 ## `npm test` 在 macOS Sierra 上无效果
 
@@ -42,13 +42,13 @@ brew reinstall watchman
 
 如果仍然不能解决问题，请尝试运行 `launchctl unload -F ~/Library/LaunchAgents/com.github.facebook.watchman.plist`
 
-也有说卸载 Watchman 可以解决这个问题。 因此，如果没有其他解决方式，请将其从系统中删除，然后重试。
+也有说卸载 Watchman 可以解决这个问题。因此，如果没有其他解决方式，请将其从系统中删除，然后重试。
 
 ## `npm run build` 过早结束
 
 在内存有限且没有交换空间的计算机上，`npm run build` 可能会失败，这在云环境中很常见。 即使在小型项目中，此命令也可以使系统中的 RAM 使用量增加数百兆，因此，如果可用内存少于 1 GB，则构建可能会失败，并显示以下消息：
 
-> 构建失败的原因在于该过程过早终止。这可能意味着系统内存不足，或者有人在进程中使用了 `kill -9` 命令。
+> The build failed because the process exited too early. This probably means the system ran out of memory or someone called `kill -9` on the process.
 
 如果你确定没有终止该进程，请考虑在要构建的计算机上 [添加一些交换空间](https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-ubuntu-14-04)，或在本地构建项目。
 
@@ -58,9 +58,9 @@ brew reinstall watchman
 
 ## Moment.js 语言环境缺失
 
-如果使用 [Moment.js](https://momentjs.com/)，则可能会注意到默认情况下仅英语语言环境可用。这是因为语言环境文件很大，你可能只需要 [Moment.js提供的所有语言环境](https://momentjs.com/#multiple-locale-support) 的子集。
+如果使用 [Moment.js](https://momentjs.com/)，则可能会注意到默认情况下仅英语语言环境可用。这是因为语言环境文件很大，你可能只需要 [Moment.js 提供的所有语言环境](https://momentjs.com/#multiple-locale-support) 的子集。
 
-要将特定的 Moment.js 语言环境添加到包中，你需要显式导入它。
+要将特定的 Moment.js 语言环境添加到包中，你需要显式引入它。
 
 例如:
 
@@ -69,7 +69,7 @@ import moment from 'moment';
 import 'moment/locale/fr';
 ```
 
-如果你是通过这种方式导入多个语言环境的，则可以稍后通过调用具有语言环境名称的 `moment.locale()` 在它们之间进行切换
+如果你是通过这种方式引入多个语言环境，则可以稍后通过调用具有语言环境名称的 `moment.locale()` 在它们之间进行切换
 
 ```js
 import moment from 'moment';
@@ -81,7 +81,7 @@ import 'moment/locale/es';
 moment.locale('fr');
 ```
 
-这仅适用于之前已明确导入的语言环境。
+这仅适用于之前已明确引入的语言环境。
 
 ## `npm run build` 压缩失败
 
