@@ -1,36 +1,36 @@
 ---
 id: troubleshooting
-title: Troubleshooting
-sidebar_label: Troubleshooting
+title: 疑难解答
+sidebar_label: 疑难解答
 ---
 
-## `npm start` doesn’t detect changes
+## `npm start` 没有检测到变化
 
-When you save a file while `npm start` is running, the browser should refresh with the updated code.
+当你在使用 `npm start` 时保存文件时，浏览器应该使用更新后的代码进行刷新。
 
-If this doesn’t happen, try one of the following workarounds:
+如果浏览器没有刷新，请尝试以下解决方法：
 
-- Check that your file is imported by your entrypoint. TypeScript will show errors on any of your source files, but webpack only reloads your files if they are directly or indirectly imported by one of your entrypoints.
-- If your project is in a Dropbox folder, try moving it out.
-- If the watcher doesn’t see a file called `index.js` and you’re referencing it by the folder name, you [need to restart the watcher](https://github.com/facebook/create-react-app/issues/1164) due to a Webpack bug.
-- Some editors like Vim and IntelliJ have a “safe write” feature that currently breaks the watcher. You will need to disable it. Follow the instructions in [“Adjusting Your Text Editor”](https://webpack.js.org/guides/development/#adjusting-your-text-editor).
-- If your project path contains parentheses, try moving the project to a path without them. This is caused by a [Webpack watcher bug](https://github.com/webpack/watchpack/issues/42).
-- On Linux and macOS, you might need to [tweak system settings](https://github.com/webpack/docs/wiki/troubleshooting#not-enough-watchers) to allow more watchers.
-- If the project runs inside a virtual machine such as (a Vagrant provisioned) VirtualBox, create an `.env` file in your project directory if it doesn’t exist, and add `CHOKIDAR_USEPOLLING=true` to it. This ensures that the next time you run `npm start`, the watcher uses the polling mode, as necessary inside a VM.
+- 检查你的入口是否已引入文件。TypeScript 将在你的任何源文件上显示错误，但是 webpack 只有在文件被某个入口直接或间接引入时才会重新加载文件。
+- 如果你的项目在 Dropbox 文件夹中，请尝试将其移出。
+- 如果你通过文件夹名称进行引用，但 watcher 没有在文件夹内找到名为 `index.js` 的文件，那么由于 Webpack 的 bug，你可能[需要重启 watcher](https://github.com/facebook/create-react-app/issues/1164)。
+- 像 Vim 和 IntelliJ 这样的一些编辑器有一个“安全写入”的特性，这个特性目前会破坏 watcher。你需要禁用它，并按照 [“调整文本编辑器”](https://webpack.js.org/guides/development/#adjusting-your-text-editor)中的说明操作。
+- 如果项目路径包含圆括号，请尝试将项目移动到没有圆括号的路径。这是 [Webpack watcher bug](https://github.com/webpack/watchpack/issues/42) 导致的。
+- 在 Linux 和 macOS 上，你可能需要 [调整系统设置](https://github.com/webpack/docs/wiki/troubleshooting#not-enough-watchers) 来允许更多 watcher。
+- 如果项目在虚拟机（例如，配置了 Vagrant 的 VirtualBox ）中运行，请在项目目录中创建一个 `.env` 文件，如果该文件不存在，需要向其添加 `CHOKIDAR_USEPOLLING=true` 。 这样可以确保下次运行 `npm start` 时，watcher 根据需要在 VM 内部使用轮询模式。
 
-If none of these solutions help please leave a comment [in this thread](https://github.com/facebook/create-react-app/issues/659).
+如果这些解决方案均无帮助，请在 [此 issues](https://github.com/facebook/create-react-app/issues/659) 中留言
 
-## `npm test` hangs or crashes on macOS Sierra
+## `npm test` 在 macOS Sierra 上无效果
 
-If you run `npm test` and the console gets stuck after printing `react-scripts test` to the console there might be a problem with your [Watchman](https://facebook.github.io/watchman/) installation as described in [facebook/create-react-app#713](https://github.com/facebook/create-react-app/issues/713).
+如果你运行 `npm test` ，并且在运行 `react-scripts test` 无反应，则你的 [Watchman](https://facebook.github.io/watchman/) 安装可能存在问题，参见 [facebook/create-react-app#713](https://github.com/facebook/create-react-app/issues/713)。
 
-We recommend deleting `node_modules` in your project and running `npm install` (or `yarn` if you use it) first. If it doesn't help, you can try one of the numerous workarounds mentioned in these issues:
+我们建议首先删除项目中的 `node_modules` 并运行 `npm install`（或者运行 `yarn`）。 如果没有帮助，你可以尝试以下解决方法：
 
 - [facebook/jest#1767](https://github.com/facebook/jest/issues/1767)
 - [facebook/watchman#358](https://github.com/facebook/watchman/issues/358)
 - [ember-cli/ember-cli#6259](https://github.com/ember-cli/ember-cli/issues/6259)
 
-It is reported that installing Watchman 4.7.0 or newer fixes the issue. If you use [Homebrew](https://brew.sh/), you can run these commands to update it:
+安装 Watchman 4.7.0 或更高版本可解决此问题。 如果使用 [Homebrew](https://brew.sh/)，则可以运行以下命令对其进行更新：
 
 ```
 watchman shutdown-server
@@ -38,39 +38,38 @@ brew update
 brew reinstall watchman
 ```
 
-You can find [other installation methods](https://facebook.github.io/watchman/docs/install.html#build-install) on the Watchman documentation page.
+你可以在 [other installation methods](https://facebook.github.io/watchman/docs/install.html#build-install) 文档页面找到其他安装方法。
 
-If this still doesn’t help, try running `launchctl unload -F ~/Library/LaunchAgents/com.github.facebook.watchman.plist`.
+如果仍然不能解决问题，请尝试运行 `launchctl unload -F ~/Library/LaunchAgents/com.github.facebook.watchman.plist`
 
-There are also reports that _uninstalling_ Watchman fixes the issue. So if nothing else helps, remove it from your system and try again.
+也有说卸载 Watchman 可以解决这个问题。因此，如果没有其他解决方式，请将其从系统中删除，然后重试。
 
-## `npm run build` exits too early
+## `npm run build` 过早结束
 
-It is reported that `npm run build` can fail on machines with limited memory and no swap space, which is common in cloud environments. Even with small projects this command can increase RAM usage in your system by hundreds of megabytes, so if you have less than 1 GB of available memory your build is likely to fail with the following message:
+在内存有限且没有交换空间的计算机上，`npm run build` 可能会失败，这在云环境中很常见。 即使在小型项目中，此命令也可以使系统中的 RAM 使用量增加数百兆，因此，如果可用内存少于 1 GB，则构建可能会失败，并显示以下消息：
 
 > The build failed because the process exited too early. This probably means the system ran out of memory or someone called `kill -9` on the process.
 
-If you are completely sure that you didn't terminate the process, consider [adding some swap space](https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-ubuntu-14-04) to the machine you’re building on, or build the project locally.
+如果你确定没有终止该进程，请考虑在要构建的计算机上 [添加一些交换空间](https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-ubuntu-14-04)，或在本地构建项目。
 
-## `npm run build` fails on Heroku
+## `npm run build` 在 Heroku 下执行失败
 
-This may be a problem with case sensitive filenames.
-Please refer to [this section](deployment.md#resolving-heroku-deployment-errors).
+这可能是大小写敏感的文件名的问题，请参阅 [本节](deployment.md#resolving-heroku-deployment-errors)。
 
-## Moment.js locales are missing
+## Moment.js 语言环境缺失
 
-If you use a [Moment.js](https://momentjs.com/), you might notice that only the English locale is available by default. This is because the locale files are large, and you probably only need a subset of [all the locales provided by Moment.js](https://momentjs.com/#multiple-locale-support).
+如果使用 [Moment.js](https://momentjs.com/)，则可能会注意到默认情况下仅英语语言环境可用。这是因为语言环境文件很大，你可能只需要 [Moment.js 提供的所有语言环境](https://momentjs.com/#multiple-locale-support) 的子集。
 
-To add a specific Moment.js locale to your bundle, you need to import it explicitly.
+要将特定的 Moment.js 语言环境添加到包中，你需要显式引入它。
 
-For example:
+例如:
 
 ```js
 import moment from 'moment';
 import 'moment/locale/fr';
 ```
 
-If you are importing multiple locales this way, you can later switch between them by calling `moment.locale()` with the locale name:
+如果你是通过这种方式引入多个语言环境，则可以稍后通过调用具有语言环境名称的 `moment.locale()` 在它们之间进行切换
 
 ```js
 import moment from 'moment';
@@ -82,10 +81,10 @@ import 'moment/locale/es';
 moment.locale('fr');
 ```
 
-This will only work for locales that have been explicitly imported before.
+这仅适用于之前已明确引入的语言环境。
 
-## `npm run build` fails to minify
+## `npm run build` 压缩失败
 
-Before `react-scripts@2.0.0`, this problem was caused by third party `node_modules` using modern JavaScript features because the minifier couldn't handle them during the build. This has been solved by compiling standard modern JavaScript features inside `node_modules` in `react-scripts@2.0.0` and higher.
+在 `react-scripts@2.0.0` 之前，此问题是由使用现代 JavaScript 功能的第三方 `node_modules` 引起的，因为 minifier 无法在构建过程中处理它们。通过在`react-scripts@2.0.0` 及更高版本中的 `node_modules` 中编译标准的现代 JavaScript 功能，可以解决此问题。
 
-If you're seeing this error, you're likely using an old version of `react-scripts`. You can either fix it by avoiding a dependency that uses modern syntax, or by upgrading to `react-scripts@>=2.0.0` and following the migration instructions in the changelog.
+如果遇到这个错误，有可能是使用了旧版本的 `react-scripts`，你可以通过避免使用现代语法的依赖关系或通过升级到 `react-scripts@>=2.0.0` 并遵循更改日志中的迁移说明来修复此问题。
