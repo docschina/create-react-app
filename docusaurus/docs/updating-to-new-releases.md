@@ -8,7 +8,7 @@ Create React App 可分为两个包：
 - `create-react-app` 用于创建新项目的命令行工具。
 - `react-scripts` 是用于生成项目的开发依赖（包括此项目）。
 
-当你运行 `npm create-react-app my-app` 时，该命令会自动安装最新版本的 Create React App。
+当你运行 `npx create-react-app my-app` 时，该命令会自动安装最新版本的 Create React App。
 > 如果你之前通过 `npm install -g create-react-app` 全局安装过 `create-react-app`，请查阅 [开始](getting-started.md) 部分以了解当前安装步骤。
 
 Create React App 会调用最新版本的 `react-scripts` 创建项目，因此你将会在新创建的 app 中自动获得所有新特性及改进。
